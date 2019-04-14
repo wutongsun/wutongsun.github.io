@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>JAVA常识 | Wutong&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一 JDK,JRE,JVM三者间的关系 1 JDKJDK是 Java 语言的软件开发工具包，主要用于移动设备、嵌入式设备上的java应用程序。JDK是整个java开发的核心，它包含了JAVA的运行环境（JVM+Java系统类库）和JAVA工具。 2 JREJRE是Java Runtime Environment缩写，指Java运行环境，是Sun的产品。运行JAVA程序所必须的环境的集合，包含JVM">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA常识">
+<meta property="og:url" content="http://yoursite.com/2019/03/12/JDK-JRE-JVM/index.html">
+<meta property="og:site_name" content="Wutong&#39;s Blog">
+<meta property="og:description" content="一 JDK,JRE,JVM三者间的关系 1 JDKJDK是 Java 语言的软件开发工具包，主要用于移动设备、嵌入式设备上的java应用程序。JDK是整个java开发的核心，它包含了JAVA的运行环境（JVM+Java系统类库）和JAVA工具。 2 JREJRE是Java Runtime Environment缩写，指Java运行环境，是Sun的产品。运行JAVA程序所必须的环境的集合，包含JVM">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://img1.ph.126.net/A2iWlmXbFe6tSz2rRGkz-A==/727331339920439686.jpg">
+<meta property="og:image" content="https://gss1.bdstatic.com/9vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=e90e6fe694cad1c8c4b6f4751e570c6c/0b7b02087bf40ad1bb99b82a562c11dfa8eccefe.jpg">
+<meta property="og:image" content="http://www.sxt.cn/360shop/Public/admin/UEditor/20170606/1496714683708833.jpg">
+<meta property="og:updated_time" content="2019-03-15T10:38:50.148Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JAVA常识">
+<meta name="twitter:description" content="一 JDK,JRE,JVM三者间的关系 1 JDKJDK是 Java 语言的软件开发工具包，主要用于移动设备、嵌入式设备上的java应用程序。JDK是整个java开发的核心，它包含了JAVA的运行环境（JVM+Java系统类库）和JAVA工具。 2 JREJRE是Java Runtime Environment缩写，指Java运行环境，是Sun的产品。运行JAVA程序所必须的环境的集合，包含JVM">
+<meta name="twitter:image" content="http://img1.ph.126.net/A2iWlmXbFe6tSz2rRGkz-A==/727331339920439686.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Wutong&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Wutong&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">黄沙百战穿金甲，不破楼兰终不还</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-JDK-JRE-JVM" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/12/JDK-JRE-JVM/" class="article-date">
+  <time datetime="2019-03-12T06:14:16.000Z" itemprop="datePublished">2019-03-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/language/">language</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JAVA常识
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一-JDK-JRE-JVM三者间的关系"><a href="#一-JDK-JRE-JVM三者间的关系" class="headerlink" title="一 JDK,JRE,JVM三者间的关系"></a>一 JDK,JRE,JVM三者间的关系</h2><p><img src="http://img1.ph.126.net/A2iWlmXbFe6tSz2rRGkz-A==/727331339920439686.jpg" alt="jav.png"></p>
+<h3 id="1-JDK"><a href="#1-JDK" class="headerlink" title="1 JDK"></a>1 JDK</h3><p>JDK是 Java 语言的软件开发工具包，主要用于移动设备、嵌入式设备上的java应用程序。JDK是整个java开发的核心，它包含了JAVA的运行环境（JVM+Java系统类库）和JAVA工具。</p>
+<h3 id="2-JRE"><a href="#2-JRE" class="headerlink" title="2 JRE"></a>2 JRE</h3><p>JRE是Java Runtime Environment缩写，指Java运行环境，是Sun的产品。运行JAVA程序所必须的环境的集合，包含JVM标准实现及Java核心类库。<br>JRE为Java Runtime Environment的简称，Java Runtime Environment（包括Java Plug-in）是Sun的产品，包括两部分：Java Runtime Environment和Java Plug-in。JavaRuntimeEnvironment(JRE)是可以在其上运行、测试和传输应用程序的Java平台。它包括Java虚拟机（jvm）、Java核心类库和支持文件。它不包含开发工具(JDK)–编译器、调试器和其它工具。JRE需要辅助软件–Java Plug-in–以便在浏览器中运行applet</p>
+<h3 id="3-JVM"><a href="#3-JVM" class="headerlink" title="3 JVM"></a>3 JVM</h3><p><img src="https://gss1.bdstatic.com/9vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=e90e6fe694cad1c8c4b6f4751e570c6c/0b7b02087bf40ad1bb99b82a562c11dfa8eccefe.jpg" alt="java.png"><br>JVM是Java Virtual Machine（Java虚拟机）的缩写，JVM是一种用于计算设备的规范，它是一个虚构出来的计算机，是通过在实际的计算机上仿真模拟各种计算机功能来实现的。</p>
+<h2 id="二-Java三大体系JavaEE-JavaSE-JavaME的区别"><a href="#二-Java三大体系JavaEE-JavaSE-JavaME的区别" class="headerlink" title="二 Java三大体系JavaEE,JavaSE,JavaME的区别"></a>二 Java三大体系JavaEE,JavaSE,JavaME的区别</h2><p><img src="http://www.sxt.cn/360shop/Public/admin/UEditor/20170606/1496714683708833.jpg" alt="J.png"></p>
+<h3 id="1-Java-SE-Java-Platform-Standard-Edition"><a href="#1-Java-SE-Java-Platform-Standard-Edition" class="headerlink" title="1 Java SE(Java Platform,Standard Edition)"></a>1 Java SE(Java Platform,Standard Edition)</h3><p>标准版，定位在个人计算机上的应用。这个版本是Java平台的核心，它提供了非常丰富的API来开发一般个人计算机上的应用程序，包括用户界面接口AWT及Swing，网络功能与国际化、图像处理能力以及输入输出支持等。在上世纪90年代末互联网上大放异彩的Applet也属于这个版本。Applet后来为Flash取代，Flash即将被HTML5取代。</p>
+<h3 id="2-Java-EE-Java-Platform-Enterprise-Edition"><a href="#2-Java-EE-Java-Platform-Enterprise-Edition" class="headerlink" title="2 Java EE(Java Platform.Enterprise Edition)"></a>2 Java EE(Java Platform.Enterprise Edition)</h3><p>企业版，定位在服务器端的应用<br>JavaEE是JavaSE的扩展，增加了用于服务器开发的类库。如：JDBC是让程序员能直接在Java内使用的SQL的语法来访问数据库内的数据;Servlet能够延伸服务器的功能，通过请求-响应的模式来处理客户端的请求;JSP是一种可以将Java程序代码内嵌在网页内的技术;</p>
+<h3 id="3-Java-ME-Java-Platform-Micro-Edition"><a href="#3-Java-ME-Java-Platform-Micro-Edition" class="headerlink" title="3 Java ME(Java Platform,Micro Edition)"></a>3 Java ME(Java Platform,Micro Edition)</h3><p>微型版，定位在消费性电子产品的应用上</p>
+<p>JavaME是JavaSE的内伸，包含J2SE的一部分核心类，也有自己的扩展类,增加了适合微小装置的类库：javax.microedition.io.*等。该版本针对资源有限的电子消费产品的需求精简核心类库，并提供了模块化的架构让不同类型产品能够随时增加支持的能力</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/12/JDK-JRE-JVM/" data-id="cjugrrr3z0016edpjz5y00jdf" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+
+	 <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+   
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/03/15/JAVA容器/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Java容器如何选?
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/03/06/VIM常用命令/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">vim常用命令</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">链接</h3>
+    <div class="widget">
+      <li><a href="https://github.com/wutongsun" title="Wutong's Blog">我的github</a></li>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/command/">command</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/language/">language</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IO/">IO</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UDP/">UDP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminal/">terminal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/方法/">方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/装饰模式/">装饰模式</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/IO/" style="font-size: 20px;">IO</a> <a href="/tags/TCP/" style="font-size: 10px;">TCP</a> <a href="/tags/UDP/" style="font-size: 20px;">UDP</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/方法/" style="font-size: 10px;">方法</a> <a href="/tags/装饰模式/" style="font-size: 10px;">装饰模式</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/12/SERVLET基础/">Servlet基础</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/11/JDBC/">JDBC</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/09/JAVA单列设计模式/">Java单列设计模式</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/09/JAVA-XML解析-SAX/">Java XML解析(SAX)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/09/TCP三次握手，四次挥手/">TCP三次握手，四次挥手</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Wutong<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

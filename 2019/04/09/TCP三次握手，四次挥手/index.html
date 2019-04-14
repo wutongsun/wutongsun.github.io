@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>TCP三次握手，四次挥手 | Wutong&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1 TCP三次握手建立连接客户端–发送带有 SYN 标志的数据包–一次握手–服务端服务端–发送带有 SYN/ACK 标志的数据包–二次握手–客户端客户端–发送带有带有 ACK 标志的数据包–三次握手–服务端 为什么要三次握手三次握手的目的是建立可靠的通信信道，说到通讯，简单来说就是数据的发送与接收，而三次握手最主要的目的就是双方确认自己与对方的发送与接收是正常的。第一次握手：Client 什么都不">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TCP三次握手，四次挥手">
+<meta property="og:url" content="http://yoursite.com/2019/04/09/TCP三次握手，四次挥手/index.html">
+<meta property="og:site_name" content="Wutong&#39;s Blog">
+<meta property="og:description" content="1 TCP三次握手建立连接客户端–发送带有 SYN 标志的数据包–一次握手–服务端服务端–发送带有 SYN/ACK 标志的数据包–二次握手–客户端客户端–发送带有带有 ACK 标志的数据包–三次握手–服务端 为什么要三次握手三次握手的目的是建立可靠的通信信道，说到通讯，简单来说就是数据的发送与接收，而三次握手最主要的目的就是双方确认自己与对方的发送与接收是正常的。第一次握手：Client 什么都不">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://camo.githubusercontent.com/484f4f39a6e6bb5f4d6cda6709bff7196a23161b/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f352f382f313633336531323733393635343166313f773d38363426683d34333926663d706e6726733d323236303935">
+<meta property="og:image" content="https://camo.githubusercontent.com/484f4f39a6e6bb5f4d6cda6709bff7196a23161b/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f352f382f313633336531323733393635343166313f773d38363426683d34333926663d706e6726733d323236303935">
+<meta property="og:image" content="https://camo.githubusercontent.com/ae140718e064bf5f444224c9da3cdc2b8cd9f9a6/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f352f382f313633336531363736653261633061333f773d35303026683d33343026663d6a70656726733d3133343036">
+<meta property="og:updated_time" content="2019-04-09T08:41:32.443Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TCP三次握手，四次挥手">
+<meta name="twitter:description" content="1 TCP三次握手建立连接客户端–发送带有 SYN 标志的数据包–一次握手–服务端服务端–发送带有 SYN/ACK 标志的数据包–二次握手–客户端客户端–发送带有带有 ACK 标志的数据包–三次握手–服务端 为什么要三次握手三次握手的目的是建立可靠的通信信道，说到通讯，简单来说就是数据的发送与接收，而三次握手最主要的目的就是双方确认自己与对方的发送与接收是正常的。第一次握手：Client 什么都不">
+<meta name="twitter:image" content="https://camo.githubusercontent.com/484f4f39a6e6bb5f4d6cda6709bff7196a23161b/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f352f382f313633336531323733393635343166313f773d38363426683d34333926663d706e6726733d323236303935">
+  
+    <link rel="alternate" href="/atom.xml" title="Wutong&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Wutong&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">黄沙百战穿金甲，不破楼兰终不还</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-TCP三次握手，四次挥手" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/09/TCP三次握手，四次挥手/" class="article-date">
+  <time datetime="2019-04-09T06:49:43.000Z" itemprop="datePublished">2019-04-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      TCP三次握手，四次挥手
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-TCP三次握手建立连接"><a href="#1-TCP三次握手建立连接" class="headerlink" title="1 TCP三次握手建立连接"></a>1 TCP三次握手建立连接</h2><p><img src="https://camo.githubusercontent.com/484f4f39a6e6bb5f4d6cda6709bff7196a23161b/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f352f382f313633336531323733393635343166313f773d38363426683d34333926663d706e6726733d323236303935" alt><br><img src="https://camo.githubusercontent.com/484f4f39a6e6bb5f4d6cda6709bff7196a23161b/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f352f382f313633336531323733393635343166313f773d38363426683d34333926663d706e6726733d323236303935" alt><br>客户端–发送带有 SYN 标志的数据包–一次握手–服务端<br>服务端–发送带有 SYN/ACK 标志的数据包–二次握手–客户端<br>客户端–发送带有带有 ACK 标志的数据包–三次握手–服务端</p>
+<h3 id="为什么要三次握手"><a href="#为什么要三次握手" class="headerlink" title="为什么要三次握手"></a>为什么要三次握手</h3><p>三次握手的目的是建立可靠的通信信道，说到通讯，简单来说就是数据的发送与接收，而三次握手最主要的目的就是双方确认自己与对方的发送与接收是正常的。<br>第一次握手：Client 什么都不能确认；Server 确认了对方发送正常<br>第二次握手：Client 确认了：自己发送、接收正常，对方发送、接收正常；Server 确认了：自己接收正常，对方发送正常<br>第三次握手：Client确认了：自己发送、接收正常，对方发送、接收正常；Server确认了：自己发送、接收正常，对方发送接收正常<br>所以三次握手就能确认双发收发功能都正常，缺一不可。</p>
+<h2 id="2-TCP四次挥手断开连接"><a href="#2-TCP四次挥手断开连接" class="headerlink" title="2 TCP四次挥手断开连接"></a>2 TCP四次挥手断开连接</h2><p><img src="https://camo.githubusercontent.com/ae140718e064bf5f444224c9da3cdc2b8cd9f9a6/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f352f382f313633336531363736653261633061333f773d35303026683d33343026663d6a70656726733d3133343036" alt><br>客户端-发送一个 FIN，用来关闭客户端到服务器的数据传送<br>服务器-收到这个 FIN，它发回一 个 ACK，确认序号为收到的序号加1 。和 SYN 一样，一个 FIN 将占用一个序号<br>服务器-关闭与客户端的连接，发送一个FIN给客户端<br>客户端-发回 ACK 报文确认，并将确认序号设置为收到序号加1</p>
+<h3 id="为什么要四次挥手"><a href="#为什么要四次挥手" class="headerlink" title="为什么要四次挥手"></a>为什么要四次挥手</h3><p>任何一方都可以在数据传送结束后发出连接释放的通知，待对方确认后进入半关闭状态。当另一方也没有数据再发送的时候，则发出连接释放通知，对方确认后就完全关闭了TCP连接。<br>举个例子：A 和 B 打电话，通话即将结束后，A 说“我没啥要说的了”，B回答“我知道了”，但是 B 可能还会有要说的话，A 不能要求 B 跟着自己的节奏结束通话，于是 B 可能又巴拉巴拉说了一通，最后 B 说“我说完了”，A 回答“知道了”，这样通话才算结束。</p>
+<h2 id="3-TCP安全可靠的一些策略"><a href="#3-TCP安全可靠的一些策略" class="headerlink" title="3 TCP安全可靠的一些策略"></a>3 TCP安全可靠的一些策略</h2><p>1、应用数据被分割成TCP认为最适合发送的数据块。<br>2、超时重传：当TCP发出一个段后，它启动一个定时器，等待目的端确认收到这个报文段。如果不能及时收到一个确认，将重发这个报文段。<br>3、TCP给发送的每一个包进行编号，接收方对数据包进行排序，把有序数据传送给应用层。<br>4、校验和：TCP将保持它首部和数据的检验和。这是一个端到端的检验和，目的是检测数据在传输过程中的任何变化。如果收到段的检验和有差错，TCP将丢弃这个报文段和不确认收到此报文段。<br>5、TCP的接收端会丢弃重复的数据。<br>6、流量控制：TCP连接的每一方都有固定大小的缓冲空间，TCP的接收端只允许发送端发送接收端缓冲区能接纳的我数据。当接收方来不及处理发送方的数据，能提示发送方降低发送的速率，防止包丢失。TCP使用的流量控制协议是可变大小的滑动窗口协议。<br>7、拥塞控制：当网络拥塞时，减少数据的发送。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/04/09/TCP三次握手，四次挥手/" data-id="cjugrrr44001jedpj8tjmsq0g" class="article-share-link">Share</a>
+      
+      
+	 <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+   
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/04/09/JAVA-XML解析-SAX/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Java XML解析(SAX)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/03/24/JAVA-TCP编程/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Java TCP编程</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">链接</h3>
+    <div class="widget">
+      <li><a href="https://github.com/wutongsun" title="Wutong's Blog">我的github</a></li>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/command/">command</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/language/">language</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IO/">IO</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UDP/">UDP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminal/">terminal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/方法/">方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/装饰模式/">装饰模式</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/IO/" style="font-size: 20px;">IO</a> <a href="/tags/TCP/" style="font-size: 10px;">TCP</a> <a href="/tags/UDP/" style="font-size: 20px;">UDP</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/方法/" style="font-size: 10px;">方法</a> <a href="/tags/装饰模式/" style="font-size: 10px;">装饰模式</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/12/SERVLET基础/">Servlet基础</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/11/JDBC/">JDBC</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/09/JAVA单列设计模式/">Java单列设计模式</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/09/JAVA-XML解析-SAX/">Java XML解析(SAX)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/09/TCP三次握手，四次挥手/">TCP三次握手，四次挥手</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Wutong<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

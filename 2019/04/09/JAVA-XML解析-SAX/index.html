@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Java XML解析(SAX) | Wutong&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="SAX(Simple API for XML)解析流模型中的”推”模型分析方式。通过事件驱动，每发现一个节点就引发一个事件，事件推给事件处理器，通过回调方法完成解析工作，解析XML文档的逻辑需要应用程序完成 优点①不需要等待所有数据都被处理，分析就能立即开始。②只在读取数据时检查数据，不需要保存在内存中。③可以在某个条件得到满足时停止解析，不必解析整个文档。④效率和性能较高，能解析大于系统内存的文">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java XML解析(SAX)">
+<meta property="og:url" content="http://yoursite.com/2019/04/09/JAVA-XML解析-SAX/index.html">
+<meta property="og:site_name" content="Wutong&#39;s Blog">
+<meta property="og:description" content="SAX(Simple API for XML)解析流模型中的”推”模型分析方式。通过事件驱动，每发现一个节点就引发一个事件，事件推给事件处理器，通过回调方法完成解析工作，解析XML文档的逻辑需要应用程序完成 优点①不需要等待所有数据都被处理，分析就能立即开始。②只在读取数据时检查数据，不需要保存在内存中。③可以在某个条件得到满足时停止解析，不必解析整个文档。④效率和性能较高，能解析大于系统内存的文">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-13T16:31:09.030Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java XML解析(SAX)">
+<meta name="twitter:description" content="SAX(Simple API for XML)解析流模型中的”推”模型分析方式。通过事件驱动，每发现一个节点就引发一个事件，事件推给事件处理器，通过回调方法完成解析工作，解析XML文档的逻辑需要应用程序完成 优点①不需要等待所有数据都被处理，分析就能立即开始。②只在读取数据时检查数据，不需要保存在内存中。③可以在某个条件得到满足时停止解析，不必解析整个文档。④效率和性能较高，能解析大于系统内存的文">
+  
+    <link rel="alternate" href="/atom.xml" title="Wutong&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Wutong&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">黄沙百战穿金甲，不破楼兰终不还</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-JAVA-XML解析-SAX" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/09/JAVA-XML解析-SAX/" class="article-date">
+  <time datetime="2019-04-09T07:48:15.000Z" itemprop="datePublished">2019-04-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Java XML解析(SAX)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="SAX-Simple-API-for-XML-解析"><a href="#SAX-Simple-API-for-XML-解析" class="headerlink" title="SAX(Simple API for XML)解析"></a>SAX(Simple API for XML)解析</h2><p>流模型中的”推”模型分析方式。通过事件驱动，每发现一个节点就引发一个事件，事件推给事件处理器，通过回调方法<br>完成解析工作，解析XML文档的逻辑需要应用程序完成</p>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>①不需要等待所有数据都被处理，分析就能立即开始。<br>②只在读取数据时检查数据，不需要保存在内存中。<br>③可以在某个条件得到满足时停止解析，不必解析整个文档。<br>④效率和性能较高，能解析大于系统内存的文档。</p>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>①需要应用程序自己负责TAG的处理逻辑（例如维护父/子关系等），文档越复杂程序就越复杂。<br>②单向导航，无法定位文档层次，很难同时访问同一文档的不同部分数据，不支持XPath。</p>
+<h2 id="eg"><a href="#eg" class="headerlink" title="eg:"></a>eg:</h2><p>p.xml 放在src下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</span><br><span class="line">&lt;persons&gt;</span><br><span class="line">&lt;person&gt;</span><br><span class="line">&lt;name&gt;至尊宝&lt;/name&gt;</span><br><span class="line">&lt;age&gt;90000&lt;/age&gt;</span><br><span class="line">&lt;/person&gt;</span><br><span class="line">&lt;/persons&gt;</span><br></pre></td></tr></table></figure></p>
+<p>入口</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) throws Exception, SAXException &#123;</span><br><span class="line">    //1 获取解析工厂</span><br><span class="line">    SAXParserFactory factory=SAXParserFactory.newInstance();</span><br><span class="line">    //2 从解析工厂获取解析器</span><br><span class="line">    SAXParser parse=factory.newSAXParser();</span><br><span class="line">    //3 编写处理器</span><br><span class="line">    //4 加载文档Document注册处理器    </span><br><span class="line">    PersonHandler handler=new PersonHandler();</span><br><span class="line">    //5 解析</span><br><span class="line">    parse.parse(Thread.currentThread().getContextClassLoader().getResourceAsStream(<span class="string">"p.xml"</span>),handler);</span><br><span class="line">    //获取数据</span><br><span class="line">    List&lt;Person&gt; persons=handler.getPersons();</span><br><span class="line">    <span class="keyword">for</span>(Person p:persons) &#123;</span><br><span class="line">    System.out.println(p.getName()+<span class="string">"---&gt;"</span>+p.getAge());</span><br><span class="line">    &#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">//处理器继承 DefaultHandler类</span><br><span class="line">class PersonHandler extends DefaultHandler&#123;</span><br><span class="line">    private List&lt;Person&gt; persons=new ArrayList&lt;Person&gt;();</span><br><span class="line">    private Person person;</span><br><span class="line">    private String tag;//存储操作标签</span><br><span class="line">    public void characters(char[] ch,int start,int length)throws SAXException&#123;</span><br><span class="line">        String contents=new String(ch,start,length);</span><br><span class="line">        <span class="keyword">if</span>(null!=tag) &#123;</span><br><span class="line">            <span class="keyword">if</span>(tag.equals(<span class="string">"name"</span>)) &#123;</span><br><span class="line">            person.setName(contents);</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(tag.equals(<span class="string">"age"</span>))&#123;</span><br><span class="line">                person.setAge(Integer.valueOf(contents));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    public void startElement (String uri, String localName,String qName, Attributes attributes)throws SAXException&#123;</span><br><span class="line">        System.out.println(qName+<span class="string">"----&gt;解析开始"</span>);</span><br><span class="line">        <span class="keyword">if</span>(null!=qName) &#123;</span><br><span class="line">            tag=qName;//存储标签名</span><br><span class="line">            <span class="keyword">if</span>(tag.equals(<span class="string">"person"</span>)) &#123;</span><br><span class="line">            person=new Person();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;    </span><br><span class="line">    &#125;</span><br><span class="line">    public void endElement (String uri, String localName, String qName)throws SAXException&#123;</span><br><span class="line">        System.out.println(qName+<span class="string">"----&gt;解析结束"</span>);</span><br><span class="line">        <span class="keyword">if</span>(null!=qName) &#123;</span><br><span class="line">            <span class="keyword">if</span>(qName.equals(<span class="string">"person"</span>)) &#123;</span><br><span class="line">                persons.add(person);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        tag=null;//tag丢弃</span><br><span class="line">    &#125;</span><br><span class="line">    public List&lt;Person&gt; <span class="function"><span class="title">getPersons</span></span>() &#123;</span><br><span class="line">        <span class="built_in">return</span> persons;</span><br><span class="line">    &#125;</span><br><span class="line">    public void setPersons(List&lt;Person&gt; persons) &#123;</span><br><span class="line">    this.persons = persons;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/04/09/JAVA-XML解析-SAX/" data-id="cjugrrr390006edpjwu8g91vy" class="article-share-link">Share</a>
+      
+      
+	 <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+   
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/04/09/JAVA单列设计模式/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Java单列设计模式
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/09/TCP三次握手，四次挥手/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">TCP三次握手，四次挥手</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">链接</h3>
+    <div class="widget">
+      <li><a href="https://github.com/wutongsun" title="Wutong's Blog">我的github</a></li>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/command/">command</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/language/">language</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IO/">IO</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UDP/">UDP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminal/">terminal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/方法/">方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/装饰模式/">装饰模式</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/IO/" style="font-size: 20px;">IO</a> <a href="/tags/TCP/" style="font-size: 10px;">TCP</a> <a href="/tags/UDP/" style="font-size: 20px;">UDP</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/方法/" style="font-size: 10px;">方法</a> <a href="/tags/装饰模式/" style="font-size: 10px;">装饰模式</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/12/SERVLET基础/">Servlet基础</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/11/JDBC/">JDBC</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/09/JAVA单列设计模式/">Java单列设计模式</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/09/JAVA-XML解析-SAX/">Java XML解析(SAX)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/09/TCP三次握手，四次挥手/">TCP三次握手，四次挥手</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Wutong<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -7,18 +7,18 @@
   
   <title>Java装饰器设计模式 | Wutong&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="四个部分1 抽象组件： 需要装饰的抽象对象（接口或抽象父类）2 具体组件： 需要装饰的对象3 抽象装饰类： 包含了对抽象组件对引用以及装饰着共同的方法4 具体装饰类： 被装饰的对象  12345$ //抽象组件$ interface Drink&amp;#123;$	double cost();$	String info();$ &amp;#125;  12345678910$ //具体组件$ class Cof">
+  <meta name="description" content="四个部分1 抽象组件： 需要装饰的抽象对象（接口或抽象父类）2 具体组件： 需要装饰的对象3 抽象装饰类： 包含了对抽象组件对引用以及装饰着共同的方法4 具体装饰类： 被装饰的对象  12345$ //抽象组件$ interface Drink&amp;#123;$	double cost();$	String info();$ &amp;#125;">
 <meta name="keywords" content="装饰模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java装饰器设计模式">
-<meta property="og:url" content="http://yoursite.com/2019/03/17/JAVA装饰器设计模式/index.html">
+<meta property="og:url" content="http://wutongsun.github.io/2019/03/17/JAVA装饰器设计模式/index.html">
 <meta property="og:site_name" content="Wutong&#39;s Blog">
-<meta property="og:description" content="四个部分1 抽象组件： 需要装饰的抽象对象（接口或抽象父类）2 具体组件： 需要装饰的对象3 抽象装饰类： 包含了对抽象组件对引用以及装饰着共同的方法4 具体装饰类： 被装饰的对象  12345$ //抽象组件$ interface Drink&amp;#123;$	double cost();$	String info();$ &amp;#125;  12345678910$ //具体组件$ class Cof">
+<meta property="og:description" content="四个部分1 抽象组件： 需要装饰的抽象对象（接口或抽象父类）2 具体组件： 需要装饰的对象3 抽象装饰类： 包含了对抽象组件对引用以及装饰着共同的方法4 具体装饰类： 被装饰的对象  12345$ //抽象组件$ interface Drink&amp;#123;$	double cost();$	String info();$ &amp;#125;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-17T06:38:59.486Z">
+<meta property="og:updated_time" content="2019-04-16T14:59:39.968Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java装饰器设计模式">
-<meta name="twitter:description" content="四个部分1 抽象组件： 需要装饰的抽象对象（接口或抽象父类）2 具体组件： 需要装饰的对象3 抽象装饰类： 包含了对抽象组件对引用以及装饰着共同的方法4 具体装饰类： 被装饰的对象  12345$ //抽象组件$ interface Drink&amp;#123;$	double cost();$	String info();$ &amp;#125;  12345678910$ //具体组件$ class Cof">
+<meta name="twitter:description" content="四个部分1 抽象组件： 需要装饰的抽象对象（接口或抽象父类）2 具体组件： 需要装饰的对象3 抽象装饰类： 包含了对抽象组件对引用以及装饰着共同的方法4 具体装饰类： 被装饰的对象  12345$ //抽象组件$ interface Drink&amp;#123;$	double cost();$	String info();$ &amp;#125;">
   
     <link rel="alternate" href="/atom.xml" title="Wutong&#39;s Blog" type="application/atom+xml">
   
@@ -63,7 +63,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wutongsun.github.io"></form>
       </div>
     </div>
   </div>
@@ -98,6 +98,7 @@
         <h2 id="四个部分"><a href="#四个部分" class="headerlink" title="四个部分"></a>四个部分</h2><p>1 抽象组件： 需要装饰的抽象对象（接口或抽象父类）<br>2 具体组件： 需要装饰的对象<br>3 抽象装饰类： 包含了对抽象组件对引用以及装饰着共同的方法<br>4 具体装饰类： 被装饰的对象</p>
 <hr>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ //抽象组件</span><br><span class="line">$ interface Drink&#123;</span><br><span class="line">$	double cost();</span><br><span class="line">$	String info();</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <hr>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ //具体组件</span><br><span class="line">$ class Coffee implements Drink&#123;</span><br><span class="line">$	private String name=<span class="string">"原味咖啡"</span>;</span><br><span class="line">$	public double <span class="function"><span class="title">cost</span></span>() &#123;</span><br><span class="line">$		<span class="built_in">return</span> 10;</span><br><span class="line">$   &#125;</span><br><span class="line">$	public String <span class="function"><span class="title">info</span></span>() &#123;	</span><br><span class="line">$		<span class="built_in">return</span> name;</span><br><span class="line">$	&#125;</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
 <hr>
@@ -106,10 +107,11 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">$ //具体装饰类</span><br><span class="line">$ class Milk extends Decorate&#123;</span><br><span class="line">$	public Milk(Drink drink) &#123;</span><br><span class="line">$		super(drink);</span><br><span class="line">$	&#125;</span><br><span class="line">$	public double <span class="function"><span class="title">cost</span></span>() &#123;</span><br><span class="line">$		<span class="built_in">return</span> super.cost()*4;</span><br><span class="line">$	&#125;</span><br><span class="line">$	public String <span class="function"><span class="title">info</span></span>() &#123;</span><br><span class="line">$		<span class="built_in">return</span> super.info()+<span class="string">"add milk"</span>;</span><br><span class="line">$	&#125;</span><br><span class="line">$ &#125;</span><br><span class="line">$ class Suger extends Decorate&#123;</span><br><span class="line">$	public Suger(Drink drink) &#123;</span><br><span class="line">$		super(drink);</span><br><span class="line">$   &#125;</span><br><span class="line">$	public double <span class="function"><span class="title">cost</span></span>() &#123;</span><br><span class="line">$		super.cost()*2;</span><br><span class="line">$	&#125;</span><br><span class="line">$	public String <span class="function"><span class="title">info</span></span>() &#123;</span><br><span class="line">$		<span class="built_in">return</span> super.info()+<span class="string">"add suger"</span>;</span><br><span class="line">$	&#125;	</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
 <hr>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ //具体使用</span><br><span class="line">$ public static void main(String[] args) &#123;</span><br><span class="line">$		Drink coffee=new Coffee();</span><br><span class="line">$		Drink suger=new Suger(coffee);</span><br><span class="line">$		System.out.println(suger.info()+<span class="string">"---&gt;"</span>+suger.cost());</span><br><span class="line">$		Drink milk =new Milk(coffee);</span><br><span class="line">$		System.out.println(milk.info()+<span class="string">"---&gt;"</span>+milk.cost());</span><br><span class="line">$		milk=new Milk(suger);</span><br><span class="line">$		System.out.println(milk.info()+<span class="string">"---&gt;"</span>+milk.cost());		</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/17/JAVA装饰器设计模式/" data-id="cjugrrr3p000sedpjk82z113h" class="article-share-link">Share</a>
+      <a data-url="http://wutongsun.github.io/2019/03/17/JAVA装饰器设计模式/" data-id="cjujxc5m8000yi8pjm3aqdyd7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/装饰模式/">装饰模式</a></li></ul>

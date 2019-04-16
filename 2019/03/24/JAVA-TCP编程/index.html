@@ -7,18 +7,18 @@
   
   <title>Java TCP编程 | Wutong&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="服务器创建ServerSocket，在指定端口监听并处理请求客户端创建Socket，向服务器发送请求  1 服务器/** 服务器端 1 创建ServerSocket(int port)对象 2 在Socket上监听客户端的连接请求 3 阻塞，等待连接的建立 4 接收并处理请求信息 5 将处理结果返回给客户端 6 关闭流和Socket对象 */123456789101112131415161718p">
+  <meta name="description" content="服务器创建ServerSocket，在指定端口监听并处理请求客户端创建Socket，向服务器发送请求  1 服务器/** 服务器端 1 创建ServerSocket(int port)对象 2 在Socket上监听客户端的连接请求 3 阻塞，等待连接的建立 4 接收并处理请求信息 5 将处理结果返回给客户端 6 关闭流和Socket对象 */">
 <meta name="keywords" content="TCP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java TCP编程">
-<meta property="og:url" content="http://yoursite.com/2019/03/24/JAVA-TCP编程/index.html">
+<meta property="og:url" content="http://wutongsun.github.io/2019/03/24/JAVA-TCP编程/index.html">
 <meta property="og:site_name" content="Wutong&#39;s Blog">
-<meta property="og:description" content="服务器创建ServerSocket，在指定端口监听并处理请求客户端创建Socket，向服务器发送请求  1 服务器/** 服务器端 1 创建ServerSocket(int port)对象 2 在Socket上监听客户端的连接请求 3 阻塞，等待连接的建立 4 接收并处理请求信息 5 将处理结果返回给客户端 6 关闭流和Socket对象 */123456789101112131415161718p">
+<meta property="og:description" content="服务器创建ServerSocket，在指定端口监听并处理请求客户端创建Socket，向服务器发送请求  1 服务器/** 服务器端 1 创建ServerSocket(int port)对象 2 在Socket上监听客户端的连接请求 3 阻塞，等待连接的建立 4 接收并处理请求信息 5 将处理结果返回给客户端 6 关闭流和Socket对象 */">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-24T03:01:03.152Z">
+<meta property="og:updated_time" content="2019-04-16T15:01:15.876Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java TCP编程">
-<meta name="twitter:description" content="服务器创建ServerSocket，在指定端口监听并处理请求客户端创建Socket，向服务器发送请求  1 服务器/** 服务器端 1 创建ServerSocket(int port)对象 2 在Socket上监听客户端的连接请求 3 阻塞，等待连接的建立 4 接收并处理请求信息 5 将处理结果返回给客户端 6 关闭流和Socket对象 */123456789101112131415161718p">
+<meta name="twitter:description" content="服务器创建ServerSocket，在指定端口监听并处理请求客户端创建Socket，向服务器发送请求  1 服务器/** 服务器端 1 创建ServerSocket(int port)对象 2 在Socket上监听客户端的连接请求 3 阻塞，等待连接的建立 4 接收并处理请求信息 5 将处理结果返回给客户端 6 关闭流和Socket对象 */">
   
     <link rel="alternate" href="/atom.xml" title="Wutong&#39;s Blog" type="application/atom+xml">
   
@@ -63,7 +63,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wutongsun.github.io"></form>
       </div>
     </div>
   </div>
@@ -98,7 +98,7 @@
         <p>服务器创建ServerSocket，在指定端口监听并处理请求<br>客户端创建Socket，向服务器发送请求</p>
 <hr>
 <h2 id="1-服务器"><a href="#1-服务器" class="headerlink" title="1 服务器"></a>1 服务器</h2><p>/**<br> 服务器端<br> 1 创建ServerSocket(int port)对象<br> 2 在Socket上监听客户端的连接请求<br> 3 阻塞，等待连接的建立<br> 4 接收并处理请求信息<br> 5 将处理结果返回给客户端<br> 6 关闭流和Socket对象</p>
-<p>*/<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public class Server &#123;</span><br><span class="line">	public static void main(String[] args) throws IOException &#123;</span><br><span class="line">		System.out.println(<span class="string">"----Server----"</span>);</span><br><span class="line">		//1 指定端口使用ServerSocket创建服务器</span><br><span class="line">		ServerSocket server=new ServerSocket(8888);</span><br><span class="line">		//2 阻塞式等待连接accept</span><br><span class="line">		Socket client=server.accept();</span><br><span class="line">		System.out.println(<span class="string">"一个客户端建立了连接"</span>);</span><br><span class="line">		//3 操作：输入输出流操作</span><br><span class="line">		DataInputStream dis=new DataInputStream(client.getInputStream());</span><br><span class="line">		String data=dis.readUTF();</span><br><span class="line">		System.out.println(data);</span><br><span class="line">		//4 释放资源</span><br><span class="line">		dis.close();</span><br><span class="line">		client.close();</span><br><span class="line">		server.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>*/<br><a id="more"></a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public class Server &#123;</span><br><span class="line">	public static void main(String[] args) throws IOException &#123;</span><br><span class="line">		System.out.println(<span class="string">"----Server----"</span>);</span><br><span class="line">		//1 指定端口使用ServerSocket创建服务器</span><br><span class="line">		ServerSocket server=new ServerSocket(8888);</span><br><span class="line">		//2 阻塞式等待连接accept</span><br><span class="line">		Socket client=server.accept();</span><br><span class="line">		System.out.println(<span class="string">"一个客户端建立了连接"</span>);</span><br><span class="line">		//3 操作：输入输出流操作</span><br><span class="line">		DataInputStream dis=new DataInputStream(client.getInputStream());</span><br><span class="line">		String data=dis.readUTF();</span><br><span class="line">		System.out.println(data);</span><br><span class="line">		//4 释放资源</span><br><span class="line">		dis.close();</span><br><span class="line">		client.close();</span><br><span class="line">		server.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="2-客户端"><a href="#2-客户端" class="headerlink" title="2 客户端"></a>2 客户端</h2><p>/**<br>  客户端<br>  1 创建Socket(String host,int port)对象<br>  2 向服务器发送连接请求<br>  3 向服务器发送服务请求<br>  4 接收服务结果<br>  5 关闭流和Socket对象</p>
 <p> */</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public class Client &#123;</span><br><span class="line">	public static void main(String[] args) throws Exception, IOException &#123;</span><br><span class="line">		System.out.println(<span class="string">"----Client----"</span>);</span><br><span class="line">		//1 建立连接 使用Socket创建客户端+服务的地址和端口</span><br><span class="line">		Socket client=new Socket(<span class="string">"localhost"</span>,8888);</span><br><span class="line">		//2 操作，输入输出流操作</span><br><span class="line">		DataOutputStream dos=new DataOutputStream(client.getOutputStream());</span><br><span class="line">		String data=<span class="string">"hello"</span>;</span><br><span class="line">		dos.writeUTF(data);</span><br><span class="line">		dos.flush();</span><br><span class="line">		//3 释放资源</span><br><span class="line">		dos.close();</span><br><span class="line">		client.close();	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -106,7 +106,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/24/JAVA-TCP编程/" data-id="cjugrrr3b000aedpjqmrfjs0a" class="article-share-link">Share</a>
+      <a data-url="http://wutongsun.github.io/2019/03/24/JAVA-TCP编程/" data-id="cjujxc5lm0006i8pjwg1geis7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TCP/">TCP</a></li></ul>

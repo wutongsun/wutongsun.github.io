@@ -7,17 +7,17 @@
   
   <title>JDBC | Wutong&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JDBC 的全称为Java DataBase Connectivity,是一套面向对象的应用程序接口(API),制定了统一的访问各类关系数据库的标准接口，为各个数据库厂商提供了标准接口的实现。通常JDBC完成以下操作:(1) 同数据库建立连接；(2)向数据库发送SQL语句(3)处理从数据库返回的结果 JDBC中常用的接口1 Driver数据库驱动程序接口，在加载Driver类时,创建自己的实例并向">
+  <meta name="description" content="JDBC 的全称为Java DataBase Connectivity,是一套面向对象的应用程序接口(API),制定了统一的访问各类关系数据库的标准接口，为各个数据库厂商提供了标准接口的实现。通常JDBC完成以下操作:(1) 同数据库建立连接；(2)向数据库发送SQL语句(3)处理从数据库返回的结果">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JDBC">
-<meta property="og:url" content="http://yoursite.com/2019/04/11/JDBC/index.html">
+<meta property="og:url" content="http://wutongsun.github.io/2019/04/11/JDBC/index.html">
 <meta property="og:site_name" content="Wutong&#39;s Blog">
-<meta property="og:description" content="JDBC 的全称为Java DataBase Connectivity,是一套面向对象的应用程序接口(API),制定了统一的访问各类关系数据库的标准接口，为各个数据库厂商提供了标准接口的实现。通常JDBC完成以下操作:(1) 同数据库建立连接；(2)向数据库发送SQL语句(3)处理从数据库返回的结果 JDBC中常用的接口1 Driver数据库驱动程序接口，在加载Driver类时,创建自己的实例并向">
+<meta property="og:description" content="JDBC 的全称为Java DataBase Connectivity,是一套面向对象的应用程序接口(API),制定了统一的访问各类关系数据库的标准接口，为各个数据库厂商提供了标准接口的实现。通常JDBC完成以下操作:(1) 同数据库建立连接；(2)向数据库发送SQL语句(3)处理从数据库返回的结果">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-13T16:30:39.846Z">
+<meta property="og:updated_time" content="2019-04-16T15:03:49.281Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JDBC">
-<meta name="twitter:description" content="JDBC 的全称为Java DataBase Connectivity,是一套面向对象的应用程序接口(API),制定了统一的访问各类关系数据库的标准接口，为各个数据库厂商提供了标准接口的实现。通常JDBC完成以下操作:(1) 同数据库建立连接；(2)向数据库发送SQL语句(3)处理从数据库返回的结果 JDBC中常用的接口1 Driver数据库驱动程序接口，在加载Driver类时,创建自己的实例并向">
+<meta name="twitter:description" content="JDBC 的全称为Java DataBase Connectivity,是一套面向对象的应用程序接口(API),制定了统一的访问各类关系数据库的标准接口，为各个数据库厂商提供了标准接口的实现。通常JDBC完成以下操作:(1) 同数据库建立连接；(2)向数据库发送SQL语句(3)处理从数据库返回的结果">
   
     <link rel="alternate" href="/atom.xml" title="Wutong&#39;s Blog" type="application/atom+xml">
   
@@ -62,7 +62,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wutongsun.github.io"></form>
       </div>
     </div>
   </div>
@@ -94,7 +94,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>JDBC 的全称为Java DataBase Connectivity,是一套面向对象的应用程序接口(API),制定了统一的访问各类关系数据库的标准接口，为各个数据库厂商提供了标准接口的实现。通常JDBC完成以下操作:<br>(1) 同数据库建立连接；<br>(2)向数据库发送SQL语句<br>(3)处理从数据库返回的结果</p>
+        <p>JDBC 的全称为Java DataBase Connectivity,是一套面向对象的应用程序接口(API),制定了统一的访问各类关系数据库的标准接口，为各个数据库厂商提供了标准接口的实现。通常JDBC完成以下操作:<br>(1) 同数据库建立连接；<br>(2)向数据库发送SQL语句<br>(3)处理从数据库返回的结果<br><a id="more"></a></p>
 <h1 id="JDBC中常用的接口"><a href="#JDBC中常用的接口" class="headerlink" title="JDBC中常用的接口"></a>JDBC中常用的接口</h1><h2 id="1-Driver"><a href="#1-Driver" class="headerlink" title="1 Driver"></a>1 Driver</h2><p>数据库驱动程序接口，在加载Driver类时,创建自己的实例并向java.sql.Drivaer Manager类注册该实例。</p>
 <h2 id="2-DriverManager"><a href="#2-DriverManager" class="headerlink" title="2 DriverManager"></a>2 DriverManager</h2><p>数据库驱动程序管理器，java.sql.DriverManager类负责管理JDBC驱动程序的基本服务，是JDBC的管理层，作用于用户和驱动程序之间，负责跟踪可用的驱动程序，并在数据库和驱动程序之间建立连接。</p>
 <h2 id="3-Connection"><a href="#3-Connection" class="headerlink" title="3 Connection"></a>3 Connection</h2><p>java.sql.Conection 接口负责与特定数据库的连接，在连接的上下文中可以执行SQL语句并返回结果。</p>
@@ -106,7 +106,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/11/JDBC/" data-id="cjugrrr3u0012edpjzx9dz65i" class="article-share-link">Share</a>
+      <a data-url="http://wutongsun.github.io/2019/04/11/JDBC/" data-id="cjujxc5m90011i8pj2ajyipt4" class="article-share-link">Share</a>
       
       
 	 <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>

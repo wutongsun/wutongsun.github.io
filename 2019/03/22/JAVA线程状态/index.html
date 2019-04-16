@@ -7,18 +7,18 @@
   
   <title>Java线程状态 | Wutong&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="线程的5个状态 1 新生状态(New)用new关键字建立一个线程对象后，该线程对象就处于新生状态。处于新生状态的线程有自己的内存空间，通过调用start方法进入就绪状态。 2 就绪状态(Runnable) 处于就绪状态的线程已经具备了运行条件，但是还没有被分配到CPU，处于“线程就绪队列”，等待系统为其分配CPU。就绪状态并不是执行状态，当系统选定一个等待执行的Thread对象后，它就会进入执行状">
+  <meta name="description" content="线程的5个状态 1 新生状态(New)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java线程状态">
-<meta property="og:url" content="http://yoursite.com/2019/03/22/JAVA线程状态/index.html">
+<meta property="og:url" content="http://wutongsun.github.io/2019/03/22/JAVA线程状态/index.html">
 <meta property="og:site_name" content="Wutong&#39;s Blog">
-<meta property="og:description" content="线程的5个状态 1 新生状态(New)用new关键字建立一个线程对象后，该线程对象就处于新生状态。处于新生状态的线程有自己的内存空间，通过调用start方法进入就绪状态。 2 就绪状态(Runnable) 处于就绪状态的线程已经具备了运行条件，但是还没有被分配到CPU，处于“线程就绪队列”，等待系统为其分配CPU。就绪状态并不是执行状态，当系统选定一个等待执行的Thread对象后，它就会进入执行状">
+<meta property="og:description" content="线程的5个状态 1 新生状态(New)">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://www.sxt.cn/360shop/Public/admin/UEditor/20170526/1495787690411518.png">
-<meta property="og:updated_time" content="2019-03-22T06:48:48.757Z">
+<meta property="og:updated_time" content="2019-04-16T15:05:29.743Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java线程状态">
-<meta name="twitter:description" content="线程的5个状态 1 新生状态(New)用new关键字建立一个线程对象后，该线程对象就处于新生状态。处于新生状态的线程有自己的内存空间，通过调用start方法进入就绪状态。 2 就绪状态(Runnable) 处于就绪状态的线程已经具备了运行条件，但是还没有被分配到CPU，处于“线程就绪队列”，等待系统为其分配CPU。就绪状态并不是执行状态，当系统选定一个等待执行的Thread对象后，它就会进入执行状">
+<meta name="twitter:description" content="线程的5个状态 1 新生状态(New)">
 <meta name="twitter:image" content="http://www.sxt.cn/360shop/Public/admin/UEditor/20170526/1495787690411518.png">
   
     <link rel="alternate" href="/atom.xml" title="Wutong&#39;s Blog" type="application/atom+xml">
@@ -64,7 +64,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wutongsun.github.io"></form>
       </div>
     </div>
   </div>
@@ -93,7 +93,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="线程的5个状态"><a href="#线程的5个状态" class="headerlink" title="线程的5个状态"></a>线程的5个状态</h1><p><img src="http://www.sxt.cn/360shop/Public/admin/UEditor/20170526/1495787690411518.png" alt></p>
-<h2 id="1-新生状态-New"><a href="#1-新生状态-New" class="headerlink" title="1 新生状态(New)"></a>1 新生状态(New)</h2><p>用new关键字建立一个线程对象后，该线程对象就处于新生状态。处于新生状态的线程有自己的内存空间，通过调用start方法进入就绪状态。</p>
+<h2 id="1-新生状态-New"><a href="#1-新生状态-New" class="headerlink" title="1 新生状态(New)"></a>1 新生状态(New)</h2><a id="more"></a>
+<p>用new关键字建立一个线程对象后，该线程对象就处于新生状态。处于新生状态的线程有自己的内存空间，通过调用start方法进入就绪状态。</p>
 <h2 id="2-就绪状态-Runnable"><a href="#2-就绪状态-Runnable" class="headerlink" title="2 就绪状态(Runnable)"></a>2 就绪状态(Runnable)</h2><p> 处于就绪状态的线程已经具备了运行条件，但是还没有被分配到CPU，处于“线程就绪队列”，等待系统为其分配CPU。就绪状态并不是执行状态，当系统选定一个等待执行的Thread对象后，它就会进入执行状态。一旦获得CPU，线程就进入运行状态并自动调用自己的run方法。有4中原因会导致线程进入就绪状态：</p>
 <blockquote>
 <p>新建线程：调用start()方法，进入就绪状态;<br>阻塞线程：阻塞解除，进入就绪状态;<br>运行线程：调用yield()方法，直接进入就绪状态;<br>运行线程：JVM将CPU资源从本线程切换到其他线程。</p>
@@ -113,7 +114,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/22/JAVA线程状态/" data-id="cjugrrr41001aedpj277aui8s" class="article-share-link">Share</a>
+      <a data-url="http://wutongsun.github.io/2019/03/22/JAVA线程状态/" data-id="cjujxc5m6000vi8pj8go0s60w" class="article-share-link">Share</a>
       
       
 	 <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>

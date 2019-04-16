@@ -7,17 +7,17 @@
   
   <title>Mac+Hexo+GitHub 免费个人博客搭建教程 | Wutong&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一 安装Node.js，Git和Hexo1 安装Git1234// 如果已安装HomeBrew 无需执行此行$ /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;$ brew install git   // 安装Git 2 安装Nodejs先安装nv">
+  <meta name="description" content="一 安装Node.js，Git和Hexo1 安装Git1234// 如果已安装HomeBrew 无需执行此行$ /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;$ brew install git   // 安装Git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mac+Hexo+GitHub 免费个人博客搭建教程">
-<meta property="og:url" content="http://yoursite.com/2019/02/24/2/index.html">
+<meta property="og:url" content="http://wutongsun.github.io/2019/02/24/2/index.html">
 <meta property="og:site_name" content="Wutong&#39;s Blog">
-<meta property="og:description" content="一 安装Node.js，Git和Hexo1 安装Git1234// 如果已安装HomeBrew 无需执行此行$ /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;$ brew install git   // 安装Git 2 安装Nodejs先安装nv">
+<meta property="og:description" content="一 安装Node.js，Git和Hexo1 安装Git1234// 如果已安装HomeBrew 无需执行此行$ /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;$ brew install git   // 安装Git">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-05T07:58:04.856Z">
+<meta property="og:updated_time" content="2019-04-16T15:02:41.022Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac+Hexo+GitHub 免费个人博客搭建教程">
-<meta name="twitter:description" content="一 安装Node.js，Git和Hexo1 安装Git1234// 如果已安装HomeBrew 无需执行此行$ /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;$ brew install git   // 安装Git 2 安装Nodejs先安装nv">
+<meta name="twitter:description" content="一 安装Node.js，Git和Hexo1 安装Git1234// 如果已安装HomeBrew 无需执行此行$ /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;$ brew install git   // 安装Git">
   
     <link rel="alternate" href="/atom.xml" title="Wutong&#39;s Blog" type="application/atom+xml">
   
@@ -62,7 +62,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wutongsun.github.io"></form>
       </div>
     </div>
   </div>
@@ -92,6 +92,7 @@
       
         <hr>
 <h2 id="一-安装Node-js，Git和Hexo"><a href="#一-安装Node-js，Git和Hexo" class="headerlink" title="一 安装Node.js，Git和Hexo"></a>一 安装Node.js，Git和Hexo</h2><p>1 安装Git<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 如果已安装HomeBrew 无需执行此行</span><br><span class="line">$ /usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br><span class="line"></span><br><span class="line">$ brew install git   // 安装Git</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p>2 安装Nodejs<br>先安装nvm，这是Nodejs版本管理器，可以轻松切换Nodejs版本。这里有两种方式安装。如果使用curl的方式安装，安装完成之后一定要重启终端。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1. Homebrew 安装方式，此安装方式无需重启</span><br><span class="line">$ brew install nvm  </span><br><span class="line">$ mkdir ~/.nvm</span><br><span class="line">$ <span class="built_in">export</span> NVM_DIR=~/.nvm</span><br><span class="line">$ . $(brew --prefix nvm)/nvm.sh</span><br><span class="line"></span><br><span class="line">2. curl安装方式</span><br><span class="line">$ curl https://raw.github.com/creationix/nvm/master/install.sh | sh</span><br></pre></td></tr></table></figure>
 <p>安装完成后，重启终端 并执行下列命令即可安装 Node.js<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvm install 4</span><br></pre></td></tr></table></figure></p>
@@ -111,7 +112,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/24/2/" data-id="cjugrrr360004edpjkvetvghy" class="article-share-link">Share</a>
+      <a data-url="http://wutongsun.github.io/2019/02/24/2/" data-id="cjujxc5le0001i8pj9a4kfdrx" class="article-share-link">Share</a>
       
       
 	 <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>

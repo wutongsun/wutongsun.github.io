@@ -7,18 +7,18 @@
   
   <title>Java遍历集合的方法 | Wutong&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1 遍历List方法一 ：普通for循环1234$ for(int i=0;i&amp;lt;list.size();i++)&amp;#123;$       String temp=(String)list.get(i);$       System.out.println(temp);$ &amp;#125; 2 遍历List方法二：增强for循环(使用泛型!)123$ for(String temp: list)">
+  <meta name="description" content="1 遍历List方法一 ：普通for循环1234$ for(int i=0;i&amp;lt;list.size();i++)&amp;#123;$       String temp=(String)list.get(i);$       System.out.println(temp);$ &amp;#125;">
 <meta name="keywords" content="方法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java遍历集合的方法">
-<meta property="og:url" content="http://yoursite.com/2019/03/15/遍历集合的方法/index.html">
+<meta property="og:url" content="http://wutongsun.github.io/2019/03/15/遍历集合的方法/index.html">
 <meta property="og:site_name" content="Wutong&#39;s Blog">
-<meta property="og:description" content="1 遍历List方法一 ：普通for循环1234$ for(int i=0;i&amp;lt;list.size();i++)&amp;#123;$       String temp=(String)list.get(i);$       System.out.println(temp);$ &amp;#125; 2 遍历List方法二：增强for循环(使用泛型!)123$ for(String temp: list)">
+<meta property="og:description" content="1 遍历List方法一 ：普通for循环1234$ for(int i=0;i&amp;lt;list.size();i++)&amp;#123;$       String temp=(String)list.get(i);$       System.out.println(temp);$ &amp;#125;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-15T13:01:48.279Z">
+<meta property="og:updated_time" content="2019-04-16T15:02:31.543Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java遍历集合的方法">
-<meta name="twitter:description" content="1 遍历List方法一 ：普通for循环1234$ for(int i=0;i&amp;lt;list.size();i++)&amp;#123;$       String temp=(String)list.get(i);$       System.out.println(temp);$ &amp;#125; 2 遍历List方法二：增强for循环(使用泛型!)123$ for(String temp: list)">
+<meta name="twitter:description" content="1 遍历List方法一 ：普通for循环1234$ for(int i=0;i&amp;lt;list.size();i++)&amp;#123;$       String temp=(String)list.get(i);$       System.out.println(temp);$ &amp;#125;">
   
     <link rel="alternate" href="/atom.xml" title="Wutong&#39;s Blog" type="application/atom+xml">
   
@@ -63,7 +63,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wutongsun.github.io"></form>
       </div>
     </div>
   </div>
@@ -96,6 +96,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="1-遍历List方法一-：普通for循环"><a href="#1-遍历List方法一-：普通for循环" class="headerlink" title="1 遍历List方法一 ：普通for循环"></a>1 遍历List方法一 ：普通for循环</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">for</span>(int i=0;i&lt;list.size();i++)&#123;</span><br><span class="line">$       String temp=(String)list.get(i);</span><br><span class="line">$       System.out.println(temp);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h3 id="2-遍历List方法二：增强for循环-使用泛型"><a href="#2-遍历List方法二：增强for循环-使用泛型" class="headerlink" title="2 遍历List方法二：增强for循环(使用泛型!)"></a>2 遍历List方法二：增强for循环(使用泛型!)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">for</span>(String temp: list)&#123;</span><br><span class="line">$       System.out.println(temp);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
 <h3 id="3-遍历List方法三：使用Iterator迭代器-1"><a href="#3-遍历List方法三：使用Iterator迭代器-1" class="headerlink" title="3 遍历List方法三：使用Iterator迭代器(1)"></a>3 遍历List方法三：使用Iterator迭代器(1)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">for</span>(Iterator iter=list.iterator();iter.hasNext();)&#123;</span><br><span class="line">$       String temp=(String)iter.next();</span><br><span class="line">$       System.out.println(temp);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
 <h3 id="4-遍历List方法四：使用Iterator迭代器-2"><a href="#4-遍历List方法四：使用Iterator迭代器-2" class="headerlink" title="4 遍历List方法四：使用Iterator迭代器(2)"></a>4 遍历List方法四：使用Iterator迭代器(2)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ Iterator iter=list.iterator();</span><br><span class="line">$ <span class="keyword">while</span>(iter.hasNext())&#123;</span><br><span class="line">$       Object obj=iter.next();</span><br><span class="line">$       iter.remove();    //如果要遍历时，删除集合中的元素，建议使用这种方式！</span><br><span class="line">$       System.out.println(obj);</span><br><span class="line">$ &#125;</span><br></pre></td></tr></table></figure>
@@ -107,7 +108,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/15/遍历集合的方法/" data-id="cjugrrr4n001tedpjlohn7l30" class="article-share-link">Share</a>
+      <a data-url="http://wutongsun.github.io/2019/03/15/遍历集合的方法/" data-id="cjujxc5mm001qi8pjwl1sfsz4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/方法/">方法</a></li></ul>

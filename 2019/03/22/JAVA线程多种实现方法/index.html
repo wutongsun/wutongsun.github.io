@@ -7,17 +7,17 @@
   
   <title>Java线程多种实现方法 | Wutong&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1 静态内部类1234567static class Test1 implements Runnable&amp;#123;    public void run() &amp;#123;        for(int i=0;i&amp;lt;20;i++) &amp;#123;            System.out.println(&quot;一边听歌&quot;);        &amp;#125;    &amp;#125;&amp;#125; 2 局部内">
+  <meta name="description" content="1 静态内部类1234567static class Test1 implements Runnable&amp;#123;    public void run() &amp;#123;        for(int i=0;i&amp;lt;20;i++) &amp;#123;            System.out.println(&quot;一边听歌&quot;);        &amp;#125;    &amp;#125;&amp;#125;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java线程多种实现方法">
-<meta property="og:url" content="http://yoursite.com/2019/03/22/JAVA线程多种实现方法/index.html">
+<meta property="og:url" content="http://wutongsun.github.io/2019/03/22/JAVA线程多种实现方法/index.html">
 <meta property="og:site_name" content="Wutong&#39;s Blog">
-<meta property="og:description" content="1 静态内部类1234567static class Test1 implements Runnable&amp;#123;    public void run() &amp;#123;        for(int i=0;i&amp;lt;20;i++) &amp;#123;            System.out.println(&quot;一边听歌&quot;);        &amp;#125;    &amp;#125;&amp;#125; 2 局部内">
+<meta property="og:description" content="1 静态内部类1234567static class Test1 implements Runnable&amp;#123;    public void run() &amp;#123;        for(int i=0;i&amp;lt;20;i++) &amp;#123;            System.out.println(&quot;一边听歌&quot;);        &amp;#125;    &amp;#125;&amp;#125;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-22T06:07:35.860Z">
+<meta property="og:updated_time" content="2019-04-16T15:00:04.985Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java线程多种实现方法">
-<meta name="twitter:description" content="1 静态内部类1234567static class Test1 implements Runnable&amp;#123;    public void run() &amp;#123;        for(int i=0;i&amp;lt;20;i++) &amp;#123;            System.out.println(&quot;一边听歌&quot;);        &amp;#125;    &amp;#125;&amp;#125; 2 局部内">
+<meta name="twitter:description" content="1 静态内部类1234567static class Test1 implements Runnable&amp;#123;    public void run() &amp;#123;        for(int i=0;i&amp;lt;20;i++) &amp;#123;            System.out.println(&quot;一边听歌&quot;);        &amp;#125;    &amp;#125;&amp;#125;">
   
     <link rel="alternate" href="/atom.xml" title="Wutong&#39;s Blog" type="application/atom+xml">
   
@@ -62,7 +62,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wutongsun.github.io"></form>
       </div>
     </div>
   </div>
@@ -95,6 +95,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="1-静态内部类"><a href="#1-静态内部类" class="headerlink" title="1 静态内部类"></a>1 静态内部类</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">static class Test1 implements Runnable&#123;</span><br><span class="line">    public void <span class="function"><span class="title">run</span></span>() &#123;</span><br><span class="line">        <span class="keyword">for</span>(int i=0;i&lt;20;i++) &#123;</span><br><span class="line">            System.out.println(<span class="string">"一边听歌"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h2 id="2-局部内部类"><a href="#2-局部内部类" class="headerlink" title="2 局部内部类"></a>2 局部内部类</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args)&#123;</span><br><span class="line">    class Test2 implements Runnable&#123;</span><br><span class="line">        public void <span class="function"><span class="title">run</span></span>() &#123;</span><br><span class="line">            <span class="keyword">for</span>(int i=0;i&lt;20;i++) &#123;</span><br><span class="line">                System.out.println(<span class="string">"一边听歌"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="3-匿名内部类"><a href="#3-匿名内部类" class="headerlink" title="3 匿名内部类"></a>3 匿名内部类</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args)&#123;</span><br><span class="line">    new Thread(new <span class="function"><span class="title">Runnable</span></span>() &#123;</span><br><span class="line">        public void <span class="function"><span class="title">run</span></span>() &#123;</span><br><span class="line">            <span class="keyword">for</span>(int i=0;i&lt;20;i++) &#123;</span><br><span class="line">                System.out.println(<span class="string">"一边听歌"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;).start();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="4-jdk8-简化-lambda-保证只有一个未实现的方法"><a href="#4-jdk8-简化-lambda-保证只有一个未实现的方法" class="headerlink" title="4 jdk8 简化 lambda(保证只有一个未实现的方法)"></a>4 jdk8 简化 lambda(保证只有一个未实现的方法)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">new Thread(()-&gt;&#123;</span><br><span class="line">    <span class="keyword">for</span>(int i=0;i&lt;20;i++) &#123;</span><br><span class="line">        System.out.println(<span class="string">"一边听歌"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).start();</span><br></pre></td></tr></table></figure>
@@ -102,7 +103,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/22/JAVA线程多种实现方法/" data-id="cjugrrr3r000vedpjfx5ee3ur" class="article-share-link">Share</a>
+      <a data-url="http://wutongsun.github.io/2019/03/22/JAVA线程多种实现方法/" data-id="cjujxc5m3000si8pjinfy2kkj" class="article-share-link">Share</a>
       
       
 	 <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>

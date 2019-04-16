@@ -10,11 +10,11 @@
   <meta name="description" content="SAX(Simple API for XML)解析流模型中的”推”模型分析方式。通过事件驱动，每发现一个节点就引发一个事件，事件推给事件处理器，通过回调方法完成解析工作，解析XML文档的逻辑需要应用程序完成 优点①不需要等待所有数据都被处理，分析就能立即开始。②只在读取数据时检查数据，不需要保存在内存中。③可以在某个条件得到满足时停止解析，不必解析整个文档。④效率和性能较高，能解析大于系统内存的文">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java XML解析(SAX)">
-<meta property="og:url" content="http://yoursite.com/2019/04/09/JAVA-XML解析-SAX/index.html">
+<meta property="og:url" content="http://wutongsun.github.io/2019/04/09/JAVA-XML解析-SAX/index.html">
 <meta property="og:site_name" content="Wutong&#39;s Blog">
 <meta property="og:description" content="SAX(Simple API for XML)解析流模型中的”推”模型分析方式。通过事件驱动，每发现一个节点就引发一个事件，事件推给事件处理器，通过回调方法完成解析工作，解析XML文档的逻辑需要应用程序完成 优点①不需要等待所有数据都被处理，分析就能立即开始。②只在读取数据时检查数据，不需要保存在内存中。③可以在某个条件得到满足时停止解析，不必解析整个文档。④效率和性能较高，能解析大于系统内存的文">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-13T16:31:09.030Z">
+<meta property="og:updated_time" content="2019-04-16T15:03:26.537Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java XML解析(SAX)">
 <meta name="twitter:description" content="SAX(Simple API for XML)解析流模型中的”推”模型分析方式。通过事件驱动，每发现一个节点就引发一个事件，事件推给事件处理器，通过回调方法完成解析工作，解析XML文档的逻辑需要应用程序完成 优点①不需要等待所有数据都被处理，分析就能立即开始。②只在读取数据时检查数据，不需要保存在内存中。③可以在某个条件得到满足时停止解析，不必解析整个文档。④效率和性能较高，能解析大于系统内存的文">
@@ -62,7 +62,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wutongsun.github.io"></form>
       </div>
     </div>
   </div>
@@ -95,7 +95,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="SAX-Simple-API-for-XML-解析"><a href="#SAX-Simple-API-for-XML-解析" class="headerlink" title="SAX(Simple API for XML)解析"></a>SAX(Simple API for XML)解析</h2><p>流模型中的”推”模型分析方式。通过事件驱动，每发现一个节点就引发一个事件，事件推给事件处理器，通过回调方法<br>完成解析工作，解析XML文档的逻辑需要应用程序完成</p>
-<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>①不需要等待所有数据都被处理，分析就能立即开始。<br>②只在读取数据时检查数据，不需要保存在内存中。<br>③可以在某个条件得到满足时停止解析，不必解析整个文档。<br>④效率和性能较高，能解析大于系统内存的文档。</p>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>①不需要等待所有数据都被处理，分析就能立即开始。<br>②只在读取数据时检查数据，不需要保存在内存中。<br>③可以在某个条件得到满足时停止解析，不必解析整个文档。<br>④效率和性能较高，能解析大于系统内存的文档。<br><a id="more"></a></p>
 <h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>①需要应用程序自己负责TAG的处理逻辑（例如维护父/子关系等），文档越复杂程序就越复杂。<br>②单向导航，无法定位文档层次，很难同时访问同一文档的不同部分数据，不支持XPath。</p>
 <h2 id="eg"><a href="#eg" class="headerlink" title="eg:"></a>eg:</h2><p>p.xml 放在src下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</span><br><span class="line">&lt;persons&gt;</span><br><span class="line">&lt;person&gt;</span><br><span class="line">&lt;name&gt;至尊宝&lt;/name&gt;</span><br><span class="line">&lt;age&gt;90000&lt;/age&gt;</span><br><span class="line">&lt;/person&gt;</span><br><span class="line">&lt;/persons&gt;</span><br></pre></td></tr></table></figure></p>
 <p>入口</p>
@@ -105,7 +105,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/09/JAVA-XML解析-SAX/" data-id="cjugrrr390006edpjwu8g91vy" class="article-share-link">Share</a>
+      <a data-url="http://wutongsun.github.io/2019/04/09/JAVA-XML解析-SAX/" data-id="cjujxc5lp000bi8pj1dm63u4d" class="article-share-link">Share</a>
       
       
 	 <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>

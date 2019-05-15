@@ -5,20 +5,15 @@
   
 
   
-  <title>Java TCP编程 | Welcome to Wutong&#39;s Blog</title>
+  <title>Welcome to Wutong&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="服务器创建ServerSocket，在指定端口监听并处理请求客户端创建Socket，向服务器发送请求  1 服务器/** 服务器端 1 创建ServerSocket(int port)对象 2 在Socket上监听客户端的连接请求 3 阻塞，等待连接的建立 4 接收并处理请求信息 5 将处理结果返回给客户端 6 关闭流和Socket对象 */">
-<meta name="keywords" content="TCP">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Java TCP编程">
-<meta property="og:url" content="http://wutongsun.github.io/2019/03/24/JAVA-TCP编程/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Welcome to Wutong&#39;s Blog">
+<meta property="og:url" content="http://wutongsun.github.io/page/4/index.html">
 <meta property="og:site_name" content="Welcome to Wutong&#39;s Blog">
-<meta property="og:description" content="服务器创建ServerSocket，在指定端口监听并处理请求客户端创建Socket，向服务器发送请求  1 服务器/** 服务器端 1 创建ServerSocket(int port)对象 2 在Socket上监听客户端的连接请求 3 阻塞，等待连接的建立 4 接收并处理请求信息 5 将处理结果返回给客户端 6 关闭流和Socket对象 */">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-16T15:01:15.876Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java TCP编程">
-<meta name="twitter:description" content="服务器创建ServerSocket，在指定端口监听并处理请求客户端创建Socket，向服务器发送请求  1 服务器/** 服务器端 1 创建ServerSocket(int port)对象 2 在Socket上监听客户端的连接请求 3 阻塞，等待连接的建立 4 接收并处理请求信息 5 将处理结果返回给客户端 6 关闭流和Socket对象 */">
+<meta name="twitter:title" content="Welcome to Wutong&#39;s Blog">
   
     <link rel="alternate" href="/atom.xml" title="Welcome to Wutong&#39;s Blog" type="application/atom+xml">
   
@@ -69,16 +64,14 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-JAVA-TCP编程" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main">
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/03/24/JAVA-TCP编程/" class="article-date">
-  <time datetime="2019-03-24T02:33:58.000Z" itemprop="datePublished">2019-03-24</time>
+    <a href="/2019/02/20/hello-world/" class="article-date">
+  <time datetime="2019-02-20T09:52:20.000Z" itemprop="datePublished">2019-02-20</time>
 </a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Java/">Java</a>
-  </div>
-
   </div>
   <div class="article-inner">
     
@@ -86,8 +79,8 @@
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      Java TCP编程
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/20/hello-world/">Hexo</a>
     </h1>
   
 
@@ -95,50 +88,37 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>服务器创建ServerSocket，在指定端口监听并处理请求<br>客户端创建Socket，向服务器发送请求</p>
-<hr>
-<h2 id="1-服务器"><a href="#1-服务器" class="headerlink" title="1 服务器"></a>1 服务器</h2><p>/**<br> 服务器端<br> 1 创建ServerSocket(int port)对象<br> 2 在Socket上监听客户端的连接请求<br> 3 阻塞，等待连接的建立<br> 4 接收并处理请求信息<br> 5 将处理结果返回给客户端<br> 6 关闭流和Socket对象</p>
-<p>*/<br><a id="more"></a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public class Server &#123;</span><br><span class="line">	public static void main(String[] args) throws IOException &#123;</span><br><span class="line">		System.out.println(<span class="string">"----Server----"</span>);</span><br><span class="line">		//1 指定端口使用ServerSocket创建服务器</span><br><span class="line">		ServerSocket server=new ServerSocket(8888);</span><br><span class="line">		//2 阻塞式等待连接accept</span><br><span class="line">		Socket client=server.accept();</span><br><span class="line">		System.out.println(<span class="string">"一个客户端建立了连接"</span>);</span><br><span class="line">		//3 操作：输入输出流操作</span><br><span class="line">		DataInputStream dis=new DataInputStream(client.getInputStream());</span><br><span class="line">		String data=dis.readUTF();</span><br><span class="line">		System.out.println(data);</span><br><span class="line">		//4 释放资源</span><br><span class="line">		dis.close();</span><br><span class="line">		client.close();</span><br><span class="line">		server.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="2-客户端"><a href="#2-客户端" class="headerlink" title="2 客户端"></a>2 客户端</h2><p>/**<br>  客户端<br>  1 创建Socket(String host,int port)对象<br>  2 向服务器发送连接请求<br>  3 向服务器发送服务请求<br>  4 接收服务结果<br>  5 关闭流和Socket对象</p>
-<p> */</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public class Client &#123;</span><br><span class="line">	public static void main(String[] args) throws Exception, IOException &#123;</span><br><span class="line">		System.out.println(<span class="string">"----Client----"</span>);</span><br><span class="line">		//1 建立连接 使用Socket创建客户端+服务的地址和端口</span><br><span class="line">		Socket client=new Socket(<span class="string">"localhost"</span>,8888);</span><br><span class="line">		//2 操作，输入输出流操作</span><br><span class="line">		DataOutputStream dos=new DataOutputStream(client.getOutputStream());</span><br><span class="line">		String data=<span class="string">"hello"</span>;</span><br><span class="line">		dos.writeUTF(data);</span><br><span class="line">		dos.flush();</span><br><span class="line">		//3 释放资源</span><br><span class="line">		dos.close();</span><br><span class="line">		client.close();	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2019/02/20/hello-world/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wutongsun.github.io/2019/03/24/JAVA-TCP编程/" data-id="cjvpf3fpm0004m2pjgji2acua" class="article-share-link">Share</a>
+      <a data-url="http://wutongsun.github.io/2019/02/20/hello-world/" data-id="cjvpf3fqy001wm2pjbrjyfhrj" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TCP/">TCP</a></li></ul>
-
 	 <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
 <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
    
     </footer>
   </div>
   
-    
-<nav id="article-nav">
-  
-    <a href="/2019/04/09/TCP三次握手，四次挥手/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          TCP三次握手，四次挥手
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2019/03/24/JAVA-UDP-编程二/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Java UDP 编程二</div>
-    </a>
-  
-</nav>
+</article>
+
 
   
-</article>
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+  </nav>
 
 </section>
         

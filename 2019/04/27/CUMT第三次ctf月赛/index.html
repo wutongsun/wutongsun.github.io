@@ -5,15 +5,19 @@
   
 
   
-  <title>Tag: UDP | Welcome to Wutong&#39;s Blog</title>
+  <title>CUMT第三次ctf月赛 | Welcome to Wutong&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Welcome to Wutong&#39;s Blog">
-<meta property="og:url" content="http://wutongsun.github.io/tags/UDP/index.html">
+  <meta name="description" content="这次校赛打的还不错，拿了第三，写个writeup纪念一下">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CUMT第三次ctf月赛">
+<meta property="og:url" content="http://wutongsun.github.io/2019/04/27/CUMT第三次ctf月赛/index.html">
 <meta property="og:site_name" content="Welcome to Wutong&#39;s Blog">
+<meta property="og:description" content="这次校赛打的还不错，拿了第三，写个writeup纪念一下">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-18T03:37:13.542Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Welcome to Wutong&#39;s Blog">
+<meta name="twitter:title" content="CUMT第三次ctf月赛">
+<meta name="twitter:description" content="这次校赛打的还不错，拿了第三，写个writeup纪念一下">
   
     <link rel="alternate" href="/atom.xml" title="Welcome to Wutong&#39;s Blog" type="application/atom+xml">
   
@@ -64,59 +68,76 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/24/JAVA-UDP-编程二/" class="archive-article-date">
-  <time datetime="2019-03-24T02:01:14.000Z" itemprop="datePublished">Mar 24</time>
+        <section id="main"><article id="post-CUMT第三次ctf月赛" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/27/CUMT第三次ctf月赛/" class="article-date">
+  <time datetime="2019-04-27T03:01:26.000Z" itemprop="datePublished">2019-04-27</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ctf/">ctf</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/24/JAVA-UDP-编程二/">Java UDP 编程二</a>
+    <h1 class="article-title" itemprop="name">
+      CUMT第三次ctf月赛
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/24/JAVA-UDP-编程/" class="archive-article-date">
-  <time datetime="2019-03-24T01:18:25.000Z" itemprop="datePublished">Mar 24</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/24/JAVA-UDP-编程/">Java UDP 编程一</a>
-    </h1>
-  
+        <p>这次校赛打的还不错，拿了第三，写个writeup纪念一下<br><br><a id="more"></a><br></p>
+<h1 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h1><h3 id="1-Web签到"><a href="#1-Web签到" class="headerlink" title="1 Web签到"></a>1 Web签到</h3><p>文件包含漏洞<br>构造<br>page=php://filter/read=convert.base64-encode/resource=cxk.php<br>在线base64解码得flag<br><br>参考链接：<a href="https://blog.csdn.net/zz_Caleb/article/details/84193092" target="_blank" rel="noopener">https://blog.csdn.net/zz_Caleb/article/details/84193092</a></p>
+<h1 id="Crypto"><a href="#Crypto" class="headerlink" title="Crypto"></a>Crypto</h1><h3 id="1-古典密码签到"><a href="#1-古典密码签到" class="headerlink" title="1 古典密码签到:"></a>1 古典密码签到:</h3><p>维吉尼亚加密，先将密文和key转成字符串，再解密得flag</p>
+<h3 id="2-现代密码签到："><a href="#2-现代密码签到：" class="headerlink" title="2 现代密码签到："></a>2 现代密码签到：</h3><p>rc4加密，密文和key 都base64解码后，再rc4解码得flag</p>
+<h3 id="3-easyxor"><a href="#3-easyxor" class="headerlink" title="3 easyxor"></a>3 easyxor</h3>
+<p>分析代码可知密文cipher.txt为crypt(flag).encode(‘base64’)加密后的密文<br>base64解码得<br>113493740270492087381619361102311635177554834526932164090282635858419073655670<br>由提示解密就等价于继续加密,<br>写个小脚本跑一跑,得flag<br></p>
+<h3 id="4-encode"><a href="#4-encode" class="headerlink" title="4 encode"></a>4 encode</h3><p>1.pyc为python编译后的文件，在线python反编译<br><a href="http://tools.bugscaner.com/decompyle/" target="_blank" rel="noopener">http://tools.bugscaner.com/decompyle/</a><br><br>改改代码，直接爆破得flag<br></p>
+<h3 id="5-RSA"><a href="#5-RSA" class="headerlink" title="5 RSA"></a>5 RSA</h3><p>下载文件后解压得flag.enc,public.pem<br>public.pem即存放公钥信息<br>flag.enc 为加密后的密文<br>很明显根据公钥是不能解密密文的，因此我们需要攻击公钥来尝试求出私钥，查看公钥信息(读取模数m,公钥e)<br>openssl rsa -pubin -text -modulus -in warmup -in public.pem<br>读取公钥<br><br>正常思路是分解大n，求出p,q，但可以尝试n次后都解不出n太大啦。<br>用了各种办法都没能攻破大n后,在github上无意中发现一个RSA攻击脚本<a href="https://github.com/pablocelayes/rsa-wiener-attack" target="_blank" rel="noopener">https://github.com/pablocelayes/rsa-wiener-attack</a><br>试了一下，结果神奇的解出来了，都跳过p,q，直接求出私钥d了，膜拜一下写出这个脚本的大佬<br><br>接下来就好办了，有私钥d和大n了，写个脚本得私钥private.pem<br>再用私钥解密密文得flag<br>（看了网上生成私钥都用了p,q，苦逼的我就一直在求p,q，后来怎么想都觉得有问题，就算没p,q，有私钥d和大n就可以解了）试了一下果然就出flag了。<br>根据私钥和大n生成私钥文件private.pem<br><br>用私钥文件解密密文得flag<br>openssl rsautl -decrypt -in flag.enc -inkey private.pem -out flag.txt<br><br>Misc<br>1&gt;Whoami???<br>查看Headers，发现状态码不对<br><br>输入teapot得flag</p>
+<p>2&gt;Lisp<br>通读源码我们知道它定义了一个方法，一个一个处理string字符串<br>写个脚本简单爆破处理一下得flag（苦逼的我之前一直想用lisp语言来爆破，结果发现Clisp不能运行这个版本的lisp）<br></p>
 
-    </header>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wutongsun.github.io/2019/04/27/CUMT第三次ctf月赛/" data-id="cjwhinbgb00001kpjk5g611vj" class="article-share-link">Share</a>
+      
+      
+	 <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+   
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/05/18/python3通讯录/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          python3通讯录
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2019/04/27/Java类加载器/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Java类加载器</div>
+    </a>
   
+</nav>
 
+  
+</article>
 
 </section>
         

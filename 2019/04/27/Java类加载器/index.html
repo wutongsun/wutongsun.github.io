@@ -7,18 +7,18 @@
   
   <title>Java类加载器 | Welcome to Wutong&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Java类加载机制1 ClassLoader类加载器，主要作用是将class文件加载到jvm虚拟机中。jvm启动的时候，并不是一次性加载所有的类，而是根据需要动态去加载类，主要分为隐式加载和显示加载。隐式加载：程序代码中不通过ClassLoader来加载需要的类，而是通过JVM类自动加载需要的类到内存中。例如，当我们在类中继承或者引用某个类的时候，发现引用的类不在内存中，那么就会自动将这些类加载到">
+  <meta name="description" content="Java类加载机制1 ClassLoader类加载器，主要作用是将class文件加载到jvm虚拟机中。jvm启动的时候，并不是一次性加载所有的类，而是根据需要动态去加载类，主要分为隐式加载和显示加载。">
 <meta name="keywords" content="类加载机制">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java类加载器">
 <meta property="og:url" content="http://wutongsun.github.io/2019/04/27/Java类加载器/index.html">
 <meta property="og:site_name" content="Welcome to Wutong&#39;s Blog">
-<meta property="og:description" content="Java类加载机制1 ClassLoader类加载器，主要作用是将class文件加载到jvm虚拟机中。jvm启动的时候，并不是一次性加载所有的类，而是根据需要动态去加载类，主要分为隐式加载和显示加载。隐式加载：程序代码中不通过ClassLoader来加载需要的类，而是通过JVM类自动加载需要的类到内存中。例如，当我们在类中继承或者引用某个类的时候，发现引用的类不在内存中，那么就会自动将这些类加载到">
+<meta property="og:description" content="Java类加载机制1 ClassLoader类加载器，主要作用是将class文件加载到jvm虚拟机中。jvm启动的时候，并不是一次性加载所有的类，而是根据需要动态去加载类，主要分为隐式加载和显示加载。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-27T03:03:44.119Z">
+<meta property="og:updated_time" content="2019-05-18T03:37:15.137Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java类加载器">
-<meta name="twitter:description" content="Java类加载机制1 ClassLoader类加载器，主要作用是将class文件加载到jvm虚拟机中。jvm启动的时候，并不是一次性加载所有的类，而是根据需要动态去加载类，主要分为隐式加载和显示加载。隐式加载：程序代码中不通过ClassLoader来加载需要的类，而是通过JVM类自动加载需要的类到内存中。例如，当我们在类中继承或者引用某个类的时候，发现引用的类不在内存中，那么就会自动将这些类加载到">
+<meta name="twitter:description" content="Java类加载机制1 ClassLoader类加载器，主要作用是将class文件加载到jvm虚拟机中。jvm启动的时候，并不是一次性加载所有的类，而是根据需要动态去加载类，主要分为隐式加载和显示加载。">
   
     <link rel="alternate" href="/atom.xml" title="Welcome to Wutong&#39;s Blog" type="application/atom+xml">
   
@@ -43,7 +43,7 @@
       </h1>
       
         <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">黄沙百战穿金甲，不破楼兰终不还</a>
+          <a href="/" id="subtitle">Stay Hungry! Stay Foolish!</a>
         </h2>
       
     </div>
@@ -95,13 +95,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Java类加载机制<br>1 ClassLoader类加载器，主要作用是将class文件加载到jvm虚拟机中。jvm启动的时候，并不是一次性加载所有的类，而是根据需要动态去加载类，主要分为隐式加载和显示加载。<br>隐式加载：程序代码中不通过ClassLoader来加载需要的类，而是通过JVM类自动加载需要的类到内存中。例如，当我们在类中继承或者引用某个类的时候，发现引用的类不在内存中，那么就会自动将这些类加载到内存中<br>显示加载：代码中通过Class.forName(),this.getClass.getClassLoader.LoadClass(),自定义类加载器中的findClass的方法等。<br>2 Jvm自带的加载器<br>1》BootStarp ClassLoader:启动类加载器，主要加载%JRE_HOME%\lib下的rt.jar,resources.jar,charsets.jar和class等。可以通过System.getProperty(“sun.boot.class.path”)查看加载的路径。<br>2》Extention ClassLoader：扩展类加载器，主要加载目录%JRE_HOME%\lib\ext目录下的jar包和class文件。也可以通过System.out.println(System.getProperty(“java.ext.dirs”))查看加载类文件的路径。<br>3》AppClassLoader/System ClassLoader:系统类加载器，主要加载当前应用下的classpath路径下的类。之前我们在环境变量中配置的classpath就是指定AppClassLoader的类加载路径。</p>
+        <p>Java类加载机制<br>1 ClassLoader类加载器，主要作用是将class文件加载到jvm虚拟机中。jvm启动的时候，并不是一次性加载所有的类，而是根据需要动态去加载类，主要分为隐式加载和显示加载。<br><a id="more"></a><br>隐式加载：程序代码中不通过ClassLoader来加载需要的类，而是通过JVM类自动加载需要的类到内存中。例如，当我们在类中继承或者引用某个类的时候，发现引用的类不在内存中，那么就会自动将这些类加载到内存中<br>显示加载：代码中通过Class.forName(),this.getClass.getClassLoader.LoadClass(),自定义类加载器中的findClass的方法等。<br>2 Jvm自带的加载器<br>1》BootStarp ClassLoader:启动类加载器，主要加载%JRE_HOME%\lib下的rt.jar,resources.jar,charsets.jar和class等。可以通过System.getProperty(“sun.boot.class.path”)查看加载的路径。<br>2》Extention ClassLoader：扩展类加载器，主要加载目录%JRE_HOME%\lib\ext目录下的jar包和class文件。也可以通过System.out.println(System.getProperty(“java.ext.dirs”))查看加载类文件的路径。<br>3》AppClassLoader/System ClassLoader:系统类加载器，主要加载当前应用下的classpath路径下的类。之前我们在环境变量中配置的classpath就是指定AppClassLoader的类加载路径。</p>
 <p>3 类加载机制-双亲委托机制<br>当一个类收到了类加载请求，它首先不会尝试自己去加载这个类，而是把这个请求委派给父类去完成，每一个层次类加载都是如此，因此所有的加载请求都应该传送到启动类加载器中，只有当父类加载器反馈自己无法完成这个请求的时候，子类加载器才会尝试自己去加载</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wutongsun.github.io/2019/04/27/Java类加载器/" data-id="cjvpf3fqo001cm2pjh230dscd" class="article-share-link">Share</a>
+      <a data-url="http://wutongsun.github.io/2019/04/27/Java类加载器/" data-id="cjwhinbio001k1kpj7i87l7bh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/类加载机制/">类加载机制</a></li></ul>
@@ -114,6 +114,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2019/04/27/CUMT第三次ctf月赛/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          CUMT第三次ctf月赛
+        
+      </div>
+    </a>
   
   
     <a href="/2019/04/12/SERVLET基础/" id="article-nav-older" class="article-nav-link-wrap">
@@ -142,7 +151,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -152,7 +161,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/command/">command</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/language/">language</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计网/">计网</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/command/">command</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ctf/">ctf</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/language/">language</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计网/">计网</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -184,6 +193,14 @@
       <ul>
         
           <li>
+            <a href="/2019/05/18/python3通讯录/">python3通讯录</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/27/CUMT第三次ctf月赛/">CUMT第三次ctf月赛</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/27/Java类加载器/">Java类加载器</a>
           </li>
         
@@ -193,14 +210,6 @@
         
           <li>
             <a href="/2019/04/11/JDBC/">JDBC</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/09/JAVA单列设计模式/">Java单列设计模式</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/09/JAVA-XML解析-SAX/">Java XML解析(SAX)</a>
           </li>
         
       </ul>

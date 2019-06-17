@@ -14,10 +14,13 @@
 <meta property="og:site_name" content="Welcome to Wutong&#39;s Blog">
 <meta property="og:description" content="一 安装Node.js，Git和Hexo1 安装Git1234// 如果已安装HomeBrew 无需执行此行$ /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;$ brew install git   // 安装Git">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://wutongsun.github.io/2019/02/24/2/2.png">
+<meta property="og:image" content="http://wutongsun.github.io/2019/02/24/2/3.png">
 <meta property="og:updated_time" content="2019-04-16T15:02:41.022Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac+Hexo+GitHub 免费个人博客搭建教程">
 <meta name="twitter:description" content="一 安装Node.js，Git和Hexo1 安装Git1234// 如果已安装HomeBrew 无需执行此行$ /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;$ brew install git   // 安装Git">
+<meta name="twitter:image" content="http://wutongsun.github.io/2019/02/24/2/2.png">
   
     <link rel="alternate" href="/atom.xml" title="Welcome to Wutong&#39;s Blog" type="application/atom+xml">
   
@@ -97,11 +100,11 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1. Homebrew 安装方式，此安装方式无需重启</span><br><span class="line">$ brew install nvm  </span><br><span class="line">$ mkdir ~/.nvm</span><br><span class="line">$ <span class="built_in">export</span> NVM_DIR=~/.nvm</span><br><span class="line">$ . $(brew --prefix nvm)/nvm.sh</span><br><span class="line"></span><br><span class="line">2. curl安装方式</span><br><span class="line">$ curl https://raw.github.com/creationix/nvm/master/install.sh | sh</span><br></pre></td></tr></table></figure>
 <p>安装完成后，重启终端 并执行下列命令即可安装 Node.js<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvm install 4</span><br></pre></td></tr></table></figure></p>
 <p>3 安装Hexo<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo npm instal hexo-cli -g</span><br></pre></td></tr></table></figure></p>
-<h2 id="二-创建Github域名和空间"><a href="#二-创建Github域名和空间" class="headerlink" title="二 创建Github域名和空间"></a>二 创建Github域名和空间</h2><h3 id="1-Github注册"><a href="#1-Github注册" class="headerlink" title="1 Github注册"></a>1 Github注册</h3><p>首先你需要注册一个Github账号<br></p>
+<h2 id="二-创建Github域名和空间"><a href="#二-创建Github域名和空间" class="headerlink" title="二 创建Github域名和空间"></a>二 创建Github域名和空间</h2><h3 id="1-Github注册"><a href="#1-Github注册" class="headerlink" title="1 Github注册"></a>1 Github注册</h3><p>首先你需要注册一个Github账号<br><img src="/2019/02/24/2/2.png"></p>
 <h3 id="2-创建仓库"><a href="#2-创建仓库" class="headerlink" title="2 创建仓库"></a>2 创建仓库</h3><blockquote>
 <p>创建一个仓库(repository) 来存储我们的网站，点击首页任意位置出现的 New repository按钮创建仓库, Respository name 中的username.github.io 的username 一定与前面的Owner 一致，记住你的username下面会用到。</p>
 </blockquote>
-
+<img src="/2019/02/24/2/3.png">
 <h2 id="三-编写，发布"><a href="#三-编写，发布" class="headerlink" title="三 编写，发布"></a>三 编写，发布</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init <span class="built_in">test</span></span><br><span class="line">$ <span class="built_in">cd</span> <span class="built_in">test</span></span><br><span class="line">$ open .</span><br></pre></td></tr></table></figure>
 <p>到_config.yml里修改些东西<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line"><span class="built_in">type</span>: git    //使用Git 发布</span><br><span class="line">repo: https://github.com/username/username.github.io.git</span><br></pre></td></tr></table></figure></p>
 <hr>
@@ -112,7 +115,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wutongsun.github.io/2019/02/24/2/" data-id="cjwhinbgm00031kpj3zd9iq0m" class="article-share-link">Share</a>
+      <a data-url="http://wutongsun.github.io/2019/02/24/2/" data-id="cjx06f2om0000o8pj1dyqz33k" class="article-share-link">Share</a>
       
       
 	 <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>

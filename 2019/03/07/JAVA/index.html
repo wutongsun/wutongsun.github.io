@@ -14,10 +14,12 @@
 <meta property="og:site_name" content="Welcome to Wutong&#39;s Blog">
 <meta property="og:description" content="执行命令解析javac 后面跟着的是java文件的文件名，例如 HelloWorld.java。 该命令用于将 java 源文件编译为 class 字节码文件，如： javac HelloWorld.java 运行javac命令后，如果成功编译没有错误的话，会出现一个 HelloWorld.class 的文件。java 后面跟着的是java文件中的类名,例如 HelloWorld 就是类名，如:">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://wutongsun.github.io/2019/03/07/JAVA/java1.png">
 <meta property="og:updated_time" content="2019-04-21T01:57:36.151Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java常识">
 <meta name="twitter:description" content="执行命令解析javac 后面跟着的是java文件的文件名，例如 HelloWorld.java。 该命令用于将 java 源文件编译为 class 字节码文件，如： javac HelloWorld.java 运行javac命令后，如果成功编译没有错误的话，会出现一个 HelloWorld.class 的文件。java 后面跟着的是java文件中的类名,例如 HelloWorld 就是类名，如:">
+<meta name="twitter:image" content="http://wutongsun.github.io/2019/03/07/JAVA/java1.png">
   
     <link rel="alternate" href="/atom.xml" title="Welcome to Wutong&#39;s Blog" type="application/atom+xml">
   
@@ -106,7 +108,7 @@
 <h3 id="类变量（静态变量）"><a href="#类变量（静态变量）" class="headerlink" title="类变量（静态变量）"></a>类变量（静态变量）</h3><p>静态变量在第一次被访问时创建，在程序结束时销毁<br>类变量被声明为public static final类型时，类变量名称一般建议使用大写字母。如果静态变量不是public和final类型，其命名方式与实例变量以及局部变量的命名方式一致。</p>
 <h3 id="访问控制修饰符"><a href="#访问控制修饰符" class="headerlink" title="访问控制修饰符"></a>访问控制修饰符</h3><p>default (即缺省，什么也不写）: 在同一包内可见，不使用任何修饰符。使用对象：类、接口、变量、方法。<br>private : 在同一类内可见。使用对象：变量、方法。 注意：不能修饰类（外部类）<br>public : 对所有类可见。使用对象：类、接口、变量、方法<br>protected : 对同一包内的类和所有子类可见。使用对象：变量、方法。 注意：不能修饰类（外部类）</p>
 <p>接口及接口的成员变量和成员方法不能声明为 protected</p>
-
+<img src="/2019/03/07/JAVA/java1.png">
 <h3 id="final-修饰符"><a href="#final-修饰符" class="headerlink" title="final 修饰符"></a>final 修饰符</h3><p>final 变量：<br>final 表示”最后的、最终的”含义，变量一旦赋值后，不能被重新赋值<br>final 方法<br>类中的 final 方法可以被子类继承，但是不能被子类修改。<br>声明 final 方法的主要目的是防止该方法的内容被修改。<br>final 类<br>final 类不能被继承，没有类能够继承 final 类的任何特性。</p>
 <h3 id="abstract-修饰符"><a href="#abstract-修饰符" class="headerlink" title="abstract 修饰符"></a>abstract 修饰符</h3><p>抽象类不能用来实例化对象，声明抽象类的唯一目的是为了将来对该类进行扩充。<br>一个类不能同时被 abstract 和 final 修饰。如果一个类包含抽象方法，那么该类一定要声明为抽象类，否则将出现编译错误。<br>抽象类可以包含抽象方法和非抽象方法。<br>抽象方法<br>抽象方法是一种没有任何实现的方法，该方法的的具体实现由子类提供。<br>抽象方法不能被声明成 final 和 static。<br>任何继承抽象类的子类必须实现父类的所有抽象方法，除非该子类也是抽象类。<br>如果一个类包含若干个抽象方法，那么该类必须声明为抽象类。抽象类可以不包含抽象方法。</p>
 <h3 id="synchronized-修饰符"><a href="#synchronized-修饰符" class="headerlink" title="synchronized 修饰符"></a>synchronized 修饰符</h3><p>synchronized 关键字声明的方法同一时间只能被一个线程访问。synchronized 修饰符可以应用于四个访问修饰符。</p>
@@ -129,7 +131,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wutongsun.github.io/2019/03/07/JAVA/" data-id="cjwhinbhu000q1kpjik11pfbe" class="article-share-link">Share</a>
+      <a data-url="http://wutongsun.github.io/2019/03/07/JAVA/" data-id="cjx06f2pj000go8pjrlmks3e9" class="article-share-link">Share</a>
       
       
 	 <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>

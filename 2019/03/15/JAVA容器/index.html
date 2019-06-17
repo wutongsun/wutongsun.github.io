@@ -7,21 +7,22 @@
   
   <title>Java容器如何选? | Welcome to Wutong&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="泛型&amp;lt;T,EV&amp;gt;泛型的本质就是“数据类型的参数化”。 我们可以把“泛型”理解为数据类型的一个占位符(形式参数)，即告诉编译器，在调用泛型时必须传入实际类型。 容器相关类都定义了泛型，我们在开发和工作中，在使用容器类时都要使用泛型。这样，在容器的存储数据、读取数据时都避免了大量的类型判断，非常便捷 Collection、List、Set、Map、Iterator接口都定义了泛型Colle">
+  <meta name="description" content="泛型&amp;lt;T,EV&amp;gt;泛型的本质就是“数据类型的参数化”。 我们可以把“泛型”理解为数据类型的一个占位符(形式参数)，即告诉编译器，在调用泛型时必须传入实际类型。 容器相关类都定义了泛型，我们在开发和工作中，在使用容器类时都要使用泛型。这样，在容器的存储数据、读取数据时都避免了大量的类型判断，非常便捷 Collection、List、Set、Map、Iterator接口都定义了泛型Coll">
 <meta name="keywords" content="tools">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java容器如何选?">
 <meta property="og:url" content="http://wutongsun.github.io/2019/03/15/JAVA容器/index.html">
 <meta property="og:site_name" content="Welcome to Wutong&#39;s Blog">
-<meta property="og:description" content="泛型&amp;lt;T,EV&amp;gt;泛型的本质就是“数据类型的参数化”。 我们可以把“泛型”理解为数据类型的一个占位符(形式参数)，即告诉编译器，在调用泛型时必须传入实际类型。 容器相关类都定义了泛型，我们在开发和工作中，在使用容器类时都要使用泛型。这样，在容器的存储数据、读取数据时都避免了大量的类型判断，非常便捷 Collection、List、Set、Map、Iterator接口都定义了泛型Colle">
+<meta property="og:description" content="泛型&amp;lt;T,EV&amp;gt;泛型的本质就是“数据类型的参数化”。 我们可以把“泛型”理解为数据类型的一个占位符(形式参数)，即告诉编译器，在调用泛型时必须传入实际类型。 容器相关类都定义了泛型，我们在开发和工作中，在使用容器类时都要使用泛型。这样，在容器的存储数据、读取数据时都避免了大量的类型判断，非常便捷 Collection、List、Set、Map、Iterator接口都定义了泛型Coll">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://wutongsun.github.io/2019/03/15/JAVA容器/容器.png">
 <meta property="og:image" content="http://www.sxt.cn/360shop/Public/admin/UEditor/20170524/1495614959696503.png">
 <meta property="og:image" content="http://www.sxt.cn/360shop/Public/admin/UEditor/20170524/1495616843888130.png">
 <meta property="og:updated_time" content="2019-04-26T12:35:22.920Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java容器如何选?">
-<meta name="twitter:description" content="泛型&amp;lt;T,EV&amp;gt;泛型的本质就是“数据类型的参数化”。 我们可以把“泛型”理解为数据类型的一个占位符(形式参数)，即告诉编译器，在调用泛型时必须传入实际类型。 容器相关类都定义了泛型，我们在开发和工作中，在使用容器类时都要使用泛型。这样，在容器的存储数据、读取数据时都避免了大量的类型判断，非常便捷 Collection、List、Set、Map、Iterator接口都定义了泛型Colle">
-<meta name="twitter:image" content="http://www.sxt.cn/360shop/Public/admin/UEditor/20170524/1495614959696503.png">
+<meta name="twitter:description" content="泛型&amp;lt;T,EV&amp;gt;泛型的本质就是“数据类型的参数化”。 我们可以把“泛型”理解为数据类型的一个占位符(形式参数)，即告诉编译器，在调用泛型时必须传入实际类型。 容器相关类都定义了泛型，我们在开发和工作中，在使用容器类时都要使用泛型。这样，在容器的存储数据、读取数据时都避免了大量的类型判断，非常便捷 Collection、List、Set、Map、Iterator接口都定义了泛型Coll">
+<meta name="twitter:image" content="http://wutongsun.github.io/2019/03/15/JAVA容器/容器.png">
   
     <link rel="alternate" href="/atom.xml" title="Welcome to Wutong&#39;s Blog" type="application/atom+xml">
   
@@ -98,7 +99,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <img src="/2019/03/15/JAVA容器/容器.png">
 <h3 id="泛型-lt-T-EV-gt"><a href="#泛型-lt-T-EV-gt" class="headerlink" title="泛型&lt;T,EV&gt;"></a>泛型&lt;T,EV&gt;</h3><p>泛型的本质就是“数据类型的参数化”。 我们可以把“泛型”理解为数据类型的一个占位符(形式参数)，即告诉编译器，在调用泛型时必须传入实际类型。</p>
 <p>容器相关类都定义了泛型，我们在开发和工作中，在使用容器类时都要使用泛型。这样，在容器的存储数据、读取数据时都避免了大量的类型判断，非常便捷</p>
 <h2 id="Collection、List、Set、Map、Iterator接口都定义了泛型"><a href="#Collection、List、Set、Map、Iterator接口都定义了泛型" class="headerlink" title="Collection、List、Set、Map、Iterator接口都定义了泛型"></a>Collection、List、Set、Map、Iterator接口都定义了泛型</h2><p>Collection接口中定义的方法</p>
@@ -126,7 +127,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wutongsun.github.io/2019/03/15/JAVA容器/" data-id="cjwhinbi4000z1kpjfzjuhvto" class="article-share-link">Share</a>
+      <a data-url="http://wutongsun.github.io/2019/03/15/JAVA容器/" data-id="cjx06f2pq000mo8pjxgtechbt" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li></ul>

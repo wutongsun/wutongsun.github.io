@@ -27,7 +27,7 @@
 <meta property="og:image" content="http://wutongsun.github.io/2019/04/27/CUMT第三次ctf月赛/9.png">
 <meta property="og:image" content="http://wutongsun.github.io/2019/04/27/CUMT第三次ctf月赛/10.png">
 <meta property="og:image" content="http://wutongsun.github.io/2019/04/27/CUMT第三次ctf月赛/11.png">
-<meta property="og:updated_time" content="2019-06-17T09:31:39.329Z">
+<meta property="og:updated_time" content="2019-06-17T09:36:14.399Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CUMT第三次ctf月赛">
 <meta name="twitter:description" content="这次校赛打的还不错，拿了第三，写个writeup纪念一下">
@@ -110,20 +110,41 @@
       
         <p>这次校赛打的还不错，拿了第三，写个writeup纪念一下<br><img src="/2019/04/27/CUMT第三次ctf月赛/13.png"><br><a id="more"></a></p>
 <img src="/2019/04/27/CUMT第三次ctf月赛/12.png">
-<h1 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h1><h3 id="1-Web签到"><a href="#1-Web签到" class="headerlink" title="1 Web签到"></a>1 Web签到</h3><p>文件包含漏洞<br>构造<br>page=php://filter/read=convert.base64-encode/resource=cxk.php<br>在线base64解码得flag</p>
-<img src="/2019/04/27/CUMT第三次ctf月赛/1.png">
+<h1 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h1><h3 id="1-Web签到"><a href="#1-Web签到" class="headerlink" title="1 Web签到"></a>1 Web签到</h3><p>文件包含漏洞<br>构造<br>page=php://filter/read=convert.base64-encode/resource=cxk.php</p>
+<h2 id="在线base64解码得flag"><a href="#在线base64解码得flag" class="headerlink" title="在线base64解码得flag"></a>在线base64解码得flag</h2><img src="/2019/04/27/CUMT第三次ctf月赛/1.png">
+<hr>
 <p>参考链接：<a href="https://blog.csdn.net/zz_Caleb/article/details/84193092" target="_blank" rel="noopener">https://blog.csdn.net/zz_Caleb/article/details/84193092</a></p>
 <h1 id="Crypto"><a href="#Crypto" class="headerlink" title="Crypto"></a>Crypto</h1><h3 id="1-古典密码签到"><a href="#1-古典密码签到" class="headerlink" title="1 古典密码签到:"></a>1 古典密码签到:</h3><p>维吉尼亚加密，先将密文和key转成字符串，再解密得flag</p>
 <h3 id="2-现代密码签到："><a href="#2-现代密码签到：" class="headerlink" title="2 现代密码签到："></a>2 现代密码签到：</h3><p>rc4加密，密文和key 都base64解码后，再rc4解码得flag</p>
-<h3 id="3-easyxor"><a href="#3-easyxor" class="headerlink" title="3 easyxor"></a>3 easyxor</h3><img src="/2019/04/27/CUMT第三次ctf月赛/2.png">
-<p>分析代码可知密文cipher.txt为crypt(flag).encode(‘base64’)加密后的密文<br>base64解码得<br>113493740270492087381619361102311635177554834526932164090282635858419073655670<br>由提示解密就等价于继续加密,<br>写个小脚本跑一跑,得flag</p>
-<img src="/2019/04/27/CUMT第三次ctf月赛/3.png">
-<h3 id="4-encode"><a href="#4-encode" class="headerlink" title="4 encode"></a>4 encode</h3><p>1.pyc为python编译后的文件，在线python反编译<br><a href="http://tools.bugscaner.com/decompyle/" target="_blank" rel="noopener">http://tools.bugscaner.com/decompyle/</a></p>
-<img src="/2019/04/27/CUMT第三次ctf月赛/4.png">
-<p>改改代码，直接爆破得flag</p>
-<img src="/2019/04/27/CUMT第三次ctf月赛/5.png">
-<h3 id="5-RSA"><a href="#5-RSA" class="headerlink" title="5 RSA"></a>5 RSA</h3><p>下载文件后解压得flag.enc,public.pem<br>public.pem即存放公钥信息<br>flag.enc 为加密后的密文<br>很明显根据公钥是不能解密密文的，因此我们需要攻击公钥来尝试求出私钥，查看公钥信息(读取模数m,公钥e)<br>openssl rsa -pubin -text -modulus -in warmup -in public.pem<br>读取公钥<br><img src="/2019/04/27/CUMT第三次ctf月赛/6.png"><br>正常思路是分解大n，求出p,q，但可以尝试n次后都解不出n太大啦。<br>用了各种办法都没能攻破大n后,在github上无意中发现一个RSA攻击脚本<a href="https://github.com/pablocelayes/rsa-wiener-attack" target="_blank" rel="noopener">https://github.com/pablocelayes/rsa-wiener-attack</a><br>试了一下，结果神奇的解出来了，都跳过p,q，直接求出私钥d了，膜拜一下写出这个脚本的大佬<br><img src="/2019/04/27/CUMT第三次ctf月赛/7.png"><br>接下来就好办了，有私钥d和大n了，写个脚本得私钥private.pem<br>再用私钥解密密文得flag<br>（看了网上生成私钥都用了p,q，苦逼的我就一直在求p,q，后来怎么想都觉得有问题，就算没p,q，有私钥d和大n就可以解了）试了一下果然就出flag了。<br>根据私钥和大n生成私钥文件private.pem<br><img src="/2019/04/27/CUMT第三次ctf月赛/8.png"><br>用私钥文件解密密文得flag<br>openssl rsautl -decrypt -in flag.enc -inkey private.pem -out flag.txt<br><img src="/2019/04/27/CUMT第三次ctf月赛/9.png"><br>Misc<br>1&gt;Whoami???<br>查看Headers，发现状态码不对<br><img src="/2019/04/27/CUMT第三次ctf月赛/10.png"><br>输入teapot得flag</p>
-<p>2&gt;Lisp<br>通读源码我们知道它定义了一个方法，一个一个处理string字符串<br>写个脚本简单爆破处理一下得flag（苦逼的我之前一直想用lisp语言来爆破，结果发现Clisp不能运行这个版本的lisp）<br><img src="/2019/04/27/CUMT第三次ctf月赛/11.png"></p>
+<h3 id="3-easyxor"><a href="#3-easyxor" class="headerlink" title="3 easyxor"></a>3 easyxor</h3><hr>
+<img src="/2019/04/27/CUMT第三次ctf月赛/2.png">
+<hr>
+<p>分析代码可知密文cipher.txt为crypt(flag).encode(‘base64’)加密后的密文<br>base64解码得<br>113493740270492087381619361102311635177554834526932164090282635858419073655670<br>由提示解密就等价于继续加密,</p>
+<h2 id="写个小脚本跑一跑-得flag"><a href="#写个小脚本跑一跑-得flag" class="headerlink" title="写个小脚本跑一跑,得flag"></a>写个小脚本跑一跑,得flag</h2><img src="/2019/04/27/CUMT第三次ctf月赛/3.png">
+<hr>
+<h3 id="4-encode"><a href="#4-encode" class="headerlink" title="4 encode"></a>4 encode</h3><p>1.pyc为python编译后的文件，在线python反编译</p>
+<h2 id="http-tools-bugscaner-com-decompyle"><a href="#http-tools-bugscaner-com-decompyle" class="headerlink" title="http://tools.bugscaner.com/decompyle/"></a><a href="http://tools.bugscaner.com/decompyle/" target="_blank" rel="noopener">http://tools.bugscaner.com/decompyle/</a></h2><img src="/2019/04/27/CUMT第三次ctf月赛/4.png">
+<hr>
+<h2 id="改改代码，直接爆破得flag"><a href="#改改代码，直接爆破得flag" class="headerlink" title="改改代码，直接爆破得flag"></a>改改代码，直接爆破得flag</h2><img src="/2019/04/27/CUMT第三次ctf月赛/5.png">
+<hr>
+<h3 id="5-RSA"><a href="#5-RSA" class="headerlink" title="5 RSA"></a>5 RSA</h3><p>下载文件后解压得flag.enc,public.pem<br>public.pem即存放公钥信息<br>flag.enc 为加密后的密文<br>很明显根据公钥是不能解密密文的，因此我们需要攻击公钥来尝试求出私钥，查看公钥信息(读取模数m,公钥e)<br>openssl rsa -pubin -text -modulus -in warmup -in public.pem</p>
+<h2 id="读取公钥"><a href="#读取公钥" class="headerlink" title="读取公钥"></a>读取公钥</h2><img src="/2019/04/27/CUMT第三次ctf月赛/6.png">
+<hr>
+<p>正常思路是分解大n，求出p,q，但可以尝试n次后都解不出n太大啦。<br>用了各种办法都没能攻破大n后,在github上无意中发现一个RSA攻击脚本<a href="https://github.com/pablocelayes/rsa-wiener-attack" target="_blank" rel="noopener">https://github.com/pablocelayes/rsa-wiener-attack</a></p>
+<h2 id="试了一下，结果神奇的解出来了，都跳过p-q，直接求出私钥d了，膜拜一下写出这个脚本的大佬"><a href="#试了一下，结果神奇的解出来了，都跳过p-q，直接求出私钥d了，膜拜一下写出这个脚本的大佬" class="headerlink" title="试了一下，结果神奇的解出来了，都跳过p,q，直接求出私钥d了，膜拜一下写出这个脚本的大佬"></a>试了一下，结果神奇的解出来了，都跳过p,q，直接求出私钥d了，膜拜一下写出这个脚本的大佬</h2><img src="/2019/04/27/CUMT第三次ctf月赛/7.png">
+<hr>
+<p>接下来就好办了，有私钥d和大n了，写个脚本得私钥private.pem<br>再用私钥解密密文得flag<br>（看了网上生成私钥都用了p,q，苦逼的我就一直在求p,q，后来怎么想都觉得有问题，就算没p,q，有私钥d和大n就可以解了）试了一下果然就出flag了。</p>
+<h2 id="根据私钥和大n生成私钥文件private-pem"><a href="#根据私钥和大n生成私钥文件private-pem" class="headerlink" title="根据私钥和大n生成私钥文件private.pem"></a>根据私钥和大n生成私钥文件private.pem</h2><img src="/2019/04/27/CUMT第三次ctf月赛/8.png">
+<hr>
+<p>用私钥文件解密密文得flag</p>
+<h2 id="openssl-rsautl-decrypt-in-flag-enc-inkey-private-pem-out-flag-txt"><a href="#openssl-rsautl-decrypt-in-flag-enc-inkey-private-pem-out-flag-txt" class="headerlink" title="openssl rsautl -decrypt -in flag.enc -inkey private.pem -out flag.txt"></a>openssl rsautl -decrypt -in flag.enc -inkey private.pem -out flag.txt</h2><img src="/2019/04/27/CUMT第三次ctf月赛/9.png">
+<hr>
+<p>Misc<br>1&gt;Whoami???</p>
+<h2 id="查看Headers，发现状态码不对"><a href="#查看Headers，发现状态码不对" class="headerlink" title="查看Headers，发现状态码不对"></a>查看Headers，发现状态码不对</h2><img src="/2019/04/27/CUMT第三次ctf月赛/10.png">
+<hr>
+<p>输入teapot得flag</p>
+<p>2&gt;Lisp<br>通读源码我们知道它定义了一个方法，一个一个处理string字符串</p>
+<h2 id="写个脚本简单爆破处理一下得flag（苦逼的我之前一直想用lisp语言来爆破，结果发现Clisp不能运行这个版本的lisp）"><a href="#写个脚本简单爆破处理一下得flag（苦逼的我之前一直想用lisp语言来爆破，结果发现Clisp不能运行这个版本的lisp）" class="headerlink" title="写个脚本简单爆破处理一下得flag（苦逼的我之前一直想用lisp语言来爆破，结果发现Clisp不能运行这个版本的lisp）"></a>写个脚本简单爆破处理一下得flag（苦逼的我之前一直想用lisp语言来爆破，结果发现Clisp不能运行这个版本的lisp）</h2><img src="/2019/04/27/CUMT第三次ctf月赛/11.png">
 
       
     </div>

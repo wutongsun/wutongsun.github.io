@@ -17,7 +17,6 @@
 <meta property="og:image" content="http://wutongsun.github.io/2019/04/27/CUMT第三次ctf月赛/13.png">
 <meta property="og:image" content="http://wutongsun.github.io/2019/04/27/CUMT第三次ctf月赛/12.png">
 <meta property="og:image" content="http://wutongsun.github.io/2019/04/27/CUMT第三次ctf月赛/1.png">
-<meta property="og:image" content="http://wutongsun.github.io/2019/04/27/CUMT第三次ctf月赛/2.png">
 <meta property="og:image" content="http://wutongsun.github.io/2019/04/27/CUMT第三次ctf月赛/3.png">
 <meta property="og:image" content="http://wutongsun.github.io/2019/04/27/CUMT第三次ctf月赛/4.png">
 <meta property="og:image" content="http://wutongsun.github.io/2019/04/27/CUMT第三次ctf月赛/5.png">
@@ -117,7 +116,7 @@
 <h1 id="Crypto"><a href="#Crypto" class="headerlink" title="Crypto"></a>Crypto</h1><h3 id="1-古典密码签到"><a href="#1-古典密码签到" class="headerlink" title="1 古典密码签到:"></a>1 古典密码签到:</h3><p>维吉尼亚加密，先将密文和key转成字符串，再解密得flag</p>
 <h3 id="2-现代密码签到："><a href="#2-现代密码签到：" class="headerlink" title="2 现代密码签到："></a>2 现代密码签到：</h3><p>rc4加密，密文和key 都base64解码后，再rc4解码得flag</p>
 <h3 id="3-easyxor"><a href="#3-easyxor" class="headerlink" title="3 easyxor"></a>3 easyxor</h3><hr>
-<img src="/2019/04/27/CUMT第三次ctf月赛/2.png">
+
 <hr>
 <p>分析代码可知密文cipher.txt为crypt(flag).encode(‘base64’)加密后的密文<br>base64解码得<br>113493740270492087381619361102311635177554834526932164090282635858419073655670<br>由提示解密就等价于继续加密,</p>
 <h2 id="写个小脚本跑一跑-得flag"><a href="#写个小脚本跑一跑-得flag" class="headerlink" title="写个小脚本跑一跑,得flag"></a>写个小脚本跑一跑,得flag</h2><img src="/2019/04/27/CUMT第三次ctf月赛/3.png">
@@ -149,7 +148,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wutongsun.github.io/2019/04/27/CUMT第三次ctf月赛/" data-id="cjx06f2p60002o8pj6kmh20sw" class="article-share-link">Share</a>
+      <a data-url="http://wutongsun.github.io/2019/04/27/CUMT第三次ctf月赛/" data-id="ck1hdwmmh00043kpj6wyapguz" class="article-share-link">Share</a>
       
       
 	 <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>

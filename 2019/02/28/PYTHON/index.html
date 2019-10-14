@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Welcome to Wutong&#39;s Blog">
 <meta property="og:description" content="post请求和get 请求两种方法 url=“http://”t=requests.session()Get=t.get(url)data={‘’:}Post=t.post(url=url,data=data)    r2=requests.get(url)">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-16T15:05:25.080Z">
+<meta property="og:updated_time" content="2019-10-13T11:12:49.815Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python">
 <meta name="twitter:description" content="post请求和get 请求两种方法 url=“http://”t=requests.session()Get=t.get(url)data={‘’:}Post=t.post(url=url,data=data)    r2=requests.get(url)">
@@ -95,7 +95,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="post请求和get-请求"><a href="#post请求和get-请求" class="headerlink" title="post请求和get 请求"></a>post请求和get 请求</h1><h2 id="两种方法"><a href="#两种方法" class="headerlink" title="两种方法"></a>两种方法</h2><blockquote>
+        <h2 id="post请求和get-请求"><a href="#post请求和get-请求" class="headerlink" title="post请求和get 请求"></a>post请求和get 请求</h2><h4 id="两种方法"><a href="#两种方法" class="headerlink" title="两种方法"></a>两种方法</h4><blockquote>
 <p>url=“http://”<br>t=requests.session()<br>Get=t.get(url)<br>data={‘’:}<br>Post=t.post(url=url,data=data)</p>
 </blockquote>
 <hr>
@@ -104,22 +104,27 @@
 </blockquote>
 <p>两者之间的区别：后者每次都是一次全新的请求，而前者不是，会记录session() cookies </p>
 <hr>
-<h1 id="读文件（utf-8编码"><a href="#读文件（utf-8编码" class="headerlink" title="读文件（utf-8编码)"></a>读文件（utf-8编码)</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ from urllib import request</span><br><span class="line">$ from urllib import parse </span><br><span class="line"></span><br><span class="line">$ r=request.urlopen(url)</span><br><span class="line">$ txt=r.read()</span><br><span class="line"></span><br><span class="line">$ txt=txt.decode(‘utf-8’)</span><br><span class="line">$ <span class="keyword">if</span>(‘flag’ <span class="keyword">in</span> page or ‘ctf’ <span class="keyword">in</span> txt):</span><br><span class="line">$   <span class="built_in">print</span>(txt.text)</span><br><span class="line">$   time.sleep(5)    <span class="comment">#延时5秒</span></span><br></pre></td></tr></table></figure>
+<h2 id="读文件（utf-8编码"><a href="#读文件（utf-8编码" class="headerlink" title="读文件（utf-8编码)"></a>读文件（utf-8编码)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ from urllib import request</span><br><span class="line">$ from urllib import parse </span><br><span class="line"></span><br><span class="line">$ r=request.urlopen(url)</span><br><span class="line">$ txt=r.read()</span><br><span class="line"></span><br><span class="line">$ txt=txt.decode(‘utf-8’)</span><br><span class="line">$ <span class="keyword">if</span>(‘flag’ <span class="keyword">in</span> page or ‘ctf’ <span class="keyword">in</span> txt):</span><br><span class="line">$   <span class="built_in">print</span>(txt.text)</span><br><span class="line">$   time.sleep(5)    <span class="comment">#延时5秒</span></span><br></pre></td></tr></table></figure>
 <hr>
-<h1 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h1><blockquote>
-<p>for i in range(1,51)<br>for letter in ‘python’:<br>  print ‘当前字母:’,letter</p>
-</blockquote>
+<h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><hr>
+<p><code></code></p>
+<p>for i in range(1,51)</p>
+<p>for letter in ‘python’:</p>
+<p>print ‘当前字母’, letter </p>
+<p>fruits=‘banana’,’apple’,’mango’]</p>
+<p>for fruit in fruits:</p>
+<p>print ‘当前水果:’, fruit</p>
+<p><code></code></p>
 <blockquote>
-<p>fruits=‘banana’,’apple’,’mango’]<br>for fruit in fruits:<br>  print ‘当前水果:’, fruit</p>
 </blockquote>
-<h1 id="数组a复制给数组b"><a href="#数组a复制给数组b" class="headerlink" title="数组a复制给数组b"></a>数组a复制给数组b</h1><blockquote>
+<h2 id="数组a复制给数组b"><a href="#数组a复制给数组b" class="headerlink" title="数组a复制给数组b"></a>数组a复制给数组b</h2><blockquote>
 <p>a=[1,2,3]<br>b=a[:]</p>
 </blockquote>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wutongsun.github.io/2019/02/28/PYTHON/" data-id="ck1nduyqq001j9apjzkxfsyob" class="article-share-link">Share</a>
+      <a data-url="http://wutongsun.github.io/2019/02/28/PYTHON/" data-id="ck1qhco1t001ldlpj4ugv68v6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -169,7 +174,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -211,6 +216,10 @@
       <ul>
         
           <li>
+            <a href="/2019/10/13/redis/">redis</a>
+          </li>
+        
+          <li>
             <a href="/2019/10/12/springboot整合mybatis/">springboot整合mybatis</a>
           </li>
         
@@ -224,10 +233,6 @@
         
           <li>
             <a href="/2019/04/27/CUMT第三次ctf月赛/">CUMT第三次ctf月赛</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/27/Java类加载器/">Java类加载器</a>
           </li>
         
       </ul>

@@ -66,6 +66,86 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-redis" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/13/redis/" class="article-date">
+  <time datetime="2019-10-13T11:07:03.000Z" itemprop="datePublished">2019-10-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/13/redis/">redis</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-redis安装"><a href="#1-redis安装" class="headerlink" title="1 redis安装"></a>1 redis安装</h3><p><code></code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker pull redis</span><br><span class="line">docker run --name redis -p 6379:6379 -d redis:latest</span><br></pre></td></tr></table></figure>
+<h3 id="2-安装redis客户端管理工具rdm"><a href="#2-安装redis客户端管理工具rdm" class="headerlink" title="2 安装redis客户端管理工具rdm"></a>2 安装redis客户端管理工具rdm</h3><h3 id="3-Redis简介"><a href="#3-Redis简介" class="headerlink" title="3 Redis简介"></a>3 Redis简介</h3><p>Redis 是完全开源免费的，遵守BSD协议，是一个高性能的key-value数据库。</p>
+<p>Redis 与其他 key - value 缓存产品有以下三个特点：</p>
+<ul>
+<li>Redis支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。</li>
+<li>Redis不仅仅支持简单的key-value类型的数据，同时还提供list，set，zset，hash等数据结构的存储。</li>
+<li>Redis支持数据的备份，即master-slave模式的数据备份。</li>
+</ul>
+<p>###4  redis 中的数据类型</p>
+<ul>
+<li>String : 字符串</li>
+<li>Hash: 散列</li>
+<li>List: 列表</li>
+<li>Set: 集合</li>
+<li>Sorted Set : 有序集合</li>
+</ul>
+<h3 id="5-常用操作"><a href="#5-常用操作" class="headerlink" title="5 常用操作"></a>5 常用操作</h3><ul>
+<li>String</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">添加,修改</span><br><span class="line"><span class="built_in">set</span> key value</span><br><span class="line">删除</span><br><span class="line">del key</span><br><span class="line">查询</span><br><span class="line">get key value</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>Hash</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hmset <span class="built_in">hash</span>-name key1 <span class="string">"value1"</span> key2 <span class="string">"value2"</span></span><br><span class="line">hget <span class="built_in">hash</span>-name key-name</span><br><span class="line">hlen <span class="built_in">hash</span>-name</span><br><span class="line">hexists <span class="built_in">hash</span>-name key1</span><br><span class="line">hdel <span class="built_in">hash</span>-name key1(key2)</span><br><span class="line">del <span class="built_in">hash</span>-name</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>List</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lpush list-name value</span><br><span class="line">lrange list-name 0 10</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Set (集合)</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sadd key value</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Zset(sorted set 有序集合)</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">zadd key 0 value1</span><br><span class="line">zadd key 0 value2</span><br><span class="line">zrangebyscore key 0 1000</span><br></pre></td></tr></table></figure>
+<h3 id="6-其他操作"><a href="#6-其他操作" class="headerlink" title="6 其他操作"></a>6 其他操作</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">exists key</span><br><span class="line">move key db</span><br><span class="line">rename key newkey</span><br><span class="line">select num //选择数据库</span><br><span class="line">SAVE //数据库备份,创建dump.rdb文件</span><br><span class="line"></span><br><span class="line">AUTH password</span><br><span class="line">config set requirepass "password"</span><br></pre></td></tr></table></figure>
+<h3 id="7-Java操作Redis"><a href="#7-Java操作Redis" class="headerlink" title="7 Java操作Redis"></a>7 Java操作Redis</h3><p>下载[Jedis]: <a href="https://static.runoob.com/download/jedis-2.9.0.jar" target="_blank" rel="noopener">https://static.runoob.com/download/jedis-2.9.0.jar</a> jar 添加到驱动包中</p>
+<p>测试连接</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RedisTest</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Jedis jedis = <span class="keyword">new</span> Jedis(<span class="string">"localhost"</span>);</span><br><span class="line">		System.out.println(jedis.ping());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wutongsun.github.io/2019/10/13/redis/" data-id="ck1qhco2h0022dlpjvybgc1jm" class="article-share-link">Share</a>
+      
+      
+	 <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+   
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-springboot整合mybatis" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/10/12/springboot整合mybatis/" class="article-date">
@@ -101,7 +181,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wutongsun.github.io/2019/10/12/springboot整合mybatis/" data-id="ck1nduyr6001z9apj68uz2y7r" class="article-share-link">Share</a>
+      <a data-url="http://wutongsun.github.io/2019/10/12/springboot整合mybatis/" data-id="ck1qhco2w0027dlpjkeffthy6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/springboot-mybatis/">springboot mybatis</a></li></ul>
@@ -151,7 +231,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wutongsun.github.io/2019/10/11/springboot添加Druid监控/" data-id="ck1nduyrb00269apjhqm7n0x7" class="article-share-link">Share</a>
+      <a data-url="http://wutongsun.github.io/2019/10/11/springboot添加Druid监控/" data-id="ck1qhco2u0026dlpjtfrlxevr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/springboot-Druid/">springboot Druid</a></li></ul>
@@ -205,7 +285,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wutongsun.github.io/2019/10/08/SpringBoot/" data-id="ck1nduyv9002k9apjj2qbob57" class="article-share-link">Share</a>
+      <a data-url="http://wutongsun.github.io/2019/10/08/SpringBoot/" data-id="ck1qhco94002jdlpjfjhqlgep" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/springboot/">springboot</a></li></ul>
@@ -255,7 +335,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wutongsun.github.io/2019/04/27/CUMT第三次ctf月赛/" data-id="ck1nduypk00049apj5fzb1bwn" class="article-share-link">Share</a>
+      <a data-url="http://wutongsun.github.io/2019/04/27/CUMT第三次ctf月赛/" data-id="ck1qhco0e0005dlpjz30e3hd4" class="article-share-link">Share</a>
       
       
 	 <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
@@ -303,7 +383,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wutongsun.github.io/2019/04/27/Java类加载器/" data-id="ck1nduyqm001c9apjhifo8kik" class="article-share-link">Share</a>
+      <a data-url="http://wutongsun.github.io/2019/04/27/Java类加载器/" data-id="ck1qhco2r0023dlpjg7h034ou" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/类加载机制/">类加载机制</a></li></ul>
@@ -354,7 +434,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wutongsun.github.io/2019/04/12/SERVLET基础/" data-id="ck1nduyqt001l9apjniomi64c" class="article-share-link">Share</a>
+      <a data-url="http://wutongsun.github.io/2019/04/12/SERVLET基础/" data-id="ck1qhco1r001idlpjpg7gnld6" class="article-share-link">Share</a>
       
       
 	 <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
@@ -402,55 +482,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wutongsun.github.io/2019/04/11/JDBC/" data-id="ck1nduyqj00169apjghq2m0yn" class="article-share-link">Share</a>
-      
-      
-	 <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
-<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
-   
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JAVA单列设计模式" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/04/09/JAVA单列设计模式/" class="article-date">
-  <time datetime="2019-04-09T08:10:19.000Z" itemprop="datePublished">2019-04-09</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Java/">Java</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/09/JAVA单列设计模式/">Java单列设计模式</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="单例设计模式"><a href="#单例设计模式" class="headerlink" title="单例设计模式"></a>单例设计模式</h2><h2 id="解决的就是在程序运行过程中，一个类最多只能创建一个对象-的问题-就比如我们电脑中的回收站，有且只需要一个"><a href="#解决的就是在程序运行过程中，一个类最多只能创建一个对象-的问题-就比如我们电脑中的回收站，有且只需要一个" class="headerlink" title="解决的就是在程序运行过程中，一个类最多只能创建一个对象 的问题,就比如我们电脑中的回收站，有且只需要一个"></a>解决的就是在程序运行过程中，一个类最多只能创建一个对象 的问题,就比如我们电脑中的回收站，有且只需要一个</h2><p>要实现一个单例类，需要经过三个步骤：<br>1、私有化构造函数，目的是避免其它类可以创建这个类的对象；<br>2、在本类中创建唯一实例对象（因为构造函数私有化了，所以单例类的唯一实例对象只能在单例类里面创建；），使用一个私有静态的成员变量保存<br>3、对外提供一个公开的静态的函数供别人获取这个唯一实例对象<br>
-        
-          </p><p class="article-more-link">
-            <a href="/2019/04/09/JAVA单列设计模式/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://wutongsun.github.io/2019/04/09/JAVA单列设计模式/" data-id="ck1nduyq7000k9apj4uil9ym1" class="article-share-link">Share</a>
+      <a data-url="http://wutongsun.github.io/2019/04/11/JDBC/" data-id="ck1qhco1l001adlpj2you19gi" class="article-share-link">Share</a>
       
       
 	 <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
@@ -486,7 +518,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -528,6 +560,10 @@
       <ul>
         
           <li>
+            <a href="/2019/10/13/redis/">redis</a>
+          </li>
+        
+          <li>
             <a href="/2019/10/12/springboot整合mybatis/">springboot整合mybatis</a>
           </li>
         
@@ -541,10 +577,6 @@
         
           <li>
             <a href="/2019/04/27/CUMT第三次ctf月赛/">CUMT第三次ctf月赛</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/27/Java类加载器/">Java类加载器</a>
           </li>
         
       </ul>

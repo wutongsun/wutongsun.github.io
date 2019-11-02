@@ -7,18 +7,18 @@
   
   <title>Java四大IO抽象类 | Welcome to Wutong&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="InputStream/OutputStream和Reader/writer类是所有IO流类的抽象父类，InputStream此抽象类是表示字节输入流的所有类的父类。InputSteam是一个抽象类，它不可以实例化。 数据的读取需要由它的子类来实现。根据节点的不同，它派生了不同的节点流子类 。继承自InputSteam的流都是用于向程序中输入数据，且数据的单位为字节(8 bit) 常用方法： in">
+  <meta name="description" content="InputStream/OutputStream和Reader/writer类是所有IO流类的抽象父类，InputStream">
 <meta name="keywords" content="IO">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java四大IO抽象类">
 <meta property="og:url" content="http://wutongsun.github.io/2019/03/16/JAVA四大IO抽象类/index.html">
 <meta property="og:site_name" content="Welcome to Wutong&#39;s Blog">
-<meta property="og:description" content="InputStream/OutputStream和Reader/writer类是所有IO流类的抽象父类，InputStream此抽象类是表示字节输入流的所有类的父类。InputSteam是一个抽象类，它不可以实例化。 数据的读取需要由它的子类来实现。根据节点的不同，它派生了不同的节点流子类 。继承自InputSteam的流都是用于向程序中输入数据，且数据的单位为字节(8 bit) 常用方法： in">
+<meta property="og:description" content="InputStream/OutputStream和Reader/writer类是所有IO流类的抽象父类，InputStream">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-16T15:00:20.152Z">
+<meta property="og:updated_time" content="2019-11-02T02:14:30.034Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java四大IO抽象类">
-<meta name="twitter:description" content="InputStream/OutputStream和Reader/writer类是所有IO流类的抽象父类，InputStream此抽象类是表示字节输入流的所有类的父类。InputSteam是一个抽象类，它不可以实例化。 数据的读取需要由它的子类来实现。根据节点的不同，它派生了不同的节点流子类 。继承自InputSteam的流都是用于向程序中输入数据，且数据的单位为字节(8 bit) 常用方法： in">
+<meta name="twitter:description" content="InputStream/OutputStream和Reader/writer类是所有IO流类的抽象父类，InputStream">
   
     <link rel="alternate" href="/atom.xml" title="Welcome to Wutong&#39;s Blog" type="application/atom+xml">
   
@@ -95,32 +95,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="InputStream-OutputStream和Reader-writer类是所有IO流类的抽象父类，"><a href="#InputStream-OutputStream和Reader-writer类是所有IO流类的抽象父类，" class="headerlink" title="InputStream/OutputStream和Reader/writer类是所有IO流类的抽象父类，"></a>InputStream/OutputStream和Reader/writer类是所有IO流类的抽象父类，</h2><h2 id="InputStream"><a href="#InputStream" class="headerlink" title="InputStream"></a>InputStream</h2><p>此抽象类是表示字节输入流的所有类的父类。InputSteam是一个抽象类，它不可以实例化。 数据的读取需要由它的子类来实现。根据节点的不同，它派生了不同的节点流子类 。<br>继承自InputSteam的流都是用于向程序中输入数据，且数据的单位为字节(8 bit)</p>
-<h3 id="常用方法："><a href="#常用方法：" class="headerlink" title="常用方法："></a>常用方法：</h3><blockquote>
-<p>int read()：读取一个字节的数据，并将字节的值作为int类型返回(0-255之间的一个值)。如果未读出字节则返回-1(返回值为-1表示读取结束)。<br>void close()：关闭输入流对象，释放相关系统资源。</p>
-</blockquote>
-<a id="more"></a>
-<hr>
-<h2 id="OutputStream"><a href="#OutputStream" class="headerlink" title="OutputStream"></a>OutputStream</h2><p>此抽象类是表示字节输出流的所有类的父类。输出流接收输出字节并将这些字节发送到某个目的地。<br>常用方法：</p>
-<blockquote>
-<p>void write(int n)：向目的地中写入一个字节。<br>void close()：关闭输出流对象，释放相关系统资源。</p>
-</blockquote>
-<hr>
-<h2 id="Reader"><a href="#Reader" class="headerlink" title="Reader"></a>Reader</h2><p>Reader用于读取的字符流抽象类，数据单位为字符。</p>
-<blockquote>
-<p>int read(): 读取一个字符的数据，并将字符的值作为int类型返回(0-65535之间的一个值，即Unicode值)。如果未读出字符则返回-1(返回值为-1表示读取结束)。<br>void close() ： 关闭流对象，释放相关系统资源。</p>
-</blockquote>
-<hr>
-<h2 id="Writer"><a href="#Writer" class="headerlink" title="Writer"></a>Writer</h2><p>Writer用于写入的字符流抽象类，数据单位为字符。</p>
-<blockquote>
-<p>void write(int n)： 向输出流中写入一个字符。<br>void close() ： 关闭输出流对象，释放相关系统资源。</p>
-</blockquote>
+        <h2 id="InputStream-OutputStream和Reader-writer类是所有IO流类的抽象父类，"><a href="#InputStream-OutputStream和Reader-writer类是所有IO流类的抽象父类，" class="headerlink" title="InputStream/OutputStream和Reader/writer类是所有IO流类的抽象父类，"></a>InputStream/OutputStream和Reader/writer类是所有IO流类的抽象父类，</h2><h2 id="InputStream"><a href="#InputStream" class="headerlink" title="InputStream"></a>InputStream</h2><a id="more"></a>
+<p>此抽象类是表示字节输入流的所有类的父类。InputSteam是一个抽象类，它不可以实例化。 数据的读取需要由它的子类来实现。根据节点的不同，它派生了不同的节点流子类 。<br>继承自InputSteam的流都是用于向程序中输入数据，且数据的单位为字节(8 bit)</p>
+<h3 id="常用方法："><a href="#常用方法：" class="headerlink" title="常用方法："></a>常用方法：</h3><p>int read()：读取一个字节的数据，并将字节的值作为int类型返回(0-255之间的一个值)。如果未读出字节则返回-1(返回值为-1表示读取结束)。<br>void close()：关闭输入流对象，释放相关系统资源。</p>
+<h2 id="OutputStream"><a href="#OutputStream" class="headerlink" title="OutputStream"></a>OutputStream</h2><p>此抽象类是表示字节输出流的所有类的父类。输出流接收输出字节并将这些字节发送到某个目的地。<br>常用方法：<br>void write(int n)：向目的地中写入一个字节。<br>void close()：关闭输出流对象，释放相关系统资源。</p>
+<h2 id="Reader"><a href="#Reader" class="headerlink" title="Reader"></a>Reader</h2><p>Reader用于读取的字符流抽象类，数据单位为字符。<br>int read(): 读取一个字符的数据，并将字符的值作为int类型返回(0-65535之间的一个值，即Unicode值)。如果未读出字符则返回-1(返回值为-1表示读取结束)。<br>void close() ： 关闭流对象，释放相关系统资源。</p>
+<h2 id="Writer"><a href="#Writer" class="headerlink" title="Writer"></a>Writer</h2><p>Writer用于写入的字符流抽象类，数据单位为字符。<br>void write(int n)： 向输出流中写入一个字符。<br>void close() ： 关闭输出流对象，释放相关系统资源。</p>
 <p>把Java对象转换为字节序列的过程称为对象的序列化。<br>把字节序列恢复为Java对象的过程称为对象的反序列化</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wutongsun.github.io/2019/03/16/JAVA四大IO抽象类/" data-id="ck2g6sppj000ks6pjqp28hzg7" class="article-share-link">Share</a>
+      <a data-url="http://wutongsun.github.io/2019/03/16/JAVA四大IO抽象类/" data-id="ck2h797tx000culpjm3zan8m3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IO/">IO</a></li></ul>
@@ -170,7 +156,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -180,7 +166,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/command/">command</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ctf/">ctf</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/language/">language</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计网/">计网</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">24</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/command/">command</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ctf/">ctf</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/language/">language</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计网/">计网</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -190,7 +176,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IO/">IO</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UDP/">UDP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot-Druid/">springboot Druid</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot-maven/">springboot maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot-mybatis/">springboot mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminal/">terminal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/方法/">方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/类加载机制/">类加载机制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/装饰模式/">装饰模式</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IO/">IO</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UDP/">UDP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hibernate/">hibernate</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot-Druid/">springboot Druid</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot-maven/">springboot maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot-mybatis/">springboot mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminal/">terminal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/类加载机制/">类加载机制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/装饰模式/">装饰模式</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -200,7 +186,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/IO/" style="font-size: 15px;">IO</a> <a href="/tags/TCP/" style="font-size: 10px;">TCP</a> <a href="/tags/UDP/" style="font-size: 15px;">UDP</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/springboot/" style="font-size: 20px;">springboot</a> <a href="/tags/springboot-Druid/" style="font-size: 10px;">springboot Druid</a> <a href="/tags/springboot-maven/" style="font-size: 10px;">springboot maven</a> <a href="/tags/springboot-mybatis/" style="font-size: 10px;">springboot mybatis</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a> <a href="/tags/tools/" style="font-size: 15px;">tools</a> <a href="/tags/方法/" style="font-size: 10px;">方法</a> <a href="/tags/类加载机制/" style="font-size: 10px;">类加载机制</a> <a href="/tags/装饰模式/" style="font-size: 10px;">装饰模式</a>
+      <a href="/tags/IO/" style="font-size: 15px;">IO</a> <a href="/tags/TCP/" style="font-size: 10px;">TCP</a> <a href="/tags/UDP/" style="font-size: 15px;">UDP</a> <a href="/tags/hibernate/" style="font-size: 10px;">hibernate</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/springboot/" style="font-size: 20px;">springboot</a> <a href="/tags/springboot-Druid/" style="font-size: 10px;">springboot Druid</a> <a href="/tags/springboot-maven/" style="font-size: 10px;">springboot maven</a> <a href="/tags/springboot-mybatis/" style="font-size: 10px;">springboot mybatis</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a> <a href="/tags/tools/" style="font-size: 15px;">tools</a> <a href="/tags/类加载机制/" style="font-size: 10px;">类加载机制</a> <a href="/tags/装饰模式/" style="font-size: 10px;">装饰模式</a>
     </div>
   </div>
 
@@ -210,6 +196,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/11/02/hibernate/">hibernate</a>
+          </li>
         
           <li>
             <a href="/2019/10/30/Java杂文/">Java杂文</a>
@@ -225,10 +215,6 @@
         
           <li>
             <a href="/2019/10/27/spring注解/">spring注解</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/27/springboot配置文件注入/">springboot配置文件注入</a>
           </li>
         
       </ul>

@@ -7,21 +7,21 @@
   
   <title>Java容器如何选? | Welcome to Wutong&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="泛型&amp;lt;T,EV&amp;gt;泛型的本质就是“数据类型的参数化”。 我们可以把“泛型”理解为数据类型的一个占位符(形式参数)，即告诉编译器，在调用泛型时必须传入实际类型。 容器相关类都定义了泛型，我们在开发和工作中，在使用容器类时都要使用泛型。这样，在容器的存储数据、读取数据时都避免了大量的类型判断，非常便捷 Collection、List、Set、Map、Iterator接口都定义了泛型Coll">
+  <meta name="description" content="泛型&amp;lt;T,EV&amp;gt;">
 <meta name="keywords" content="tools">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java容器如何选?">
 <meta property="og:url" content="http://wutongsun.github.io/2019/03/15/JAVA容器/index.html">
 <meta property="og:site_name" content="Welcome to Wutong&#39;s Blog">
-<meta property="og:description" content="泛型&amp;lt;T,EV&amp;gt;泛型的本质就是“数据类型的参数化”。 我们可以把“泛型”理解为数据类型的一个占位符(形式参数)，即告诉编译器，在调用泛型时必须传入实际类型。 容器相关类都定义了泛型，我们在开发和工作中，在使用容器类时都要使用泛型。这样，在容器的存储数据、读取数据时都避免了大量的类型判断，非常便捷 Collection、List、Set、Map、Iterator接口都定义了泛型Coll">
+<meta property="og:description" content="泛型&amp;lt;T,EV&amp;gt;">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://wutongsun.github.io/2019/03/15/JAVA容器/容器.png">
 <meta property="og:image" content="http://www.sxt.cn/360shop/Public/admin/UEditor/20170524/1495614959696503.png">
 <meta property="og:image" content="http://www.sxt.cn/360shop/Public/admin/UEditor/20170524/1495616843888130.png">
-<meta property="og:updated_time" content="2019-04-26T12:35:22.920Z">
+<meta property="og:updated_time" content="2019-11-02T02:27:35.349Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java容器如何选?">
-<meta name="twitter:description" content="泛型&amp;lt;T,EV&amp;gt;泛型的本质就是“数据类型的参数化”。 我们可以把“泛型”理解为数据类型的一个占位符(形式参数)，即告诉编译器，在调用泛型时必须传入实际类型。 容器相关类都定义了泛型，我们在开发和工作中，在使用容器类时都要使用泛型。这样，在容器的存储数据、读取数据时都避免了大量的类型判断，非常便捷 Collection、List、Set、Map、Iterator接口都定义了泛型Coll">
+<meta name="twitter:description" content="泛型&amp;lt;T,EV&amp;gt;">
 <meta name="twitter:image" content="http://wutongsun.github.io/2019/03/15/JAVA容器/容器.png">
   
     <link rel="alternate" href="/atom.xml" title="Welcome to Wutong&#39;s Blog" type="application/atom+xml">
@@ -100,34 +100,34 @@
     <div class="article-entry" itemprop="articleBody">
       
         <img src="/2019/03/15/JAVA容器/容器.png">
-<h3 id="泛型-lt-T-EV-gt"><a href="#泛型-lt-T-EV-gt" class="headerlink" title="泛型&lt;T,EV&gt;"></a>泛型&lt;T,EV&gt;</h3><p>泛型的本质就是“数据类型的参数化”。 我们可以把“泛型”理解为数据类型的一个占位符(形式参数)，即告诉编译器，在调用泛型时必须传入实际类型。</p>
+<h3 id="泛型-lt-T-EV-gt"><a href="#泛型-lt-T-EV-gt" class="headerlink" title="泛型&lt;T,EV&gt;"></a>泛型&lt;T,EV&gt;</h3><a id="more"></a>
+<p>泛型的本质就是“数据类型的参数化”。 我们可以把“泛型”理解为数据类型的一个占位符(形式参数)，即告诉编译器，在调用泛型时必须传入实际类型。</p>
 <p>容器相关类都定义了泛型，我们在开发和工作中，在使用容器类时都要使用泛型。这样，在容器的存储数据、读取数据时都避免了大量的类型判断，非常便捷</p>
 <h2 id="Collection、List、Set、Map、Iterator接口都定义了泛型"><a href="#Collection、List、Set、Map、Iterator接口都定义了泛型" class="headerlink" title="Collection、List、Set、Map、Iterator接口都定义了泛型"></a>Collection、List、Set、Map、Iterator接口都定义了泛型</h2><p>Collection接口中定义的方法</p>
-<h2 id><a href="#" class="headerlink" title></a><img src="http://www.sxt.cn/360shop/Public/admin/UEditor/20170524/1495614959696503.png" alt="j.png"></h2><a id="more"></a>
-<h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><p> List是有序、可重复的容器。<br>有序：List中每个元素都有索引标记。可以根据元素的索引标记(在List中的位置)访问元素，从而精确控制这些元素。</p>
+<h2 id><a href="#" class="headerlink" title></a><img src="http://www.sxt.cn/360shop/Public/admin/UEditor/20170524/1495614959696503.png" alt="j.png"></h2><h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><p> List是有序、可重复的容器。<br>有序：List中每个元素都有索引标记。可以根据元素的索引标记(在List中的位置)访问元素，从而精确控制这些元素。</p>
 <p>可重复：List允许加入重复的元素。更确切地讲，List通常允许满足 e1.equals(e2) 的元素重复加入容器。</p>
 <p>List接口常用的实现类有3个：ArrayList、LinkedList和Vector。</p>
 <h3 id="ArragList"><a href="#ArragList" class="headerlink" title="ArragList"></a>ArragList</h3><p>ArrayList底层是用数组实现的存储。 特点：查询效率高，增删效率低，线程不安全。但我们一般使用它。<br>数组长度是有限的，而ArrayList是可以存放任意数量的对象，长度不受限制</p>
 <h3 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h3><p>LinkedList底层用双向链表实现的存储。特点：查询效率低，增删效率高，线程不安全。<br><img src="http://www.sxt.cn/360shop/Public/admin/UEditor/20170524/1495616843888130.png" alt="j.png"></p>
 <h3 id="Vector"><a href="#Vector" class="headerlink" title="Vector"></a>Vector</h3><p>Vector底层是用数组实现的List，相关的方法都加了同步检查，因此“线程安全,效率低”。</p>
 <h3 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h3><p>如何选用ArrayList、LinkedList、Vector?</p>
-<pre><code>1. 需要线程安全时，用Vector。
-2. 不存在线程安全问题时，并且查找较多用ArrayList(一般使用它)。
-3. 不存在线程安全问题时，增加或删除元素较多用LinkedList。
-</code></pre><h2 id="Map接口"><a href="#Map接口" class="headerlink" title="Map接口"></a>Map接口</h2><p>Map是用来存储“键(key)-值(value) 对”的。 Map类中存储的“键值对”通过键来标识，所以“键对象”不能重复。<br>Map 接口的实现类有HashMap、TreeMap、HashTable、Properties等</p>
+<ol>
+<li>需要线程安全时，用Vector。</li>
+<li>不存在线程安全问题时，并且查找较多用ArrayList(一般使用它)。</li>
+<li>不存在线程安全问题时，增加或删除元素较多用LinkedList。</li>
+</ol>
+<h2 id="Map接口"><a href="#Map接口" class="headerlink" title="Map接口"></a>Map接口</h2><p>Map是用来存储“键(key)-值(value) 对”的。 Map类中存储的“键值对”通过键来标识，所以“键对象”不能重复。<br>Map 接口的实现类有HashMap、TreeMap、HashTable、Properties等</p>
 <h3 id="HashMap和HashTable"><a href="#HashMap和HashTable" class="headerlink" title="HashMap和HashTable"></a>HashMap和HashTable</h3><p>HashMap采用哈希算法实现，是Map接口最常用的实现类。 由于底层采用了哈希表存储数据，我们要求键不能重复，如果发生重复，新的键值对会替换旧的键值对。 HashMap在查找、删除、修改方面都有非常高的效率。</p>
 <p>HashTable类和HashMap用法几乎一样，底层实现几乎一样，只不过HashTable的方法添加了synchronized关键字确保线程同步检查，效率较低。</p>
 <h3 id="HashMap与HashTable的区别"><a href="#HashMap与HashTable的区别" class="headerlink" title="HashMap与HashTable的区别"></a>HashMap与HashTable的区别</h3><ol>
-<li><p>HashMap: 线程不安全，效率高。允许key或value为null。</p>
-</li>
-<li><p>HashTable: 线程安全，效率低。不允许key或value为null。</p>
-</li>
+<li>HashMap: 线程不安全，效率高。允许key或value为null。</li>
+<li>HashTable: 线程安全，效率低。不允许key或value为null。</li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wutongsun.github.io/2019/03/15/JAVA容器/" data-id="ck2g6sppv0013s6pjgfnoa49g" class="article-share-link">Share</a>
+      <a data-url="http://wutongsun.github.io/2019/03/15/JAVA容器/" data-id="ck2h797uk000pulpjhjqmaf95" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li></ul>
@@ -177,7 +177,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -187,7 +187,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/command/">command</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ctf/">ctf</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/language/">language</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计网/">计网</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">24</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/command/">command</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ctf/">ctf</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/language/">language</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计网/">计网</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -197,7 +197,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IO/">IO</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UDP/">UDP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot-Druid/">springboot Druid</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot-maven/">springboot maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot-mybatis/">springboot mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminal/">terminal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/方法/">方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/类加载机制/">类加载机制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/装饰模式/">装饰模式</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IO/">IO</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UDP/">UDP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hibernate/">hibernate</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot-Druid/">springboot Druid</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot-maven/">springboot maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot-mybatis/">springboot mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminal/">terminal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/类加载机制/">类加载机制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/装饰模式/">装饰模式</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -207,7 +207,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/IO/" style="font-size: 15px;">IO</a> <a href="/tags/TCP/" style="font-size: 10px;">TCP</a> <a href="/tags/UDP/" style="font-size: 15px;">UDP</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/springboot/" style="font-size: 20px;">springboot</a> <a href="/tags/springboot-Druid/" style="font-size: 10px;">springboot Druid</a> <a href="/tags/springboot-maven/" style="font-size: 10px;">springboot maven</a> <a href="/tags/springboot-mybatis/" style="font-size: 10px;">springboot mybatis</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a> <a href="/tags/tools/" style="font-size: 15px;">tools</a> <a href="/tags/方法/" style="font-size: 10px;">方法</a> <a href="/tags/类加载机制/" style="font-size: 10px;">类加载机制</a> <a href="/tags/装饰模式/" style="font-size: 10px;">装饰模式</a>
+      <a href="/tags/IO/" style="font-size: 15px;">IO</a> <a href="/tags/TCP/" style="font-size: 10px;">TCP</a> <a href="/tags/UDP/" style="font-size: 15px;">UDP</a> <a href="/tags/hibernate/" style="font-size: 10px;">hibernate</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/springboot/" style="font-size: 20px;">springboot</a> <a href="/tags/springboot-Druid/" style="font-size: 10px;">springboot Druid</a> <a href="/tags/springboot-maven/" style="font-size: 10px;">springboot maven</a> <a href="/tags/springboot-mybatis/" style="font-size: 10px;">springboot mybatis</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a> <a href="/tags/tools/" style="font-size: 15px;">tools</a> <a href="/tags/类加载机制/" style="font-size: 10px;">类加载机制</a> <a href="/tags/装饰模式/" style="font-size: 10px;">装饰模式</a>
     </div>
   </div>
 
@@ -217,6 +217,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/11/02/hibernate/">hibernate</a>
+          </li>
         
           <li>
             <a href="/2019/10/30/Java杂文/">Java杂文</a>
@@ -232,10 +236,6 @@
         
           <li>
             <a href="/2019/10/27/spring注解/">spring注解</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/27/springboot配置文件注入/">springboot配置文件注入</a>
           </li>
         
       </ul>

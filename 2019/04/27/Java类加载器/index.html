@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Welcome to Wutong&#39;s Blog">
 <meta property="og:description" content="Java类加载机制1 ClassLoader类加载器，主要作用是将class文件加载到jvm虚拟机中。jvm启动的时候，并不是一次性加载所有的类，而是根据需要动态去加载类，主要分为隐式加载和显示加载。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-18T03:37:15.137Z">
+<meta property="og:updated_time" content="2019-11-02T02:28:06.665Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java类加载器">
 <meta name="twitter:description" content="Java类加载机制1 ClassLoader类加载器，主要作用是将class文件加载到jvm虚拟机中。jvm启动的时候，并不是一次性加载所有的类，而是根据需要动态去加载类，主要分为隐式加载和显示加载。">
@@ -95,13 +95,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Java类加载机制<br>1 ClassLoader类加载器，主要作用是将class文件加载到jvm虚拟机中。jvm启动的时候，并不是一次性加载所有的类，而是根据需要动态去加载类，主要分为隐式加载和显示加载。<br><a id="more"></a><br>隐式加载：程序代码中不通过ClassLoader来加载需要的类，而是通过JVM类自动加载需要的类到内存中。例如，当我们在类中继承或者引用某个类的时候，发现引用的类不在内存中，那么就会自动将这些类加载到内存中<br>显示加载：代码中通过Class.forName(),this.getClass.getClassLoader.LoadClass(),自定义类加载器中的findClass的方法等。<br>2 Jvm自带的加载器<br>1》BootStarp ClassLoader:启动类加载器，主要加载%JRE_HOME%\lib下的rt.jar,resources.jar,charsets.jar和class等。可以通过System.getProperty(“sun.boot.class.path”)查看加载的路径。<br>2》Extention ClassLoader：扩展类加载器，主要加载目录%JRE_HOME%\lib\ext目录下的jar包和class文件。也可以通过System.out.println(System.getProperty(“java.ext.dirs”))查看加载类文件的路径。<br>3》AppClassLoader/System ClassLoader:系统类加载器，主要加载当前应用下的classpath路径下的类。之前我们在环境变量中配置的classpath就是指定AppClassLoader的类加载路径。</p>
+        <p>Java类加载机制<br>1 ClassLoader类加载器，主要作用是将class文件加载到jvm虚拟机中。jvm启动的时候，并不是一次性加载所有的类，而是根据需要动态去加载类，主要分为隐式加载和显示加载。<br><a id="more"></a><br>隐式加载：程序代码中不通过ClassLoader来加载需要的类，而是通过JVM类自动加载需要的类到内存中。例如，当我们在类中继承或者引用某个类的时候，发现引用的类不在内存中，那么就会自动将这些类加载到内存中<br>显示加载：代码中通过Class.forName(),this.getClass.getClassLoader.LoadClass(),自定义类加载器中的findClass的方法等。<br>2 Jvm自带的加载器</p>
+<ol>
+<li>BootStarp ClassLoader:启动类加载器，主要加载%JRE_HOME%\lib下的rt.jar,resources.jar,charsets.jar和class等。可以通过System.getProperty(“sun.boot.class.path”)查看加载的路径。</li>
+<li>Extention ClassLoader：扩展类加载器，主要加载目录%JRE_HOME%\lib\ext目录下的jar包和class文件。也可以通过System.out.println(System.getProperty(“java.ext.dirs”))查看加载类文件的路径。</li>
+<li>AppClassLoader/System ClassLoader:系统类加载器，主要加载当前应用下的classpath路径下的类。之前我们在环境变量中配置的classpath就是指定AppClassLoader的类加载路径。</li>
+</ol>
 <p>3 类加载机制-双亲委托机制<br>当一个类收到了类加载请求，它首先不会尝试自己去加载这个类，而是把这个请求委派给父类去完成，每一个层次类加载都是如此，因此所有的加载请求都应该传送到启动类加载器中，只有当父类加载器反馈自己无法完成这个请求的时候，子类加载器才会尝试自己去加载</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wutongsun.github.io/2019/04/27/Java类加载器/" data-id="ck2g6spq4001ds6pjtoakgtth" class="article-share-link">Share</a>
+      <a data-url="http://wutongsun.github.io/2019/04/27/Java类加载器/" data-id="ck2h797vg001fulpjot8oijec" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/类加载机制/">类加载机制</a></li></ul>
@@ -151,7 +156,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -161,7 +166,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/command/">command</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ctf/">ctf</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/language/">language</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计网/">计网</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">24</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/command/">command</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ctf/">ctf</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/language/">language</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计网/">计网</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -171,7 +176,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IO/">IO</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UDP/">UDP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot-Druid/">springboot Druid</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot-maven/">springboot maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot-mybatis/">springboot mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminal/">terminal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/方法/">方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/类加载机制/">类加载机制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/装饰模式/">装饰模式</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IO/">IO</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UDP/">UDP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hibernate/">hibernate</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot-Druid/">springboot Druid</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot-maven/">springboot maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot-mybatis/">springboot mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminal/">terminal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/类加载机制/">类加载机制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/装饰模式/">装饰模式</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -181,7 +186,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/IO/" style="font-size: 15px;">IO</a> <a href="/tags/TCP/" style="font-size: 10px;">TCP</a> <a href="/tags/UDP/" style="font-size: 15px;">UDP</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/springboot/" style="font-size: 20px;">springboot</a> <a href="/tags/springboot-Druid/" style="font-size: 10px;">springboot Druid</a> <a href="/tags/springboot-maven/" style="font-size: 10px;">springboot maven</a> <a href="/tags/springboot-mybatis/" style="font-size: 10px;">springboot mybatis</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a> <a href="/tags/tools/" style="font-size: 15px;">tools</a> <a href="/tags/方法/" style="font-size: 10px;">方法</a> <a href="/tags/类加载机制/" style="font-size: 10px;">类加载机制</a> <a href="/tags/装饰模式/" style="font-size: 10px;">装饰模式</a>
+      <a href="/tags/IO/" style="font-size: 15px;">IO</a> <a href="/tags/TCP/" style="font-size: 10px;">TCP</a> <a href="/tags/UDP/" style="font-size: 15px;">UDP</a> <a href="/tags/hibernate/" style="font-size: 10px;">hibernate</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/springboot/" style="font-size: 20px;">springboot</a> <a href="/tags/springboot-Druid/" style="font-size: 10px;">springboot Druid</a> <a href="/tags/springboot-maven/" style="font-size: 10px;">springboot maven</a> <a href="/tags/springboot-mybatis/" style="font-size: 10px;">springboot mybatis</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a> <a href="/tags/tools/" style="font-size: 15px;">tools</a> <a href="/tags/类加载机制/" style="font-size: 10px;">类加载机制</a> <a href="/tags/装饰模式/" style="font-size: 10px;">装饰模式</a>
     </div>
   </div>
 
@@ -191,6 +196,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/11/02/hibernate/">hibernate</a>
+          </li>
         
           <li>
             <a href="/2019/10/30/Java杂文/">Java杂文</a>
@@ -206,10 +215,6 @@
         
           <li>
             <a href="/2019/10/27/spring注解/">spring注解</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/27/springboot配置文件注入/">springboot配置文件注入</a>
           </li>
         
       </ul>

@@ -15,7 +15,7 @@
 <meta property="og:description" content="线程的5个状态 1 新生状态(New)">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://www.sxt.cn/360shop/Public/admin/UEditor/20170526/1495787690411518.png">
-<meta property="og:updated_time" content="2019-04-16T15:05:29.743Z">
+<meta property="og:updated_time" content="2019-11-01T13:55:43.100Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java线程状态">
 <meta name="twitter:description" content="线程的5个状态 1 新生状态(New)">
@@ -95,26 +95,22 @@
         <h1 id="线程的5个状态"><a href="#线程的5个状态" class="headerlink" title="线程的5个状态"></a>线程的5个状态</h1><p><img src="http://www.sxt.cn/360shop/Public/admin/UEditor/20170526/1495787690411518.png" alt></p>
 <h2 id="1-新生状态-New"><a href="#1-新生状态-New" class="headerlink" title="1 新生状态(New)"></a>1 新生状态(New)</h2><a id="more"></a>
 <p>用new关键字建立一个线程对象后，该线程对象就处于新生状态。处于新生状态的线程有自己的内存空间，通过调用start方法进入就绪状态。</p>
-<h2 id="2-就绪状态-Runnable"><a href="#2-就绪状态-Runnable" class="headerlink" title="2 就绪状态(Runnable)"></a>2 就绪状态(Runnable)</h2><p> 处于就绪状态的线程已经具备了运行条件，但是还没有被分配到CPU，处于“线程就绪队列”，等待系统为其分配CPU。就绪状态并不是执行状态，当系统选定一个等待执行的Thread对象后，它就会进入执行状态。一旦获得CPU，线程就进入运行状态并自动调用自己的run方法。有4中原因会导致线程进入就绪状态：</p>
-<blockquote>
-<p>新建线程：调用start()方法，进入就绪状态;<br>阻塞线程：阻塞解除，进入就绪状态;<br>运行线程：调用yield()方法，直接进入就绪状态;<br>运行线程：JVM将CPU资源从本线程切换到其他线程。</p>
-</blockquote>
+<h2 id="2-就绪状态-Runnable"><a href="#2-就绪状态-Runnable" class="headerlink" title="2 就绪状态(Runnable)"></a>2 就绪状态(Runnable)</h2><p> 处于就绪状态的线程已经具备了运行条件，但是还没有被分配到CPU，处于“线程就绪队列”，等待系统为其分配CPU。就绪状态并不是执行状态，当系统选定一个等待执行的Thread对象后，它就会进入执行状态。一旦获得CPU，线程就进入运行状态并自动调用自己的run方法。有4中原因会导致线程进入就绪状态：<br>新建线程：调用start()方法，进入就绪状态;<br>阻塞线程：阻塞解除，进入就绪状态;<br>运行线程：调用yield()方法，直接进入就绪状态;<br>运行线程：JVM将CPU资源从本线程切换到其他线程。</p>
 <h2 id="3-运行状态-Running"><a href="#3-运行状态-Running" class="headerlink" title="3 运行状态(Running)"></a>3 运行状态(Running)</h2><p>在运行状态的线程执行自己run方法中的代码，直到调用其他方法而终止或等待某资源而阻塞或完成任务而死亡。如果在给定的时间片内没有执行结束，就会被系统给换下来回到就绪状态。也可能由于某些“导致阻塞的事件”而进入阻塞状态。</p>
 <h2 id="4-阻塞状态-Blocked"><a href="#4-阻塞状态-Blocked" class="headerlink" title="4 阻塞状态(Blocked)"></a>4 阻塞状态(Blocked)</h2><p>阻塞指的是暂停一个线程的执行以等待某个条件发生(如某资源就绪)。有4种原因会导致阻塞：</p>
-<blockquote>
 <ol>
 <li>执行sleep(int millsecond)方法，使当前线程休眠，进入阻塞状态。当指定的时间到了后，线程进入就绪状态。</li>
 <li>执行wait()方法，使当前线程进入阻塞状态。当使用nofity()方法唤醒这个线程后，它进入就绪状态。</li>
 <li>线程运行时，某个操作进入阻塞状态，比如执行IO流操作(read()/write()方法本身就是阻塞的方法)。只有当引起该操作阻塞的原因消失后，线程进入就绪状态。</li>
-<li>join()线程联合: 当某个线程等待另一个线程执行结束后，才能继续执行时，使用join()方法</li>
+<li><p>join()线程联合: 当某个线程等待另一个线程执行结束后，才能继续执行时，使用join()方法</p>
+<h2 id="5-死亡状态-Terminated"><a href="#5-死亡状态-Terminated" class="headerlink" title="5 死亡状态(Terminated)"></a>5 死亡状态(Terminated)</h2><p>死亡状态是线程生命周期中的最后一个阶段。线程死亡的原因有两个。一个是正常运行的线程完成了它run()方法内的全部工作; 另一个是线程被强制终止，如通过执行stop()或destroy()方法来终止一个线程(注：stop()/destroy()方法已经被JDK废弃，不推荐使用)。<br>当一个线程进入死亡状态以后，就不能再回到其它状态了。</p>
+<h3 id="sleep-抱着资源睡觉，yield-礼让cpu，join-只能对象调用阻塞其他线程"><a href="#sleep-抱着资源睡觉，yield-礼让cpu，join-只能对象调用阻塞其他线程" class="headerlink" title="sleep()抱着资源睡觉，yield()礼让cpu，join()只能对象调用阻塞其他线程"></a>sleep()抱着资源睡觉，yield()礼让cpu，join()只能对象调用阻塞其他线程</h3></li>
 </ol>
-</blockquote>
-<h2 id="5-死亡状态-Terminated"><a href="#5-死亡状态-Terminated" class="headerlink" title="5 死亡状态(Terminated)"></a>5 死亡状态(Terminated)</h2><p>死亡状态是线程生命周期中的最后一个阶段。线程死亡的原因有两个。一个是正常运行的线程完成了它run()方法内的全部工作; 另一个是线程被强制终止，如通过执行stop()或destroy()方法来终止一个线程(注：stop()/destroy()方法已经被JDK废弃，不推荐使用)。<br> 当一个线程进入死亡状态以后，就不能再回到其它状态了。</p>
-<h3 id="sleep-抱着资源睡觉，yield-礼让cpu，join-只能对象调用阻塞其他线程"><a href="#sleep-抱着资源睡觉，yield-礼让cpu，join-只能对象调用阻塞其他线程" class="headerlink" title="sleep()抱着资源睡觉，yield()礼让cpu，join()只能对象调用阻塞其他线程"></a>sleep()抱着资源睡觉，yield()礼让cpu，join()只能对象调用阻塞其他线程</h3>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wutongsun.github.io/2019/03/22/JAVA线程状态/" data-id="ck2g6sppq000us6pjxqr51zcz" class="article-share-link">Share</a>
+      <a data-url="http://wutongsun.github.io/2019/03/22/JAVA线程状态/" data-id="ck2h797us0010ulpjrviwxph8" class="article-share-link">Share</a>
       
       
 	 <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
@@ -162,7 +158,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -172,7 +168,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/command/">command</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ctf/">ctf</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/language/">language</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计网/">计网</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">24</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/command/">command</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ctf/">ctf</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/language/">language</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计网/">计网</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -182,7 +178,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IO/">IO</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UDP/">UDP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot-Druid/">springboot Druid</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot-maven/">springboot maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot-mybatis/">springboot mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminal/">terminal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/方法/">方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/类加载机制/">类加载机制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/装饰模式/">装饰模式</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IO/">IO</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UDP/">UDP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hibernate/">hibernate</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot-Druid/">springboot Druid</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot-maven/">springboot maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot-mybatis/">springboot mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminal/">terminal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/类加载机制/">类加载机制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/装饰模式/">装饰模式</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -192,7 +188,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/IO/" style="font-size: 15px;">IO</a> <a href="/tags/TCP/" style="font-size: 10px;">TCP</a> <a href="/tags/UDP/" style="font-size: 15px;">UDP</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/springboot/" style="font-size: 20px;">springboot</a> <a href="/tags/springboot-Druid/" style="font-size: 10px;">springboot Druid</a> <a href="/tags/springboot-maven/" style="font-size: 10px;">springboot maven</a> <a href="/tags/springboot-mybatis/" style="font-size: 10px;">springboot mybatis</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a> <a href="/tags/tools/" style="font-size: 15px;">tools</a> <a href="/tags/方法/" style="font-size: 10px;">方法</a> <a href="/tags/类加载机制/" style="font-size: 10px;">类加载机制</a> <a href="/tags/装饰模式/" style="font-size: 10px;">装饰模式</a>
+      <a href="/tags/IO/" style="font-size: 15px;">IO</a> <a href="/tags/TCP/" style="font-size: 10px;">TCP</a> <a href="/tags/UDP/" style="font-size: 15px;">UDP</a> <a href="/tags/hibernate/" style="font-size: 10px;">hibernate</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/springboot/" style="font-size: 20px;">springboot</a> <a href="/tags/springboot-Druid/" style="font-size: 10px;">springboot Druid</a> <a href="/tags/springboot-maven/" style="font-size: 10px;">springboot maven</a> <a href="/tags/springboot-mybatis/" style="font-size: 10px;">springboot mybatis</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a> <a href="/tags/tools/" style="font-size: 15px;">tools</a> <a href="/tags/类加载机制/" style="font-size: 10px;">类加载机制</a> <a href="/tags/装饰模式/" style="font-size: 10px;">装饰模式</a>
     </div>
   </div>
 
@@ -202,6 +198,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/11/02/hibernate/">hibernate</a>
+          </li>
         
           <li>
             <a href="/2019/10/30/Java杂文/">Java杂文</a>
@@ -217,10 +217,6 @@
         
           <li>
             <a href="/2019/10/27/spring注解/">spring注解</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/27/springboot配置文件注入/">springboot配置文件注入</a>
           </li>
         
       </ul>

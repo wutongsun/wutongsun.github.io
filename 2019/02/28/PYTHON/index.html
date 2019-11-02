@@ -7,18 +7,18 @@
   
   <title>Python | Welcome to Wutong&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="post请求和get 请求两种方法 url=“http://”t=requests.session()Get=t.get(url)data={‘’:}Post=t.post(url=url,data=data)    r2=requests.get(url)">
+  <meta name="description" content="post请求和get 请求两种方法">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python">
 <meta property="og:url" content="http://wutongsun.github.io/2019/02/28/PYTHON/index.html">
 <meta property="og:site_name" content="Welcome to Wutong&#39;s Blog">
-<meta property="og:description" content="post请求和get 请求两种方法 url=“http://”t=requests.session()Get=t.get(url)data={‘’:}Post=t.post(url=url,data=data)    r2=requests.get(url)">
+<meta property="og:description" content="post请求和get 请求两种方法">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-10-13T11:12:49.815Z">
+<meta property="og:updated_time" content="2019-11-02T02:29:33.078Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python">
-<meta name="twitter:description" content="post请求和get 请求两种方法 url=“http://”t=requests.session()Get=t.get(url)data={‘’:}Post=t.post(url=url,data=data)    r2=requests.get(url)">
+<meta name="twitter:description" content="post请求和get 请求两种方法">
   
     <link rel="alternate" href="/atom.xml" title="Welcome to Wutong&#39;s Blog" type="application/atom+xml">
   
@@ -95,36 +95,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="post请求和get-请求"><a href="#post请求和get-请求" class="headerlink" title="post请求和get 请求"></a>post请求和get 请求</h2><h4 id="两种方法"><a href="#两种方法" class="headerlink" title="两种方法"></a>两种方法</h4><blockquote>
-<p>url=“http://”<br>t=requests.session()<br>Get=t.get(url)<br>data={‘’:}<br>Post=t.post(url=url,data=data)</p>
-</blockquote>
-<hr>
-<blockquote>
-<p>r2=requests.get(url)<br><a id="more"></a></p>
-</blockquote>
-<p>两者之间的区别：后者每次都是一次全新的请求，而前者不是，会记录session() cookies </p>
-<hr>
-<h2 id="读文件（utf-8编码"><a href="#读文件（utf-8编码" class="headerlink" title="读文件（utf-8编码)"></a>读文件（utf-8编码)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ from urllib import request</span><br><span class="line">$ from urllib import parse </span><br><span class="line"></span><br><span class="line">$ r=request.urlopen(url)</span><br><span class="line">$ txt=r.read()</span><br><span class="line"></span><br><span class="line">$ txt=txt.decode(‘utf-8’)</span><br><span class="line">$ <span class="keyword">if</span>(‘flag’ <span class="keyword">in</span> page or ‘ctf’ <span class="keyword">in</span> txt):</span><br><span class="line">$   <span class="built_in">print</span>(txt.text)</span><br><span class="line">$   time.sleep(5)    <span class="comment">#延时5秒</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><hr>
-<p><code></code></p>
-<p>for i in range(1,51)</p>
-<p>for letter in ‘python’:</p>
-<p>print ‘当前字母’, letter </p>
-<p>fruits=‘banana’,’apple’,’mango’]</p>
-<p>for fruit in fruits:</p>
-<p>print ‘当前水果:’, fruit</p>
-<p><code></code></p>
-<blockquote>
-</blockquote>
-<h2 id="数组a复制给数组b"><a href="#数组a复制给数组b" class="headerlink" title="数组a复制给数组b"></a>数组a复制给数组b</h2><blockquote>
-<p>a=[1,2,3]<br>b=a[:]</p>
-</blockquote>
+        <h2 id="post请求和get-请求"><a href="#post请求和get-请求" class="headerlink" title="post请求和get 请求"></a>post请求和get 请求</h2><h4 id="两种方法"><a href="#两种方法" class="headerlink" title="两种方法"></a>两种方法</h4><a id="more"></a>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">url=“http://”</span><br><span class="line">t=requests.session()</span><br><span class="line">Get=t.get(url)</span><br><span class="line">data=&#123;‘’:&#125;</span><br><span class="line">Post=t.post(url=url,data=data)</span><br><span class="line">r2=requests.get(url)</span><br><span class="line">两者之间的区别：后者每次都是一次全新的请求，而前者不是，会记录session() cookies</span><br></pre></td></tr></table></figure>
+<h2 id="读文件（utf-8编码"><a href="#读文件（utf-8编码" class="headerlink" title="读文件（utf-8编码)"></a>读文件（utf-8编码)</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> parse </span><br><span class="line"></span><br><span class="line">r=request.urlopen(url)</span><br><span class="line">txt=r.read()</span><br><span class="line"></span><br><span class="line">txt=txt.decode(‘utf<span class="number">-8</span>’)</span><br><span class="line"><span class="keyword">if</span>(‘flag’ <span class="keyword">in</span> page <span class="keyword">or</span> ‘ctf’ <span class="keyword">in</span> txt):</span><br><span class="line">   print(txt.text)</span><br><span class="line">   time.sleep(<span class="number">5</span>)    <span class="comment">#延时5秒</span></span><br></pre></td></tr></table></figure>
+<h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">51</span>)</span><br><span class="line"><span class="keyword">for</span> letter <span class="keyword">in</span> <span class="string">'python'</span>:</span><br><span class="line"><span class="keyword">print</span> <span class="string">'当前字母'</span>, letter </span><br><span class="line">fruits=‘banana’,’apple’,’mango’]</span><br><span class="line"><span class="keyword">for</span> fruit <span class="keyword">in</span> fruits:</span><br><span class="line"><span class="keyword">print</span> ‘当前水果:’, fruit</span><br></pre></td></tr></table></figure>
+<h2 id="数组a复制给数组b"><a href="#数组a复制给数组b" class="headerlink" title="数组a复制给数组b"></a>数组a复制给数组b</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">b=a[:]</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wutongsun.github.io/2019/02/28/PYTHON/" data-id="ck2g6spq5001hs6pjhdh1wop6" class="article-share-link">Share</a>
+      <a data-url="http://wutongsun.github.io/2019/02/28/PYTHON/" data-id="ck2h797vh001julpjvho31wni" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -174,7 +154,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -184,7 +164,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/command/">command</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ctf/">ctf</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/language/">language</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计网/">计网</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">24</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/command/">command</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ctf/">ctf</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/language/">language</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计网/">计网</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -194,7 +174,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IO/">IO</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UDP/">UDP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot-Druid/">springboot Druid</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot-maven/">springboot maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot-mybatis/">springboot mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminal/">terminal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/方法/">方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/类加载机制/">类加载机制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/装饰模式/">装饰模式</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IO/">IO</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UDP/">UDP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hibernate/">hibernate</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot-Druid/">springboot Druid</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot-maven/">springboot maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot-mybatis/">springboot mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminal/">terminal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/类加载机制/">类加载机制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/装饰模式/">装饰模式</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -204,7 +184,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/IO/" style="font-size: 15px;">IO</a> <a href="/tags/TCP/" style="font-size: 10px;">TCP</a> <a href="/tags/UDP/" style="font-size: 15px;">UDP</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/springboot/" style="font-size: 20px;">springboot</a> <a href="/tags/springboot-Druid/" style="font-size: 10px;">springboot Druid</a> <a href="/tags/springboot-maven/" style="font-size: 10px;">springboot maven</a> <a href="/tags/springboot-mybatis/" style="font-size: 10px;">springboot mybatis</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a> <a href="/tags/tools/" style="font-size: 15px;">tools</a> <a href="/tags/方法/" style="font-size: 10px;">方法</a> <a href="/tags/类加载机制/" style="font-size: 10px;">类加载机制</a> <a href="/tags/装饰模式/" style="font-size: 10px;">装饰模式</a>
+      <a href="/tags/IO/" style="font-size: 15px;">IO</a> <a href="/tags/TCP/" style="font-size: 10px;">TCP</a> <a href="/tags/UDP/" style="font-size: 15px;">UDP</a> <a href="/tags/hibernate/" style="font-size: 10px;">hibernate</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/springboot/" style="font-size: 20px;">springboot</a> <a href="/tags/springboot-Druid/" style="font-size: 10px;">springboot Druid</a> <a href="/tags/springboot-maven/" style="font-size: 10px;">springboot maven</a> <a href="/tags/springboot-mybatis/" style="font-size: 10px;">springboot mybatis</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a> <a href="/tags/tools/" style="font-size: 15px;">tools</a> <a href="/tags/类加载机制/" style="font-size: 10px;">类加载机制</a> <a href="/tags/装饰模式/" style="font-size: 10px;">装饰模式</a>
     </div>
   </div>
 
@@ -214,6 +194,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/11/02/hibernate/">hibernate</a>
+          </li>
         
           <li>
             <a href="/2019/10/30/Java杂文/">Java杂文</a>
@@ -229,10 +213,6 @@
         
           <li>
             <a href="/2019/10/27/spring注解/">spring注解</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/27/springboot配置文件注入/">springboot配置文件注入</a>
           </li>
         
       </ul>

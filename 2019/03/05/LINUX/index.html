@@ -7,18 +7,18 @@
   
   <title>linux常用命令汇总 | Welcome to Wutong&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Linux常用命令1 目录操作 cd ./a　切换到当前目录的a文件夹cd .. 　切换到上一层目录cd /　　切换到系统根目录cd ~　　切换到用户主目录cd -　　切换到上一个所在目录   pwd　　显示当前所在目录的绝对路径  2 查看文件列表 ls /path/显示该目录所有文件或文件夹名ls -a　　显示所有文件或文件夹名（包含隐藏的）ls -l　　按列表显示所有文件或文件夹，缩写成ll">
+  <meta name="description" content="Linux常用命令1 目录操作">
 <meta name="keywords" content="linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux常用命令汇总">
 <meta property="og:url" content="http://wutongsun.github.io/2019/03/05/LINUX/index.html">
 <meta property="og:site_name" content="Welcome to Wutong&#39;s Blog">
-<meta property="og:description" content="Linux常用命令1 目录操作 cd ./a　切换到当前目录的a文件夹cd .. 　切换到上一层目录cd /　　切换到系统根目录cd ~　　切换到用户主目录cd -　　切换到上一个所在目录   pwd　　显示当前所在目录的绝对路径  2 查看文件列表 ls /path/显示该目录所有文件或文件夹名ls -a　　显示所有文件或文件夹名（包含隐藏的）ls -l　　按列表显示所有文件或文件夹，缩写成ll">
+<meta property="og:description" content="Linux常用命令1 目录操作">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-16T15:05:07.364Z">
+<meta property="og:updated_time" content="2019-11-02T02:25:59.328Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux常用命令汇总">
-<meta name="twitter:description" content="Linux常用命令1 目录操作 cd ./a　切换到当前目录的a文件夹cd .. 　切换到上一层目录cd /　　切换到系统根目录cd ~　　切换到用户主目录cd -　　切换到上一个所在目录   pwd　　显示当前所在目录的绝对路径  2 查看文件列表 ls /path/显示该目录所有文件或文件夹名ls -a　　显示所有文件或文件夹名（包含隐藏的）ls -l　　按列表显示所有文件或文件夹，缩写成ll">
+<meta name="twitter:description" content="Linux常用命令1 目录操作">
   
     <link rel="alternate" href="/atom.xml" title="Welcome to Wutong&#39;s Blog" type="application/atom+xml">
   
@@ -95,95 +95,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Linux常用命令"><a href="#Linux常用命令" class="headerlink" title="Linux常用命令"></a>Linux常用命令</h1><h2 id="1-目录操作"><a href="#1-目录操作" class="headerlink" title="1 目录操作"></a>1 目录操作</h2><blockquote>
-<p>cd ./a　切换到当前目录的a文件夹<br>cd .. 　切换到上一层目录<br>cd /　　切换到系统根目录<br>cd ~　　切换到用户主目录<br>cd -　　切换到上一个所在目录</p>
-</blockquote>
-<blockquote>
-<p>pwd　　显示当前所在目录的绝对路径</p>
-</blockquote>
-<h2 id="2-查看文件列表"><a href="#2-查看文件列表" class="headerlink" title="2 查看文件列表"></a>2 查看文件列表</h2><blockquote>
-<p>ls /path/显示该目录所有文件或文件夹名<br>ls -a　　显示所有文件或文件夹名（包含隐藏的）<br>ls -l　　按列表显示所有文件或文件夹，缩写成ll</p>
-</blockquote>
-<blockquote>
-<p>ll -h　　友好的显示文件大小（显示成K，MB，GB）<br><a id="more"></a></p>
-</blockquote>
-<h2 id="3-创建和删除文件夹"><a href="#3-创建和删除文件夹" class="headerlink" title="3 创建和删除文件夹"></a>3 创建和删除文件夹</h2><blockquote>
-<p>mkdir app 创建app文件夹<br>makdir -p test1/test2 级联创建文件夹</p>
-</blockquote>
-<blockquote>
-<p>rmdir app 删除文件夹</p>
-</blockquote>
-<h2 id="4文件操作"><a href="#4文件操作" class="headerlink" title="4文件操作"></a>4文件操作</h2><blockquote>
-<p>rm a.txt 删除文件，需要确认<br>rm -f a.txt 不询问，直接删除文件<br>rm -rf <em> 不询问直接删除当前目录下所有文件<br>rm -rf /</em> no作no die,why you try!</p>
-</blockquote>
-<blockquote>
-<p>cp 1.txt 2.txt 将1.txt复制为b.txt文件<br>cp a.txt ../ 将a.txt文件负责到上一层目录文件中</p>
-</blockquote>
-<blockquote>
-<p>mv a.txt ../ 将a.txt文件移动到上一层目录中</p>
-</blockquote>
-<blockquote>
-<p>touch 1.txt 创建一个空的文件夹</p>
-</blockquote>
-<blockquote>
-<p>echo “hello”&gt;1.txt 把“&gt;“左边的输出内容放到右边的文件里去，如果存在就覆盖</p>
-</blockquote>
-<blockquote>
-<p>vi 1.txt 用vi编辑文本</p>
-</blockquote>
-<h2 id="5-文件打包归档和压缩"><a href="#5-文件打包归档和压缩" class="headerlink" title="5 文件打包归档和压缩"></a>5 文件打包归档和压缩</h2><blockquote>
-<p>tar -cvf test.tar path1 path2 将path1和path2文件夹在当前目录下打包并压缩为test.tar<br>tar -xzvf file.tar.gz 在当前目录下解压文件<br>tar -xzvf file.tar.gz -C ../解压到上一层目录中</p>
-</blockquote>
-<blockquote>
-<p>zip test.txt.zip test.txt 打包并压缩<br>unzip text.txt.zip 解压</p>
-</blockquote>
-<p>tar常用参数:<br>-c: 创建一个新的tar文件<br>-v: 显示运行过程的信息<br>-f: 指定文件名<br>-z: 调用gzip 压缩命令进行压缩<br>-t：查看压缩文件内容<br>-x: 解开tar文件</p>
-<h2 id="6-文件查找"><a href="#6-文件查找" class="headerlink" title="6 文件查找"></a>6 文件查找</h2><blockquote>
-<p>find ./ -name ‘<em>.txt’ 查找以.txt结尾的文件(遍历当前目录)<br>find ./ -name ‘in</em>‘ 查找以in开头的文件<br>find ./ -type f 查找普通文件<br>find ./ -type l 查找连接文件</p>
-</blockquote>
-<h2 id="7-查看文本内容"><a href="#7-查看文本内容" class="headerlink" title="7 查看文本内容"></a>7 查看文本内容</h2><blockquote>
-<p>cat 1.txt 显示文件所有内容<br>more 1.txt  可以分页看<br>less 1.txt 不仅可以分页，还可以方便搜索<br>head -30 1.txt 查看文件前30行<br>tail -20 1.txt 查看文件尾部20行</p>
-</blockquote>
-<h2 id="8-其他常用命令"><a href="#8-其他常用命令" class="headerlink" title="8 其他常用命令"></a>8 其他常用命令</h2><blockquote>
-<p>echo $ JAVA_HOME  输出变量值</p>
-</blockquote>
-<blockquote>
-<p>whoami 查询当前登陆的用户名<br>mkdir test&amp;&amp;cd test</p>
-</blockquote>
-<h2 id="9-添加用户"><a href="#9-添加用户" class="headerlink" title="9 添加用户"></a>9 添加用户</h2><blockquote>
-<p>useradd user1<br>passwd 123456</p>
-</blockquote>
-<p>-u 指定组ID（uid）<br>-g 指定所属的组名（gid）<br>-G 指定多个组，用逗号“，”分开（Groups）<br>-c 用户描述（comment）<br>-d 指定用户目录<br>-e 失效时间（expire date）</p>
-<h2 id="10-删除用户"><a href="#10-删除用户" class="headerlink" title="10 删除用户"></a>10 删除用户</h2><blockquote>
-<p>userdel user1</p>
-</blockquote>
-<h2 id="11-修改用户属性"><a href="#11-修改用户属性" class="headerlink" title="11 修改用户属性"></a>11 修改用户属性</h2><blockquote>
-<p>usermod -l user2 user1   user1-&gt;user2<br>usermod -g root usr1 改为root权限<br>usermod -G h1,h2 user1 给user1添加两个组h1,h2<br>usermod -d /home/ user1 更改目录</p>
-</blockquote>
+        <h1 id="Linux常用命令"><a href="#Linux常用命令" class="headerlink" title="Linux常用命令"></a>Linux常用命令</h1><h2 id="1-目录操作"><a href="#1-目录操作" class="headerlink" title="1 目录操作"></a>1 目录操作</h2><a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ./a　切换到当前目录的a文件夹</span><br><span class="line"><span class="built_in">cd</span> .. 　切换到上一层目录</span><br><span class="line"><span class="built_in">cd</span> /　　切换到系统根目录</span><br><span class="line"><span class="built_in">cd</span> ~　　切换到用户主目录</span><br><span class="line"><span class="built_in">cd</span> -　　切换到上一个所在目录</span><br><span class="line"><span class="built_in">pwd</span>　　显示当前所在目录的绝对路径</span><br></pre></td></tr></table></figure>
+<h2 id="2-查看文件列表"><a href="#2-查看文件列表" class="headerlink" title="2 查看文件列表"></a>2 查看文件列表</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ls /path/显示该目录所有文件或文件夹名</span><br><span class="line">ls -a　　显示所有文件或文件夹名（包含隐藏的）</span><br><span class="line">ls -l　　按列表显示所有文件或文件夹，缩写成ll</span><br><span class="line">ll -h　　友好的显示文件大小（显示成K，MB，GB）</span><br></pre></td></tr></table></figure>
+<h2 id="3-创建和删除文件夹"><a href="#3-创建和删除文件夹" class="headerlink" title="3 创建和删除文件夹"></a>3 创建和删除文件夹</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir app 创建app文件夹</span><br><span class="line">makdir -p test1/test2 级联创建文件夹</span><br><span class="line">rmdir app 删除文件夹</span><br></pre></td></tr></table></figure>
+<h2 id="4文件操作"><a href="#4文件操作" class="headerlink" title="4文件操作"></a>4文件操作</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">rm a.txt 删除文件，需要确认</span><br><span class="line">rm -f a.txt 不询问，直接删除文件</span><br><span class="line">rm -rf * 不询问直接删除当前目录下所有文件</span><br><span class="line">rm -rf /* no作no die,why you try!</span><br><span class="line"></span><br><span class="line">cp 1.txt 2.txt 将1.txt复制为b.txt文件</span><br><span class="line">cp a.txt ../ 将a.txt文件负责到上一层目录文件中</span><br><span class="line"></span><br><span class="line">mv a.txt ../ 将a.txt文件移动到上一层目录中</span><br><span class="line"></span><br><span class="line">touch 1.txt 创建一个空的文件夹</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"hello"</span>&gt;1.txt 把“&gt;“左边的输出内容放到右边的文件里去，如果存在就覆盖</span><br><span class="line">vi 1.txt 用vi编辑文本</span><br></pre></td></tr></table></figure>
+<h2 id="5-文件打包归档和压缩"><a href="#5-文件打包归档和压缩" class="headerlink" title="5 文件打包归档和压缩"></a>5 文件打包归档和压缩</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">tar -cvf test.tar path1 path2 将path1和path2文件夹在当前目录下打包并压缩为test.tar</span><br><span class="line">tar -xzvf file.tar.gz 在当前目录下解压文件</span><br><span class="line">tar -xzvf file.tar.gz -C ../解压到上一层目录中</span><br><span class="line"></span><br><span class="line">zip test.txt.zip test.txt 打包并压缩</span><br><span class="line">unzip text.txt.zip 解压</span><br><span class="line"></span><br><span class="line">tar常用参数:</span><br><span class="line">-c: 创建一个新的tar文件</span><br><span class="line">-v: 显示运行过程的信息</span><br><span class="line">-f: 指定文件名</span><br><span class="line">-z: 调用gzip 压缩命令进行压缩</span><br><span class="line">-t：查看压缩文件内容</span><br><span class="line">-x: 解开tar文件</span><br></pre></td></tr></table></figure>
+<h2 id="6-文件查找"><a href="#6-文件查找" class="headerlink" title="6 文件查找"></a>6 文件查找</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">find ./ -name <span class="string">'*.txt'</span> 查找以.txt结尾的文件(遍历当前目录)</span><br><span class="line">find ./ -name <span class="string">'in*'</span> 查找以<span class="keyword">in</span>开头的文件</span><br><span class="line">find ./ -<span class="built_in">type</span> f 查找普通文件</span><br><span class="line">find ./ -<span class="built_in">type</span> l 查找连接文件</span><br></pre></td></tr></table></figure>
+<h2 id="7-查看文本内容"><a href="#7-查看文本内容" class="headerlink" title="7 查看文本内容"></a>7 查看文本内容</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cat 1.txt 显示文件所有内容</span><br><span class="line">more 1.txt  可以分页看</span><br><span class="line">less 1.txt 不仅可以分页，还可以方便搜索</span><br><span class="line">head -30 1.txt 查看文件前30行</span><br><span class="line">tail -20 1.txt 查看文件尾部20行</span><br></pre></td></tr></table></figure>
+<h2 id="8-其他常用命令"><a href="#8-其他常用命令" class="headerlink" title="8 其他常用命令"></a>8 其他常用命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> $ JAVA_HOME  输出变量值</span><br><span class="line"></span><br><span class="line">whoami 查询当前登陆的用户名</span><br><span class="line">mkdir <span class="built_in">test</span>&amp;&amp;<span class="built_in">cd</span> <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+<h2 id="9-添加用户"><a href="#9-添加用户" class="headerlink" title="9 添加用户"></a>9 添加用户</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">useradd user1</span><br><span class="line">passwd 123456</span><br><span class="line"></span><br><span class="line">-u 指定组ID（uid）</span><br><span class="line">-g 指定所属的组名（gid）</span><br><span class="line">-G 指定多个组，用逗号“，”分开（Groups）</span><br><span class="line">-c 用户描述（comment）</span><br><span class="line">-d 指定用户目录</span><br><span class="line">-e 失效时间（expire date）</span><br></pre></td></tr></table></figure>
+<h2 id="10-删除用户"><a href="#10-删除用户" class="headerlink" title="10 删除用户"></a>10 删除用户</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">userdel user1</span><br></pre></td></tr></table></figure>
+<h2 id="11-修改用户属性"><a href="#11-修改用户属性" class="headerlink" title="11 修改用户属性"></a>11 修改用户属性</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">usermod -l user2 user1   user1-&gt;user2</span><br><span class="line">usermod -g root usr1 改为root权限</span><br><span class="line">usermod -G h1,h2 user1 给user1添加两个组h1,h2</span><br><span class="line">usermod -d /home/ user1 更改目录</span><br></pre></td></tr></table></figure>
 <h2 id="12-用户及用户组相关配置文件"><a href="#12-用户及用户组相关配置文件" class="headerlink" title="12 用户及用户组相关配置文件"></a>12 用户及用户组相关配置文件</h2><p>用户配置信息存放位置：<br>保存用户信息的文件：/etc/passwd<br>保存密码的文件：/etc/shadow</p>
 <p>passwd文件示例：<br>user002:x:500:500:user002:/home/user002:/bin/bash<br>passwd文件各字段含义：<br>account:password:UID:GID:GECOS:directory:shell</p>
 <p>shadow文件示例：<br>user002:$1$vRug41$UUxYzdP0i6s6wtUPieGDQ/:18617:0:99999:7:::</p>
 <p>保存用户组的文件：/etc/group<br>保存用户组密码的文件：/etc/gshadow（设置组管理员时才有用）</p>
-<h2 id="13-其他的用户管理命令"><a href="#13-其他的用户管理命令" class="headerlink" title="13 其他的用户管理命令"></a>13 其他的用户管理命令</h2><blockquote>
-<p>id user002　　查看一个用户的UID和GID<br>su user001　　切换到user001用户<br>su - user001　　切换到user001用户，并且将环境也切换到user001用户的环境（推荐使用）<br>exis　　退出当前shell（会退出当前登录用户）</p>
-</blockquote>
-<h2 id="14-网卡地址配置"><a href="#14-网卡地址配置" class="headerlink" title="14 网卡地址配置"></a>14 网卡地址配置</h2><p>ifconfig eth0 查看指定的eth0以太网卡地址信息</p>
-<p>ifconfig eth0 ip netmask 255.255.255.0<br>修改ip地址</p>
-<blockquote>
-<p>vi /etc/sysconfig/network-scripts/ifcfg-eth0 修改配置文件来修改ip地址</p>
-</blockquote>
-<h2 id="15-主机名配置管理"><a href="#15-主机名配置管理" class="headerlink" title="15 主机名配置管理"></a>15 主机名配置管理</h2><p>修改主机名<br>vi /etc/sysconfig/network<br>修改完成后要重启服务器才能生效</p>
-<p>主机名-IP映射，服务器本地映射<br>服务器网络寻址时默认是现在本地的hosts文件中查找IP映射，通过修改hosts来映射局域网内部的主机名非常方便<br>实现方法，将局域网内的每一台主机的“hostnamip”写入每一台主机的hosts文件中：<br>vi /etc/hosts<br>192.168.2.150 user001-server-01<br>192.168.2.151 user001-server-02<br>192.168.2.152 user001-server-03</p>
-<h2 id="16-网络服务启动与停止"><a href="#16-网络服务启动与停止" class="headerlink" title="16 网络服务启动与停止"></a>16 网络服务启动与停止</h2><p>列出系统所有应用服务状态：<br>service –status-all<br>重启网络服务：service network restart<br>停止httpd：service httpd stop<br>启动httpd：service httpd start<br>关闭防火墙服务：service iptables stop<br>关闭防火墙自动启动：chkconfig iptables off</p>
-<h2 id="17-查看网络连接信息"><a href="#17-查看网络连接信息" class="headerlink" title="17 查看网络连接信息"></a>17 查看网络连接信息</h2><p>netstat:<br>-a 显示所有连接和监听端口<br>-l 只显示监听进程<br>-t (tcp)仅显示tcp相关选项<br>-u (udp)仅显示udp相关选项<br>-n 拒绝显示别名，能显示数字的全部转化成数字。<br>-p 显示建立相关链接的程序名</p>
-<h2 id="18-系统管理"><a href="#18-系统管理" class="headerlink" title="18 系统管理"></a>18 系统管理</h2><p>df -h　　查看磁盘空间状态信息<br>du -sh *　　查看指定目录下所有子目录和文件的汇总大小<br>free　　查看内存使用状况</p>
-<p>top　　查看实时刷新的系统进程信息<br>ps -ef　　查看系统中当前瞬间的进程信息快照<br>ps -ef | grep myshell.sh　　搜索myshell进程的信息<br>kill -9 pid　　杀掉进程（-9 表示强制杀死）</p>
-<h2 id="19其他系统管理命令"><a href="#19其他系统管理命令" class="headerlink" title="19其他系统管理命令"></a>19其他系统管理命令</h2><p>date “+%Y%m%d”　　按格式显示当前系统时间<br>date -s “2020-01-01 10:10:10”　　设置系统时间<br>clear　　清屏幕(只是滚到上面看不到了)<br>uname 显示系统信息。<br>uname -a 显示本机详细信息。<br>chmod u=rwx,g=rx,o=rx a.txt　　（u代表所属用户 g代表所属组的成员用户 o代表其他用户）</p>
+<h2 id="13-其他的用户管理命令"><a href="#13-其他的用户管理命令" class="headerlink" title="13 其他的用户管理命令"></a>13 其他的用户管理命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">id user002　　查看一个用户的UID和GID</span><br><span class="line">su user001　　切换到user001用户</span><br><span class="line">su - user001　　切换到user001用户，并且将环境也切换到user001用户的环境（推荐使用）</span><br><span class="line"><span class="built_in">exit</span>　　退出当前shell（会退出当前登录用户）</span><br></pre></td></tr></table></figure>
+<h2 id="14-网卡地址配置"><a href="#14-网卡地址配置" class="headerlink" title="14 网卡地址配置"></a>14 网卡地址配置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ifconfig eth0 查看指定的eth0以太网卡地址信息</span><br><span class="line">ifconfig eth0 ip netmask 255.255.255.0</span><br><span class="line">修改ip地址</span><br><span class="line"></span><br><span class="line">vi /etc/sysconfig/network-scripts/ifcfg-eth0 修改配置文件来修改ip地址</span><br></pre></td></tr></table></figure>
+<h2 id="15-主机名配置管理"><a href="#15-主机名配置管理" class="headerlink" title="15 主机名配置管理"></a>15 主机名配置管理</h2><p>修改主机名</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/sysconfig/network</span><br><span class="line">修改完成后要重启服务器才能生效</span><br><span class="line"></span><br><span class="line">主机名-IP映射，服务器本地映射</span><br><span class="line">服务器网络寻址时默认是现在本地的hosts文件中查找IP映射，通过修改hosts来映射局域网内部的主机名非常方便</span><br><span class="line">实现方法，将局域网内的每一台主机的“hostnamip”写入每一台主机的hosts文件中：</span><br><span class="line">vi /etc/hosts</span><br><span class="line">192.168.2.150 user001-server-01</span><br><span class="line">192.168.2.151 user001-server-02</span><br><span class="line">192.168.2.152 user001-server-03</span><br></pre></td></tr></table></figure>
+<h2 id="16-网络服务启动与停止"><a href="#16-网络服务启动与停止" class="headerlink" title="16 网络服务启动与停止"></a>16 网络服务启动与停止</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">列出系统所有应用服务状态：</span><br><span class="line">service --status-all</span><br><span class="line">重启网络服务：service network restart </span><br><span class="line">停止httpd：service httpd stop</span><br><span class="line">启动httpd：service httpd start</span><br><span class="line">关闭防火墙服务：service iptables stop</span><br><span class="line">关闭防火墙自动启动：chkconfig iptables off</span><br></pre></td></tr></table></figure>
+<h2 id="17-查看网络连接信息"><a href="#17-查看网络连接信息" class="headerlink" title="17 查看网络连接信息"></a>17 查看网络连接信息</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">netstat:</span><br><span class="line">-a 显示所有连接和监听端口</span><br><span class="line">-l 只显示监听进程</span><br><span class="line">-t (tcp)仅显示tcp相关选项</span><br><span class="line">-u (udp)仅显示udp相关选项</span><br><span class="line">-n 拒绝显示别名，能显示数字的全部转化成数字。</span><br><span class="line">-p 显示建立相关链接的程序名</span><br></pre></td></tr></table></figure>
+<h2 id="18-系统管理"><a href="#18-系统管理" class="headerlink" title="18 系统管理"></a>18 系统管理</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">df -h　　查看磁盘空间状态信息</span><br><span class="line">du -sh *　　查看指定目录下所有子目录和文件的汇总大小   </span><br><span class="line">free　　查看内存使用状况</span><br><span class="line"></span><br><span class="line">top　　查看实时刷新的系统进程信息</span><br><span class="line">ps -ef　　查看系统中当前瞬间的进程信息快照</span><br><span class="line">ps -ef | grep myshell.sh　　搜索myshell进程的信息</span><br><span class="line"><span class="built_in">kill</span> -9 pid　　杀掉进程（-9 表示强制杀死）</span><br></pre></td></tr></table></figure>
+<h2 id="19其他系统管理命令"><a href="#19其他系统管理命令" class="headerlink" title="19其他系统管理命令"></a>19其他系统管理命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">date <span class="string">"+%Y%m%d"</span>　　按格式显示当前系统时间</span><br><span class="line">date -s <span class="string">"2020-01-01 10:10:10"</span>　　设置系统时间</span><br><span class="line">clear　　清屏幕(只是滚到上面看不到了)</span><br><span class="line">uname 显示系统信息。</span><br><span class="line">uname -a 显示本机详细信息。</span><br><span class="line">chmod u=rwx,g=rx,o=rx a.txt　　（u代表所属用户 g代表所属组的成员用户 o代表其他用户）</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wutongsun.github.io/2019/03/05/LINUX/" data-id="ck2g6spqa001ns6pj130jd3h7" class="article-share-link">Share</a>
+      <a data-url="http://wutongsun.github.io/2019/03/05/LINUX/" data-id="ck2h797vj001mulpjo9u8f085" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
@@ -233,7 +173,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -243,7 +183,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/command/">command</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ctf/">ctf</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/language/">language</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计网/">计网</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">24</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/command/">command</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ctf/">ctf</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/language/">language</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计网/">计网</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -253,7 +193,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IO/">IO</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UDP/">UDP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot-Druid/">springboot Druid</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot-maven/">springboot maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot-mybatis/">springboot mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminal/">terminal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/方法/">方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/类加载机制/">类加载机制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/装饰模式/">装饰模式</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IO/">IO</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UDP/">UDP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hibernate/">hibernate</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot-Druid/">springboot Druid</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot-maven/">springboot maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot-mybatis/">springboot mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminal/">terminal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/类加载机制/">类加载机制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/装饰模式/">装饰模式</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -263,7 +203,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/IO/" style="font-size: 15px;">IO</a> <a href="/tags/TCP/" style="font-size: 10px;">TCP</a> <a href="/tags/UDP/" style="font-size: 15px;">UDP</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/springboot/" style="font-size: 20px;">springboot</a> <a href="/tags/springboot-Druid/" style="font-size: 10px;">springboot Druid</a> <a href="/tags/springboot-maven/" style="font-size: 10px;">springboot maven</a> <a href="/tags/springboot-mybatis/" style="font-size: 10px;">springboot mybatis</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a> <a href="/tags/tools/" style="font-size: 15px;">tools</a> <a href="/tags/方法/" style="font-size: 10px;">方法</a> <a href="/tags/类加载机制/" style="font-size: 10px;">类加载机制</a> <a href="/tags/装饰模式/" style="font-size: 10px;">装饰模式</a>
+      <a href="/tags/IO/" style="font-size: 15px;">IO</a> <a href="/tags/TCP/" style="font-size: 10px;">TCP</a> <a href="/tags/UDP/" style="font-size: 15px;">UDP</a> <a href="/tags/hibernate/" style="font-size: 10px;">hibernate</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/springboot/" style="font-size: 20px;">springboot</a> <a href="/tags/springboot-Druid/" style="font-size: 10px;">springboot Druid</a> <a href="/tags/springboot-maven/" style="font-size: 10px;">springboot maven</a> <a href="/tags/springboot-mybatis/" style="font-size: 10px;">springboot mybatis</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a> <a href="/tags/tools/" style="font-size: 15px;">tools</a> <a href="/tags/类加载机制/" style="font-size: 10px;">类加载机制</a> <a href="/tags/装饰模式/" style="font-size: 10px;">装饰模式</a>
     </div>
   </div>
 
@@ -273,6 +213,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/11/02/hibernate/">hibernate</a>
+          </li>
         
           <li>
             <a href="/2019/10/30/Java杂文/">Java杂文</a>
@@ -288,10 +232,6 @@
         
           <li>
             <a href="/2019/10/27/spring注解/">spring注解</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/27/springboot配置文件注入/">springboot配置文件注入</a>
           </li>
         
       </ul>

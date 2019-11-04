@@ -5,21 +5,15 @@
   
 
   
-  <title>Servlet基础 | Welcome to Wutong&#39;s Blog</title>
+  <title>Tag: jpa | Welcome to Wutong&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Servlet对象与普通的JAVA对象不同，它可以处理Web浏览器或其他HTTP客户端程序发送的HTTP请求，但前提是把Servlet对象布置到Servlet容器中。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Servlet基础">
-<meta property="og:url" content="http://wutongsun.github.io/2019/04/12/SERVLET基础/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Welcome to Wutong&#39;s Blog">
+<meta property="og:url" content="http://wutongsun.github.io/tags/jpa/index.html">
 <meta property="og:site_name" content="Welcome to Wutong&#39;s Blog">
-<meta property="og:description" content="Servlet对象与普通的JAVA对象不同，它可以处理Web浏览器或其他HTTP客户端程序发送的HTTP请求，但前提是把Servlet对象布置到Servlet容器中。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://wutongsun.github.io/2019/04/12/SERVLET基础/1.png">
-<meta property="og:updated_time" content="2019-11-02T02:21:42.094Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Servlet基础">
-<meta name="twitter:description" content="Servlet对象与普通的JAVA对象不同，它可以处理Web浏览器或其他HTTP客户端程序发送的HTTP请求，但前提是把Servlet对象布置到Servlet容器中。">
-<meta name="twitter:image" content="http://wutongsun.github.io/2019/04/12/SERVLET基础/1.png">
+<meta name="twitter:title" content="Welcome to Wutong&#39;s Blog">
   
     <link rel="alternate" href="/atom.xml" title="Welcome to Wutong&#39;s Blog" type="application/atom+xml">
   
@@ -70,72 +64,40 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-SERVLET基础" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/04/12/SERVLET基础/" class="article-date">
-  <time datetime="2019-04-12T06:07:19.000Z" itemprop="datePublished">2019-04-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Java/">Java</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <section id="main">
   
-    <h1 class="article-title" itemprop="name">
-      Servlet基础
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2019/11/04/spring-data-jpa/" class="archive-article-date">
+  <time datetime="2019-11-04T08:08:48.000Z" itemprop="datePublished">Nov 4</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/11/04/spring-data-jpa/">spring data jpa</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <img src="/2019/04/12/SERVLET基础/1.png" title="Servlet与容器">
-<p>Servlet对象与普通的JAVA对象不同，它可以处理Web浏览器或其他HTTP客户端程序发送的HTTP请求，但前提是把Servlet对象布置到Servlet容器中。<br><a id="more"></a><br>Servlet 与Web容器的关系是非常密切的，在Web容器中Servlet主要经历了4个阶段，即Servlet的生命周期<br>1 在Web容器启动或客户机第一次请求服务时，容器将加载Servlet类并将其放入到Servlet实例池<br>2 当Servlet实例化后，容器将调用Servlet对象的init()方法完成Servlet的初始化操作<br>3 容器通过Servlet的service()方法处理客户端请求。在Service()方法中，Servlet实例根据不同的HTTP请求类型作出不同的处理，并在处理后做出相应的响应<br>4 在Web容器关闭时，容器调用Servlet对象的desdroy()方法对资源进行释放。</p>
-<h3 id="Servlet配置"><a href="#Servlet配置" class="headerlink" title="Servlet配置"></a>Servlet配置</h3><p>Servlet对象创建在Java Resources/src/下，要使Servlet对象正常地运行，需要进行适当的配置，以告知Web容器哪一个请求调用哪一个Servlet对象处理，对Servlet起到一个注册的作用(配置文件在WEB-INF下的web.xml)<br>1）声明Servlet对象</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>类名<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>包名.类名<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>2）映射Servlet<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>包名<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>相对路径名<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://wutongsun.github.io/2019/04/12/SERVLET基础/" data-id="ck2k6ot9x001jvopjs29xmp93" class="article-share-link">Share</a>
-      
-      
-	 <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
-<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
-   
-    </footer>
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2019/04/27/Java类加载器/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Java类加载器
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2019/04/11/JDBC/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">JDBC</div>
-    </a>
-  
-</nav>
-
-  
 </article>
+  
+  
+    </div></section>
+  
+
 
 </section>
         

@@ -51,19 +51,17 @@
   };
 </script>
 
-  <meta name="description" content="线程的5个状态 1 新生状态(New)">
+  <meta name="description" content="1 持久层接口UserDao123public interface UserDao&amp;#123;  public void getUser();&amp;#125;  2 持久层各种实现类123456public class UserDaoMySqlImpl implements UserDao&amp;#123;  @Override  public void getUser()&amp;#123;    System.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java线程状态">
-<meta property="og:url" content="http:&#x2F;&#x2F;wutongsun.github.io&#x2F;2019&#x2F;03&#x2F;22&#x2F;JAVA%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81&#x2F;index.html">
+<meta property="og:title" content="spring中ioc解耦合原理">
+<meta property="og:url" content="http:&#x2F;&#x2F;wutongsun.github.io&#x2F;2019&#x2F;11&#x2F;09&#x2F;spring%E4%B8%ADioc%E8%A7%A3%E8%80%A6%E5%90%88%E5%8E%9F%E7%90%86&#x2F;index.html">
 <meta property="og:site_name" content="Wutong&#39;s Blog">
-<meta property="og:description" content="线程的5个状态 1 新生状态(New)">
+<meta property="og:description" content="1 持久层接口UserDao123public interface UserDao&amp;#123;  public void getUser();&amp;#125;  2 持久层各种实现类123456public class UserDaoMySqlImpl implements UserDao&amp;#123;  @Override  public void getUser()&amp;#123;    System.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http:&#x2F;&#x2F;www.sxt.cn&#x2F;360shop&#x2F;Public&#x2F;admin&#x2F;UEditor&#x2F;20170526&#x2F;1495787690411518.png">
-<meta property="og:updated_time" content="2019-11-01T13:55:43.100Z">
+<meta property="og:updated_time" content="2019-11-09T14:37:05.388Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;www.sxt.cn&#x2F;360shop&#x2F;Public&#x2F;admin&#x2F;UEditor&#x2F;20170526&#x2F;1495787690411518.png">
 
-<link rel="canonical" href="http://wutongsun.github.io/2019/03/22/JAVA%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81/">
+<link rel="canonical" href="http://wutongsun.github.io/2019/11/09/spring%E4%B8%ADioc%E8%A7%A3%E8%80%A6%E5%90%88%E5%8E%9F%E7%90%86/">
 
 
 <script id="page-configurations">
@@ -77,7 +75,7 @@
   };
 </script>
 
-  <title>Java线程状态 | Wutong's Blog</title>
+  <title>spring中ioc解耦合原理 | Wutong's Blog</title>
   
 
 
@@ -194,7 +192,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://wutongsun.github.io/2019/03/22/JAVA%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81/">
+    <link itemprop="mainEntityOfPage" href="http://wutongsun.github.io/2019/11/09/spring%E4%B8%ADioc%E8%A7%A3%E8%80%A6%E5%90%88%E5%8E%9F%E7%90%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/author.jpg">
@@ -207,7 +205,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Java线程状态
+          spring中ioc解耦合原理
         </h1>
 
         <div class="post-meta">
@@ -216,16 +214,21 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2019-03-22 14:27:53" itemprop="dateCreated datePublished" datetime="2019-03-22T14:27:53+08:00">2019-03-22</time>
+              <time title="创建时间：2019-11-09 22:08:03 / 修改时间：22:37:05" itemprop="dateCreated datePublished" datetime="2019-11-09T22:08:03+08:00">2019-11-09</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-01 21:55:43" itemprop="dateModified" datetime="2019-11-01T21:55:43+08:00">2019-11-01</time>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
               </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+            </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -233,7 +236,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>981</span>
+              <span>1.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -252,23 +255,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="线程的5个状态"><a href="#线程的5个状态" class="headerlink" title="线程的5个状态"></a>线程的5个状态</h1><p><img src="http://www.sxt.cn/360shop/Public/admin/UEditor/20170526/1495787690411518.png" alt=""></p>
-<h2 id="1-新生状态-New"><a href="#1-新生状态-New" class="headerlink" title="1 新生状态(New)"></a>1 新生状态(New)</h2><a id="more"></a>
-<p>用new关键字建立一个线程对象后，该线程对象就处于新生状态。处于新生状态的线程有自己的内存空间，通过调用start方法进入就绪状态。</p>
-<h2 id="2-就绪状态-Runnable"><a href="#2-就绪状态-Runnable" class="headerlink" title="2 就绪状态(Runnable)"></a>2 就绪状态(Runnable)</h2><p> 处于就绪状态的线程已经具备了运行条件，但是还没有被分配到CPU，处于“线程就绪队列”，等待系统为其分配CPU。就绪状态并不是执行状态，当系统选定一个等待执行的Thread对象后，它就会进入执行状态。一旦获得CPU，线程就进入运行状态并自动调用自己的run方法。有4中原因会导致线程进入就绪状态：<br>新建线程：调用start()方法，进入就绪状态;<br>阻塞线程：阻塞解除，进入就绪状态;<br>运行线程：调用yield()方法，直接进入就绪状态;<br>运行线程：JVM将CPU资源从本线程切换到其他线程。</p>
-<h2 id="3-运行状态-Running"><a href="#3-运行状态-Running" class="headerlink" title="3 运行状态(Running)"></a>3 运行状态(Running)</h2><p>在运行状态的线程执行自己run方法中的代码，直到调用其他方法而终止或等待某资源而阻塞或完成任务而死亡。如果在给定的时间片内没有执行结束，就会被系统给换下来回到就绪状态。也可能由于某些“导致阻塞的事件”而进入阻塞状态。</p>
-<h2 id="4-阻塞状态-Blocked"><a href="#4-阻塞状态-Blocked" class="headerlink" title="4 阻塞状态(Blocked)"></a>4 阻塞状态(Blocked)</h2><p>阻塞指的是暂停一个线程的执行以等待某个条件发生(如某资源就绪)。有4种原因会导致阻塞：</p>
-<ol>
-<li><p>执行sleep(int millsecond)方法，使当前线程休眠，进入阻塞状态。当指定的时间到了后，线程进入就绪状态。</p>
-</li>
-<li><p>执行wait()方法，使当前线程进入阻塞状态。当使用nofity()方法唤醒这个线程后，它进入就绪状态。</p>
-</li>
-<li><p>线程运行时，某个操作进入阻塞状态，比如执行IO流操作(read()/write()方法本身就是阻塞的方法)。只有当引起该操作阻塞的原因消失后，线程进入就绪状态。</p>
-</li>
-<li><p>join()线程联合: 当某个线程等待另一个线程执行结束后，才能继续执行时，使用join()方法</p>
-<h2 id="5-死亡状态-Terminated"><a href="#5-死亡状态-Terminated" class="headerlink" title="5 死亡状态(Terminated)"></a>5 死亡状态(Terminated)</h2><p>死亡状态是线程生命周期中的最后一个阶段。线程死亡的原因有两个。一个是正常运行的线程完成了它run()方法内的全部工作; 另一个是线程被强制终止，如通过执行stop()或destroy()方法来终止一个线程(注：stop()/destroy()方法已经被JDK废弃，不推荐使用)。<br>当一个线程进入死亡状态以后，就不能再回到其它状态了。</p>
-<h3 id="sleep-抱着资源睡觉，yield-礼让cpu，join-只能对象调用阻塞其他线程"><a href="#sleep-抱着资源睡觉，yield-礼让cpu，join-只能对象调用阻塞其他线程" class="headerlink" title="sleep()抱着资源睡觉，yield()礼让cpu，join()只能对象调用阻塞其他线程"></a>sleep()抱着资源睡觉，yield()礼让cpu，join()只能对象调用阻塞其他线程</h3></li>
-</ol>
+        <h3 id="1-持久层接口UserDao"><a href="#1-持久层接口UserDao" class="headerlink" title="1 持久层接口UserDao"></a>1 持久层接口UserDao</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserDao</span></span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getUser</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-持久层各种实现类"><a href="#2-持久层各种实现类" class="headerlink" title="2 持久层各种实现类"></a>2 持久层各种实现类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserDaoMySqlImpl</span> <span class="keyword">implements</span> <span class="title">UserDao</span></span>&#123;</span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getUser</span><span class="params">()</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"mysql获取用户数据"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserOracleImpl</span> <span class="keyword">implements</span> <span class="title">UserDao</span></span>&#123;</span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getUser</span><span class="params">()</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"Oracle获取用户数据"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-service层接口UserService"><a href="#3-service层接口UserService" class="headerlink" title="3 service层接口UserService"></a>3 service层接口UserService</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserService</span></span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getUser</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-service接口实现类UserServiceImpl"><a href="#4-service接口实现类UserServiceImpl" class="headerlink" title="4 service接口实现类UserServiceImpl"></a>4 service接口实现类UserServiceImpl</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserServiceImpl</span> <span class="keyword">implements</span> <span class="title">UserService</span></span>&#123;</span><br><span class="line">  <span class="keyword">private</span> UserDao userDao = <span class="keyword">null</span>;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setUserDao</span><span class="params">(UserDao userDao)</span></span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.userDao = userDao;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getUser</span><span class="params">()</span></span>&#123;</span><br><span class="line">    userDao.getUser();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-编写测试类"><a href="#5-编写测试类" class="headerlink" title="5 编写测试类"></a>5 编写测试类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    UserServiceImpl userService = <span class="keyword">new</span> UserServiceImpl();</span><br><span class="line">    userService.setUserDao(<span class="keyword">new</span> UserDaoMySqlImpl());</span><br><span class="line">    userService.getUser();</span><br><span class="line">    System.out.println(<span class="string">"-----------"</span>);</span><br><span class="line">    userService.setUserDao(<span class="keyword">new</span> UserOracleImpl());</span><br><span class="line">    userService.getUser();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h3><p>创建对象的过程的过程发生了质的改变，如果在UserService中写死具体用的那个持久层方法，那么对应每个持久层方法都得写一个相应的Service实现类，非常麻烦。现在通过传接口给service的实现类，将dao层与service层解耦合了，并且使得创建对象的决定权交给了Test类，也就是配置文件。</p>
+<p><strong>总的来说spring-ioc的思想为：创建对象的过程由程序转为了配置文件</strong></p>
 
     </div>
 
@@ -284,7 +284,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://wutongsun.github.io/2019/03/22/JAVA%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81/" title="Java线程状态">http://wutongsun.github.io/2019/03/22/JAVA%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81/</a>
+    <a href="http://wutongsun.github.io/2019/11/09/spring%E4%B8%ADioc%E8%A7%A3%E8%80%A6%E5%90%88%E5%8E%9F%E7%90%86/" title="spring中ioc解耦合原理">http://wutongsun.github.io/2019/11/09/spring%E4%B8%ADioc%E8%A7%A3%E8%80%A6%E5%90%88%E5%8E%9F%E7%90%86/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -299,17 +299,14 @@
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2019/03/22/JAVA%E7%BA%BF%E7%A8%8B%E5%A4%9A%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/" rel="next" title="Java线程多种实现方法">
-                  <i class="fa fa-chevron-left"></i> Java线程多种实现方法
+                <a href="/2019/11/04/Java-Web%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="next" title="Java Web服务器">
+                  <i class="fa fa-chevron-left"></i> Java Web服务器
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2019/03/24/JAVA-UDP-%E7%BC%96%E7%A8%8B/" rel="prev" title="Java UDP 编程一">
-                  Java UDP 编程一 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>
@@ -348,7 +345,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#线程的5个状态"><span class="nav-number">1.</span> <span class="nav-text">线程的5个状态</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-新生状态-New"><span class="nav-number">1.1.</span> <span class="nav-text">1 新生状态(New)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-就绪状态-Runnable"><span class="nav-number">1.2.</span> <span class="nav-text">2 就绪状态(Runnable)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-运行状态-Running"><span class="nav-number">1.3.</span> <span class="nav-text">3 运行状态(Running)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-阻塞状态-Blocked"><span class="nav-number">1.4.</span> <span class="nav-text">4 阻塞状态(Blocked)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-死亡状态-Terminated"><span class="nav-number">1.5.</span> <span class="nav-text">5 死亡状态(Terminated)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sleep-抱着资源睡觉，yield-礼让cpu，join-只能对象调用阻塞其他线程"><span class="nav-number">1.5.1.</span> <span class="nav-text">sleep()抱着资源睡觉，yield()礼让cpu，join()只能对象调用阻塞其他线程</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-持久层接口UserDao"><span class="nav-number">1.</span> <span class="nav-text">1 持久层接口UserDao</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-持久层各种实现类"><span class="nav-number">2.</span> <span class="nav-text">2 持久层各种实现类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-service层接口UserService"><span class="nav-number">3.</span> <span class="nav-text">3 service层接口UserService</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-service接口实现类UserServiceImpl"><span class="nav-number">4.</span> <span class="nav-text">4 service接口实现类UserServiceImpl</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-编写测试类"><span class="nav-number">5.</span> <span class="nav-text">5 编写测试类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结："><span class="nav-number">6.</span> <span class="nav-text">小结：</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

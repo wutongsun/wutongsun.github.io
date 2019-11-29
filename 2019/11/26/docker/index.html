@@ -51,14 +51,14 @@
   };
 </script>
 
-  <meta name="description" content="docker常用命令123456789101112131415161718192021docker psdocker ps -a 查看所有docker search mysql   查询docker pull mysql:5.7 拉取镜像docker inspect mysql:5.7 查看详细信息docker image rm -f mysql:5.7   删除镜像docker rmi -f m">
+  <meta name="description" content="docker常用命令">
 <meta property="og:type" content="article">
 <meta property="og:title" content="docker">
 <meta property="og:url" content="http:&#x2F;&#x2F;wutongsun.github.io&#x2F;2019&#x2F;11&#x2F;26&#x2F;docker&#x2F;index.html">
 <meta property="og:site_name" content="Wutong&#39;s Blog">
-<meta property="og:description" content="docker常用命令123456789101112131415161718192021docker psdocker ps -a 查看所有docker search mysql   查询docker pull mysql:5.7 拉取镜像docker inspect mysql:5.7 查看详细信息docker image rm -f mysql:5.7   删除镜像docker rmi -f m">
+<meta property="og:description" content="docker常用命令">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-29T12:57:06.930Z">
+<meta property="og:updated_time" content="2019-11-29T13:44:10.960Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://wutongsun.github.io/2019/11/26/docker/">
@@ -222,7 +222,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-29 20:57:06" itemprop="dateModified" datetime="2019-11-29T20:57:06+08:00">2019-11-29</time>
+                <time title="修改时间：2019-11-29 21:44:10" itemprop="dateModified" datetime="2019-11-29T21:44:10+08:00">2019-11-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -261,7 +261,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="docker常用命令"><a href="#docker常用命令" class="headerlink" title="docker常用命令"></a>docker常用命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">docker ps</span><br><span class="line">docker ps -a 查看所有</span><br><span class="line">docker search mysql   查询</span><br><span class="line">docker pull mysql:5.7 拉取镜像</span><br><span class="line">docker inspect mysql:5.7 查看详细信息</span><br><span class="line">docker image rm -f mysql:5.7   删除镜像</span><br><span class="line">docker rmi -f mysql:5.7    删除镜像</span><br><span class="line">docker rmi -f $(docker ps -a -q)   删除所有镜像</span><br><span class="line">docker start container  启动容器</span><br><span class="line">docker run --name containerName -d image-name  docker run --name redis -p 6379:6379 -d redis:latest 后台运行容器</span><br><span class="line">docker run -it mysql:5.7 /bin/bash  运行镜像,并进入容器</span><br><span class="line">docker container commit hostname image:version  创建镜像</span><br><span class="line">docker image build -t python:3 创建镜像(在此目录必须有Dockerfile文件)</span><br><span class="line">docker save -o package.tar python:3 导出镜像</span><br><span class="line">docker load -i package.tar  加载镜像</span><br><span class="line">docker load &lt; package.tar 加载镜像</span><br><span class="line">docker tag mysql:5.7 <span class="built_in">local</span>/mysql:5.7  更改标签</span><br><span class="line">docker login </span><br><span class="line">docker push images  上传镜像</span><br><span class="line">docker run -d -p 8888:8080 tomcat</span><br><span class="line">docker run --name tomcat -p 8080:8080 -v localpath:destpath -d tomcat  -v 将主机localpath目录挂载到容器的destpath目录下</span><br></pre></td></tr></table></figure>
+        <h3 id="docker常用命令"><a href="#docker常用命令" class="headerlink" title="docker常用命令"></a>docker常用命令</h3><a id="more"></a>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">docker ps</span><br><span class="line">docker ps -a 查看所有</span><br><span class="line">docker search mysql   查询</span><br><span class="line">docker pull mysql:5.7 拉取镜像</span><br><span class="line">docker inspect mysql:5.7 查看详细信息</span><br><span class="line">docker image rm -f mysql:5.7   删除镜像</span><br><span class="line">docker rmi -f mysql:5.7    删除镜像</span><br><span class="line">docker rmi -f $(docker ps -a -q)   删除所有镜像</span><br><span class="line">docker start container  启动容器</span><br><span class="line">docker run --name containerName -d image-name  docker run --name redis -p 6379:6379 -d redis:latest 后台运行容器</span><br><span class="line">docker run -it mysql:5.7 /bin/bash  运行镜像,并进入容器</span><br><span class="line">docker container commit hostname image:version  创建镜像</span><br><span class="line">docker image build -t python:3 创建镜像(在此目录必须有Dockerfile文件)</span><br><span class="line">docker save -o package.tar python:3 导出镜像</span><br><span class="line">docker load -i package.tar  加载镜像</span><br><span class="line">docker load &lt; package.tar 加载镜像</span><br><span class="line">docker tag mysql:5.7 <span class="built_in">local</span>/mysql:5.7  更改标签</span><br><span class="line">docker login </span><br><span class="line">docker push images  上传镜像</span><br><span class="line">docker run -d -p 8888:8080 tomcat</span><br><span class="line">docker run --name tomcat -p 8080:8080 -v localpath:destpath -d tomcat  -v 将主机localpath目录挂载到容器的destpath目录下</span><br></pre></td></tr></table></figure>
 
 
     </div>

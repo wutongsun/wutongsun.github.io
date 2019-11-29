@@ -58,7 +58,7 @@
 <meta property="og:site_name" content="Wutong&#39;s Blog">
 <meta property="og:description" content="svn">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-17T05:17:54.328Z">
+<meta property="og:updated_time" content="2019-11-29T12:56:00.641Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://wutongsun.github.io/2019/11/14/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6git-svn/">
@@ -156,12 +156,12 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">8</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">11</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">47</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">50</span></a>
 
   </li>
   </ul>
@@ -222,7 +222,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-17 13:17:54" itemprop="dateModified" datetime="2019-11-17T13:17:54+08:00">2019-11-17</time>
+                <time title="修改时间：2019-11-29 20:56:00" itemprop="dateModified" datetime="2019-11-29T20:56:00+08:00">2019-11-29</time>
               </span>
 
           <br>
@@ -231,7 +231,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>363</span>
+              <span>453</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -254,7 +254,9 @@
 
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在客户端对版本库进行检出操作</span></span><br><span class="line">svn checkout svn://IP/path  --username=name</span><br><span class="line"><span class="comment"># 查看文件状态</span></span><br><span class="line">svn status</span><br><span class="line"><span class="comment"># 提交文件到版本库</span></span><br><span class="line">svn add filename</span><br><span class="line"><span class="comment"># 提交更改</span></span><br><span class="line">svn commit -m <span class="string">"information"</span></span><br><span class="line"><span class="comment"># 默认更新到最新版本</span></span><br><span class="line">svn update </span><br><span class="line"><span class="comment"># 更新到指定版本</span></span><br><span class="line">svn update -edition</span><br><span class="line"><span class="comment"># 默认比较你的工作文件与缓存在.svn的原始拷贝，也可以比较指定版本之间的差别</span></span><br><span class="line">svn diff -r 2:3 filename</span><br><span class="line"><span class="comment"># 文件版本回退</span></span><br><span class="line">svn revert filename</span><br><span class="line"><span class="comment"># 目录版本回退</span></span><br><span class="line">svn revert -R trunk</span><br><span class="line"><span class="comment"># 显示版本日志</span></span><br><span class="line">svn <span class="built_in">log</span> </span><br><span class="line"><span class="comment"># 可以在不下载文件到本地目录的情况下来查看目录中的文件</span></span><br><span class="line">svn list url</span><br></pre></td></tr></table></figure>
 
-<h3 id="git"><a href="#git" class="headerlink" title="git"></a>git</h3>
+<h3 id="git"><a href="#git" class="headerlink" title="git"></a>git</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br><span class="line">git <span class="built_in">log</span></span><br><span class="line">git reset logId  //返回之前状态</span><br><span class="line">git checkout -b branchName //切换分支</span><br><span class="line">git pull</span><br><span class="line">git merge + 分支名</span><br></pre></td></tr></table></figure>
+
+
     </div>
 
     
@@ -349,14 +351,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-count">50</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -415,12 +417,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">150k</span>
+    <span title="站点总字数">154k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:16</span>
+    <span title="站点阅读时长">2:20</span>
 </div>
 
         
